@@ -1,0 +1,14 @@
+{
+  "projeto": "auto_avaliar",
+  "mongo": {
+    "clusters": [
+      "cluster0-shard-00-00-mlnqx.mongodb.net:27017",
+      "cluster0-shard-00-01-mlnqx.mongodb.net:27017",
+      "cluster0-shard-00-02-mlnqx.mongodb.net:27017"
+    ],
+    "user": "admin",
+    "password": "admin",
+    "main_database": "relatorios",
+    "main_collection": "regressivos"
+  }
+}
