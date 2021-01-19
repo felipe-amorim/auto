@@ -4,6 +4,10 @@ import com.autoavaliar.intern.Instances;
 
 public class GetterPopUps {
     public String text(){
-        return Instances.getWebDriver().switchTo().alert().getText();
+        final String[] retorno = {""};
+        Instances.getExecuteClassInstance().execute(()->{
+            retorno[0] = Instances.getWebDriver().switchTo().alert().getText();
+        }, false, true);
+        return retorno[0];
     }
 }
