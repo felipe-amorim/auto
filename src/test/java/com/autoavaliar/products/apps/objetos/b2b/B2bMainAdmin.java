@@ -85,6 +85,7 @@ public class B2bMainAdmin {
         public static String b2bMain4x4StatusBom = "//tr[@id=\"conservation-status\"]//input[@value=\"B\"]";
         public static String b2bMain4x4StatusOtimo = "//tr[@id=\"conservation-status\"]//input[@value=\"O\"]";
         public static String b2bMainLojaFisica = "//select[@name=\"loja_fisica\"]";
+        public static String b2bMainOrigem = "//select[@name=\"origem\"]";
         public static String b2bMainMotor = "//input[@name=\"motor\"]";
         public static String b2bMainCambio = "//select[@id=\"dadosCambio\"]";
     }
@@ -168,6 +169,7 @@ public class B2bMainAdmin {
         ret.put(tabDadosCadastrais.b2bMainLojaFisica, "Loja Fisica");
         ret.put(tabDadosCadastrais.b2bMainMotor, "Motor");
         ret.put(tabDadosCadastrais.b2bMainCambio, "Cambio");
+        ret.put(tabDadosCadastrais.b2bMainOrigem, "Origem");
 
         //Aba de Opcionais
         ret.put(tabOpcionais.b2bMainOpcionais, "Opcionais");
