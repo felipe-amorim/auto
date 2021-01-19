@@ -233,6 +233,21 @@ public class JRobot {
         robot.keyRelease(KeyEvent.VK_TAB);
     }
 
+    public static void commandShiftG(){
+        setRobot();
+        esperar(50);
+        robot.keyPress(KeyEvent.VK_META);
+        esperar(50);
+        robot.keyPress(KeyEvent.VK_SHIFT);
+        esperar(50);
+        robot.keyPress(KeyEvent.VK_G);
+        esperar(50);
+        robot.keyRelease(KeyEvent.VK_G);
+        esperar(50);
+        robot.keyRelease(KeyEvent.VK_SHIFT);
+        esperar(50);
+        robot.keyRelease(KeyEvent.VK_META);
+    }
 
     public static void enter(){
         setRobot();
@@ -251,7 +266,17 @@ public class JRobot {
 
     public static void robotClick(){
         getRobot().mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        esperar(50);
         getRobot().mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        esperar(50);
+    }
+
+    public static void mouseMoveMiddle(){
+        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+        esperar(50);
+        getRobot().mouseMove (d.width/2, d.height/2);
+        esperar(50);
+        getRobot().mouseMove (d.width/2, d.height/2);
     }
 
     public static void mousePress(){
@@ -270,7 +295,9 @@ public class JRobot {
 
     public static Robot getRobot()
     {
+        esperar(50);
         if(robot==null){
+            esperar(500);
             setRobot();
         }
         return robot;

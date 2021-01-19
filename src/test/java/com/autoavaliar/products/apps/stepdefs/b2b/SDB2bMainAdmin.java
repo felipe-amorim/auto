@@ -18,20 +18,20 @@ import static com.autoavaliar.products.apps.objetos.b2b.B2bMainAdmin.tabDadosCad
 
 public class SDB2bMainAdmin extends CoreWeb {
     static String placa = "n/a";
-    private static String chassi = "1";
-    private static String anoFab = "2000";
-    private static String marca = "FIAT";
-    private static String modelo = "UNO";
-    private static String km = "67541";
-    private static String quatroxquatro = "";
-    private static String statusQuatroPorQuatro = "";
-    private static String motor = "1";
-    private static String statusCambio = "";
-    private static String statusMotor = "";
-    private static String valorDeCompra = "1012300";
-    private static String valorDeCompreJa = "1912300";
-    private static String valorMinimoOFerta = "1512300";
-    private static String dataFinal = "n/a";
+    static String chassi = "1";
+    static String anoFab = "2000";
+    static String marca = "FIAT";
+    static String modelo = "UNO";
+    static String km = "67541";
+    static String quatroxquatro = "";
+    static String statusQuatroPorQuatro = "";
+    static String motor = "1";
+    static String statusCambio = "";
+    static String statusMotor = "";
+    static String valorDeCompra = "1012300";
+    static String valorDeCompreJa = "1912300";
+    static String valorMinimoOFerta = "1512300";
+    static String dataFinal = "n/a";
 
 
     @Given("O usuario cria um novo veiculo no b{int}b adm como timeqa usando os arquivos {string}")

@@ -90,7 +90,7 @@ import static com.mongodb.client.model.Filters.eq;
 
 public class Instances {
 
-    private static String operationalSystem = System.getProperty("os.name");
+    public static String operationalSystem = System.getProperty("os.name");
     private static String operationalSystemSufix = operationalSystem.toLowerCase().startsWith("win") ? ".exe" : "" ;
     public static String chrome = "chrome";
     public static String firefox = "firefox";
