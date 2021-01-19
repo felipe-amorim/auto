@@ -1,5 +1,6 @@
 package com.autoavaliar.products.apps.stepdefs.b2b;
 
+import com.autoavaliar.intern.Instances;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import com.autoavaliar.support.CoreWeb;
@@ -118,9 +119,22 @@ public class SDB2bMain extends CoreWeb {
         find(tabFotos.b2bMainFotos).click();
 
         find(tabFotos.b2bMainFoto1).actions().click();
-        sleep().until(500);
+        sleep().until(2000);
 
-        JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\2.jpg");
+        if(Instances.operationalSystem.toLowerCase().startsWith("win")){
+            JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\1.png");
+        }else {
+            JRobot.mouseMoveMiddle();
+            sleep().until(500);
+            JRobot.robotClick();
+            sleep().until(500);
+            JRobot.commandShiftG();
+            sleep().until(500);
+            JRobot.enviar(System.getProperty("user.dir") + "/src/test/resources/products/apps/massas/b2b/1.png");
+            sleep().until(500);
+            JRobot.enter();
+        }
+
 
         //JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\car_fusca.jpg");
 
@@ -131,7 +145,19 @@ public class SDB2bMain extends CoreWeb {
 
         find(tabFotos.b2bMainFoto2).actions().click();
         sleep().until(500);
-        JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\fusca3.jpg");
+        if(Instances.operationalSystem.toLowerCase().startsWith("win")) {
+            JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\2.png");
+        }else {
+            JRobot.mouseMoveMiddle();
+            sleep().until(500);
+            JRobot.robotClick();
+            sleep().until(500);
+            JRobot.commandShiftG();
+            sleep().until(500);
+            JRobot.enviar(System.getProperty("user.dir") + "/src/test/resources/products/apps/massas/b2b/2.png");
+            sleep().until(500);
+            JRobot.enter();
+        }
         sleep().until(500);
         JRobot.enter();
         sleep().until(2000);
@@ -139,7 +165,19 @@ public class SDB2bMain extends CoreWeb {
 
         find(tabFotos.b2bMainFoto3).actions().click();
         sleep().until(500);
-        JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\fusca4.jpg");
+        if(Instances.operationalSystem.toLowerCase().startsWith("win")) {
+            JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\3.png");
+        }else {
+            JRobot.mouseMoveMiddle();
+            sleep().until(500);
+            JRobot.robotClick();
+            sleep().until(500);
+            JRobot.commandShiftG();
+            sleep().until(500);
+            JRobot.enviar(System.getProperty("user.dir") + "/src/test/resources/products/apps/massas/b2b/3.png");
+            sleep().until(500);
+            JRobot.enter();
+        }
         sleep().until(500);
         JRobot.enter();
         sleep().until(2000);
