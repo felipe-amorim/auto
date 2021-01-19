@@ -4,6 +4,8 @@ Feature: Solicitar nova avaliação USBI
   Scenario Outline: Criar veiculo, Author: Felipe Amorim, Category: criar novo veiculo, Environment: Google Chrome
     Given O usuario define os valores do carro <placa> <chassi> <ano> <marca> <modelo> <km> <quatroPorQuatro> <statusQuatroPorQuatro> <motor> <statusCambio> <statusMotor> <compra> <compreja> <minimoOferta> <dataUmaSemanaDepois>
     And O usuario cria um novo veiculo no b2b adm como timeqa usando os arquivos <local>
+    #And O usuario valida dados que os dados inseridos no portal admin estao iguais ao portal comum
+
 
     #Given O usuario navega para portal auto avaliar na url admin
     #When O usuario acessa portal auto avaliar da url admin com usuario qa
@@ -55,8 +57,6 @@ Feature: Solicitar nova avaliação USBI
     #And O usuario acessa portal auto avaliar com usuario qa
     #And O usuario acessa opcao repassar para portal auto avaliar
     #And O usuario realiza busca por veiculo cadastrado por placa
-
-
 
     #And O usuario cria um novo veiculo no b2b adm como timeqa usando os arquivos <local>
     #Then devo acessar o b2b e verificar se o anuncio do veiculo está publicado

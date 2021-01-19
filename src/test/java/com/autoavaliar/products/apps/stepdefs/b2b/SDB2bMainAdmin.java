@@ -59,9 +59,11 @@ public class SDB2bMainAdmin extends CoreWeb {
             find(tabDadosCadastrais.b2bMainChassi).click();
             sleep().until(3000);
             if (find().popUp().exists()) {
-                find().popUp();
+                System.out.println("entrou no if pop up existe");
+                find().popUp().deny();
                 placa = GeradorPlaca.gerarPlaca();
             } else {
+                System.out.println("entrou no else pop up nao existe");
                 break;
             }
             find(tabDadosCadastrais.b2bMainPlaca).clear();
@@ -71,7 +73,7 @@ public class SDB2bMainAdmin extends CoreWeb {
         //find(b2bMainChassi).click();
         //sleep().until(3000);
 
-        find(tabDadosCadastrais.b2bMainChassi).send().text(chassi);
+        find(tabDadosCadastrais.b2bMainChassi).send().text(placa);
         find(tabDadosCadastrais.b2bMainSelectCarro).comboBox().set().byText("Carro");
 
 
@@ -126,9 +128,22 @@ public class SDB2bMainAdmin extends CoreWeb {
         find(tabFotos.b2bMainFotos).click();
 
         find(tabFotos.b2bMainFoto1).actions().click();
-        sleep().until(500);
+        sleep().until(2000);
 
-        JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\2.jpg");
+        if(Instances.operationalSystem.toLowerCase().startsWith("win")){
+            JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\1.png");
+        }else {
+            JRobot.mouseMoveMiddle();
+            sleep().until(500);
+            JRobot.robotClick();
+            sleep().until(500);
+            JRobot.commandShiftG();
+            sleep().until(500);
+            JRobot.enviar(System.getProperty("user.dir") + "/src/test/resources/products/apps/massas/b2b/1.png");
+            sleep().until(500);
+            JRobot.enter();
+        }
+
 
         //JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\car_fusca.jpg");
 
@@ -139,7 +154,19 @@ public class SDB2bMainAdmin extends CoreWeb {
 
         find(tabFotos.b2bMainFoto2).actions().click();
         sleep().until(500);
-        JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\fusca3.jpg");
+        if(Instances.operationalSystem.toLowerCase().startsWith("win")) {
+            JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\2.png");
+        }else {
+            JRobot.mouseMoveMiddle();
+            sleep().until(500);
+            JRobot.robotClick();
+            sleep().until(500);
+            JRobot.commandShiftG();
+            sleep().until(500);
+            JRobot.enviar(System.getProperty("user.dir") + "/src/test/resources/products/apps/massas/b2b/2.png");
+            sleep().until(500);
+            JRobot.enter();
+        }
         sleep().until(500);
         JRobot.enter();
         sleep().until(2000);
@@ -147,7 +174,19 @@ public class SDB2bMainAdmin extends CoreWeb {
 
         find(tabFotos.b2bMainFoto3).actions().click();
         sleep().until(500);
-        JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\fusca4.jpg");
+        if(Instances.operationalSystem.toLowerCase().startsWith("win")) {
+            JRobot.enviar(System.getProperty("user.dir") + "\\src\\test\\resources\\products\\apps\\massas\\b2b\\3.png");
+        }else {
+            JRobot.mouseMoveMiddle();
+            sleep().until(500);
+            JRobot.robotClick();
+            sleep().until(500);
+            JRobot.commandShiftG();
+            sleep().until(500);
+            JRobot.enviar(System.getProperty("user.dir") + "/src/test/resources/products/apps/massas/b2b/3.png");
+            sleep().until(500);
+            JRobot.enter();
+        }
         sleep().until(500);
         JRobot.enter();
         sleep().until(2000);
@@ -182,13 +221,23 @@ public class SDB2bMainAdmin extends CoreWeb {
             find(b2bMainDataFinal).send().setValueThroughJavaScript(new SimpleDateFormat().format(convert().getDate().add().days(7)));
         }*/
         find(b2bMainSalvar).click();
-        sleep().until(4000);
         find().popUp().accept();
-        sleep().until(4000);
         find().popUp().accept();
         find(b2bMainConfirmar).click();
-        sleep().until(4000);
+        sleep().until(5000);
         find().popUp().accept();
+        System.out.println("####################################");
+        System.out.println(find(b2bMainStatusDoVeiculo).get().text().toString());
+        System.out.println("####################################");
+        if (assertThat(find(b2bMainStatusDoVeiculo).get().text().toString()).isEqualTo("Em Oferta")){
+            scroll().down(5000);
+            evidence("Status do veículo era Em Oferta");
+        } else {
+            scroll().down(5000);
+            evidence("Status do veículo não era Em Oferta");
+            error().Fail();
+        }
+
     }
 
     @When("O usuario valida o veiculo cadastrado no b{int}b")

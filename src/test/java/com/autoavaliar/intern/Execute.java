@@ -39,6 +39,7 @@ public class Execute {
                     }
                 }
                 runnable.run();
+                Instances.setIsAvailable(true);
                 executed = true;
                 break;
             } catch (WebDriverException e){
