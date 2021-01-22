@@ -9,3 +9,4 @@ Feature: Solicitar nova avaliação USBI
     Examples:
       | local                                                                  | placa     | chassi    | ano    | marca       | modelo   | km      | quatroPorQuatro | statusQuatroPorQuatro | motor  | statusCambio | statusMotor | compra    | compreja  | minimoOferta | dataUmaSemanaDepois |
       | "C:/Users/isaias.silva/AppData/Local/Google/Chrome/User Data/Default/" | "qwe0005" | "qwe0003" | "2016" | "chevrolet" | "prisma" | "50000" | "nao"           | "n/a"                 | "1000" | "ruim"       | "bom"       | "2000000" | "3500000" | "3000000"    | "sim"               |
+
