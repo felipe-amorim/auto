@@ -13,10 +13,13 @@ import static com.autoavaliar.products.apps.objetos.portal.tabela_autoavaliar.Ta
 
 public class SDB2bLogin extends CoreWeb {
 
+
+
     @Given("O usuario navega para portal auto avaliar na url comum")
     public void oUsuarioNavegaParaPortalAutoAvaliarNaUrlComum() {
         webDriver().set().options().maximized();
         webDriver().navigate(b2bMainUrl);
+        sleep().untilAppear(B2B_LOGIN_INPUT_EMAIL);
     }
 
     @When("O usuario acessa portal auto avaliar com usuario qa")
@@ -32,7 +35,9 @@ public class SDB2bLogin extends CoreWeb {
         find(B2B_LOGIN_INPUT_SENHA).send().nonRobotic().text(b2bMainSenhaTimeQaB2b);
         find(B2B_LOGIN_BUTTON_ENTRAR).click();
         log().setLocator(B2bMain);
+        sleep().setMaxTime(30000);
         sleep().untilAppear(B2B_MAIN_TEXT_O_QUE_VOCE_PROCURA);
+        sleep().setDefaultTime();
     }
 
 }
