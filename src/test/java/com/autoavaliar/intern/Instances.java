@@ -254,8 +254,6 @@ public class Instances {
         public static String MOBILE = "mobile";
         public static String SCREEN = "screen";
     }
-    private static String WEB_LAST_MODAL_XPATH = "";
-    private static List<WebElement> WEB_LAST_MODAL = new ArrayList<>();
 
     private static final String userLanguage = System.getProperty("user.language");
 
@@ -556,10 +554,11 @@ public class Instances {
         if (androidAppActivity.length() > 0) {
             androidDesiredCapabilities.setCapability("appActivity", androidAppActivity);
         }
+        androidDesiredCapabilities.setCapability("autoGrantPermissions", "true");
         //androidDesiredCapabilities.setCapability("unicodeKeyboard", "false");
         //androidDesiredCapabilities.setCapability("resetKeyboard", "false");
-        androidDesiredCapabilities.setCapability("noReset", "true");
-        androidDesiredCapabilities.setCapability("fullReset", "false");
+        //androidDesiredCapabilities.setCapability("noReset", "true");
+        //androidDesiredCapabilities.setCapability("fullReset", "false");
         return androidDesiredCapabilities;
     }
 
@@ -613,7 +612,7 @@ public class Instances {
                 }
 
                 if (!appiumAberto) {
-                    getReportClassInstance().stepWarning("O appium não estava aberto, iniciando o server..");
+                    /*getReportClassInstance().stepWarning("O appium nÃ£o estava aberto, iniciando o server..");
                     AppiumDriverLocalService server;
                     AppiumServiceBuilder serviceBuilder = new AppiumServiceBuilder();
 
@@ -623,7 +622,7 @@ public class Instances {
                     String appiumpath = System.getenv("APPIUM_PATH");
                     serviceBuilder.withAppiumJS(new File(appiumpath));
                     server = AppiumDriverLocalService.buildService(serviceBuilder);
-                    server.start();
+                    server.start();*/
                 }
 
                 String SERVER_URL = String.format(androidUrl, porti);
@@ -634,8 +633,8 @@ public class Instances {
                     new UrlChecker().waitUntilAvailable(defaultWaitMilis, TimeUnit.MILLISECONDS, status);
                     System.out.println("Appium conectado");
                 } catch (UrlChecker.TimeoutException | MalformedURLException e) {
-                    System.out.println("Nenhuma conexão pode ser estabelecida com o appium durante '" + defaultWaitMilis + "', abortando testes..");
-                    getReportClassInstance().stepFatal(new Throwable("Nenhuma conexão pode ser estabelecida com o appium durante '" + defaultWaitMilis + "'ms, abortando testes.."));
+                    System.out.println("Nenhuma conexÃ£o pode ser estabelecida com o appium durante '" + defaultWaitMilis + "', abortando testes..");
+                    getReportClassInstance().stepFatal(new Throwable("Nenhuma conexÃ£o pode ser estabelecida com o appium durante '" + defaultWaitMilis + "'ms, abortando testes.."));
                 }
 
 
@@ -643,7 +642,7 @@ public class Instances {
                 System.out.println("cmd: " + cmd);
                 int quantidadeDeDevices = cmd.size();
                 List<String> devicesAnteriores = cmd;
-                if (cmd.get(1).trim().length() == 0) {
+                /*if (cmd.get(1).trim().length() == 0) {
                     getReportClassInstance().stepPass("Nenhum device estava aberto, iniciando o device '" + androidDeviceName + "'");
                     String androidNameInvoke = androidDeviceName.trim().replaceAll(" ", "_");
                     String androidpath = System.getenv("ANDROID_HOME");
@@ -660,12 +659,12 @@ public class Instances {
                         }
                     }
                     if (!existe) {
-                        getReportClassInstance().stepFatal(new Throwable("O device '" + androidDeviceName + "' não existe no android manager virtual devices, abortando testes.."));
+                        getReportClassInstance().stepFatal(new Throwable("O device '" + androidDeviceName + "' nÃ£o existe no android manager virtual devices, abortando testes.."));
                     } else {
                         new Thread(() -> commandEx("emulator -avd " + androidNameInvoke)).start();
                         //for (String linha : cmd) {
                         //    if (linha.contains("Missing emulator engine program for")) {
-                        //        getReportClassInstance().stepFatal(new Throwable("O emulador do device informado não foi localizado, abortanto testes.."));
+                        //        getReportClassInstance().stepFatal(new Throwable("O emulador do device informado nÃ£o foi localizado, abortanto testes.."));
                         //    }
                         //}
                     }
@@ -696,14 +695,15 @@ public class Instances {
                         getSleepWebClassInstance().until(100);
                         tempoMaximoLocal = tempoMaximoLocal - 100;
                         if (tempoMaximoLocal <= 0) {
-                            getReportClassInstance().stepFatal(new Throwable("O device não terminou de iniciar após '" + defaultWaitMilis + "'ms, abortando testes;;"));
+                            getReportClassInstance().stepFatal(new Throwable("O device nÃ£o terminou de iniciar apÃ³s '" + defaultWaitMilis + "'ms, abortando testes;;"));
                         }
                     }
-                }
+                }*/
                 try {
                     androidDriver = new AndroidDriver<>(new URL(getAndroidUrl()), getAndroidDesiredCapabilities());
                 } catch (SessionNotCreatedException e) {
-                    System.out.println("O device estava ligado, mas ainda estava iniciando...");
+                    //System.out.println("O device estava ligado, mas ainda estava iniciando...");
+                    System.out.println("Ocorreu um erro ao iniciar o device, consultar log do appium");
                     long tempoMaximoLocal = 300000;
                     while (true) {
                         long tempoInicial = Calendar.getInstance().getTimeInMillis();
@@ -715,13 +715,13 @@ public class Instances {
                         }
                         //getSleepWebClassInstance().until(100);
                         Instances.getScreenshotClassInstance().print();
-                        getReportClassInstance().stepPass("Tentativa de conexão sem sucesso, tentando novamente..");
+                        getReportClassInstance().stepPass("Tentativa de conexÃ£o sem sucesso, tentando novamente..");
                         long tempoFinal = Calendar.getInstance().getTimeInMillis();
                         long diferenca = tempoFinal - tempoInicial;
                         //tempoMaximoLocal = tempoMaximoLocal - 100;
                         tempoMaximoLocal = tempoMaximoLocal - diferenca;
                         if (tempoMaximoLocal <= 0) {
-                            getReportClassInstance().stepFatal(new Throwable("O device não terminou de iniciar após '" + defaultWaitMilis + "'ms, abortando testes;;"));
+                            getReportClassInstance().stepFatal(new Throwable("O device nÃ£o terminou de iniciar apÃ³s '" + defaultWaitMilis + "'ms, abortando testes;;"));
                         }
                     }
                 }
@@ -863,13 +863,13 @@ public class Instances {
     public static List<String> commandEx(String command) {
         List<String> resp = new ArrayList<String>();
         Process cmdProc;
-        try {
-            cmdProc = Runtime.getRuntime().exec("cmd /c " + command);
-            //System.out.println("Disparando o comando: " + command);
-            BufferedReader stdoutReader = new BufferedReader(
-                new InputStreamReader(cmdProc.getInputStream()));
-            String line;
-            while ((line = stdoutReader.readLine()) != null) {
+        //try {
+        //cmdProc = Runtime.getRuntime().exec("cmd /c " + command);
+        //System.out.println("Disparando o comando: " + command);
+        //BufferedReader stdoutReader = new BufferedReader(
+        //new InputStreamReader(cmdProc.getInputStream()));
+        //String line;
+            /*while ((line = stdoutReader.readLine()) != null) {
                 //System.out.println(line);
                 resp.add(line);
             }
@@ -878,10 +878,10 @@ public class Instances {
             while ((line = stderrReader.readLine()) != null) {
                 resp.add(line);
                 //System.out.println(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            }*/
+        //} catch (IOException e) {
+        //    e.printStackTrace();
+        //}
         return resp;
     }
 
@@ -1508,22 +1508,6 @@ public class Instances {
         Instances.softAssert = softAssert;
     }
 
-    public static String getWebLastModalXpath() {
-        return WEB_LAST_MODAL_XPATH;
-    }
-
-    public static void setWebLastModalXpath(String webLastModalXpath) {
-        WEB_LAST_MODAL_XPATH = webLastModalXpath;
-    }
-
-    public static List<WebElement> getWebLastModal() {
-        return WEB_LAST_MODAL;
-    }
-
-    public static void setWebLastModal(List<WebElement> webLastModal) {
-        WEB_LAST_MODAL = webLastModal;
-    }
-
     public static String getWebLastXpath() {
         return webLastXpath;
     }
@@ -1531,7 +1515,7 @@ public class Instances {
     public static void setWebLastXpath(String xpath) {
         Instances.webLastXpath = xpath;
         Instances.setIsAvailable(false);
-        Instances.getLocatorWebClassInstance().locate(xpath, false);
+        Instances.getLocatorWebClassInstance().locate(xpath);
     }
 
     public static float getScreenLastPrecision() {
@@ -1708,10 +1692,10 @@ public class Instances {
 
     public static String getScreenLastLocatorLog() {
 
-        String r = "[Mapa de log não definido]";
+        String r = "[Mapa de log nÃ£o definido]";
         if (locator != null) {
             if (locator.get(Instances.getScreenLastLocator()) == null) {
-                r = "[Log do localizador não definido]";
+                r = "[Log do localizador nÃ£o definido]";
             } else {
                 r = locator.get(Instances.getScreenLastLocator());
             }
@@ -1725,10 +1709,10 @@ public class Instances {
 
     public static String getAndroidLastXpathLog() {
 
-        String r = "[Mapa de log não definido]";
+        String r = "[Mapa de log nÃ£o definido]";
         if (locator != null) {
             if (locator.get(Instances.getAndroidLastXpath()) == null) {
-                r = "[Log do xpath não definido]";
+                r = "[Log do xpath nÃ£o definido]";
             } else {
                 r = locator.get(Instances.getAndroidLastXpath());
             }
@@ -1742,10 +1726,10 @@ public class Instances {
 
     public static String getWebLastXpathLog() {
 
-        String r = "[Mapa de log não definido]";
+        String r = "[Mapa de log nÃ£o definido]";
         if (locator != null) {
             if (locator.get(Instances.getWebLastXpath()) == null) {
-                r = "[Log do xpath não definido]";
+                r = "[Log do xpath nÃ£o definido]";
             } else {
                 r = locator.get(Instances.getWebLastXpath());
             }
@@ -1955,9 +1939,9 @@ public class Instances {
             boolean o = pastaAnexo.mkdirs();
             ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(detailedHtmlReportFileLoc);
             htmlReporter.config().setTheme(Theme.STANDARD);
-            htmlReporter.config().setDocumentTitle("Relatório de Testes - " + product);
+            htmlReporter.config().setDocumentTitle("RelatÃ³rio de Testes - " + product);
             htmlReporter.config().setEncoding("utf-8");
-            htmlReporter.config().setReportName("Relatório de Testes - " + product);
+            htmlReporter.config().setReportName("RelatÃ³rio de Testes - " + product);
             htmlReporter.config().setTimeStampFormat("yyyy/MM/dd - HH:mm:ss.SSS");
             extent = new ExtentReports();
             extent.attachReporter(htmlReporter);
@@ -2265,7 +2249,7 @@ public class Instances {
             }
             setMongoConnection(product);
         }*/
-        //flushMongo();
+        flushMongo();
         extent.flush();
         translateReport();
     }
