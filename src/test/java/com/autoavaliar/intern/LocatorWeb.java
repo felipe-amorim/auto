@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 public class LocatorWeb {
-    public void locate(String input, boolean modal) {
+    public void locate(String input) {
         JavascriptExecutor js = (JavascriptExecutor) Instances.getWebDriver();
         if (Instances.getWebLastElements() != null) {
             try {
@@ -19,15 +19,15 @@ public class LocatorWeb {
                 System.out.println("exception pintando pagina laranja: ");
             }
         }
-        if (Instances.getWebLastModal() != null) {
-            try {
-                for (WebElement element : Instances.getWebLastModal()) {
-                    js.executeScript("arguments[0].style.border='1px solid orange'", element);
-                }
-            } catch (WebDriverException e) {
-                System.out.println("exception pintando pagina laranja: ");
-            }
-        }
+        //if (Instances.getWebLastModal() != null) {
+        //    try {
+        //        for (WebElement element : Instances.getWebLastModal()) {
+        //            js.executeScript("arguments[0].style.border='1px solid orange'", element);
+        //        }
+        //    } catch (WebDriverException e) {
+        //        System.out.println("exception pintando pagina laranja: ");
+        //    }
+        //}
         int tempoDeEspera = Instances.getDefaultWaitMilis();
         try {
             String estadoDaPagina = String.valueOf(((JavascriptExecutor) Instances.getWebDriver()).executeScript("return document.readyState"));
@@ -143,10 +143,10 @@ public class LocatorWeb {
         Instances.setLastWindows(Instances.getWebDriver().getWindowHandles());
         Instances.setLastIeratos(Instances.getLastWindows().iterator());
 
-        if(!modal) {
+        //if(!modal) {
             Instances.setWebLastElements(elements);
-        }else {
-            Instances.setWebLastModal(elements);
-        }
+        //}else {
+        //    //Instances.setWebLastModal(elements);
+        //}
     }
 }

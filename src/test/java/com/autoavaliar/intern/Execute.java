@@ -32,7 +32,7 @@ public class Execute {
         while (true){
             long ti = Calendar.getInstance().getTimeInMillis();
             try {
-                if (!isExceptional){
+                if (!isExceptional && Instances.getLastTechnology().equals(Instances.Technology.WEB)){
                     JavascriptExecutor js = (JavascriptExecutor) Instances.getWebDriver();
                     for (WebElement element : Instances.getWebLastElements()) {
                         js.executeScript("arguments[0].style.border='3px solid red'", element);
