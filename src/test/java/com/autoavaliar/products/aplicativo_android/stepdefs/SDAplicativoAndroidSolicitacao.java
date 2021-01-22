@@ -87,7 +87,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
 
     @And("O usuario arrasta a tela para baixo")
     public void oUsuarioArrastaATelaParaBaixo() {
-        scroll().down(1);
+        //scroll().down(1);
         evidence("Evidencia scroll");
     }
 
@@ -216,7 +216,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     public void oUsuarioInsereQuatroFotosDeTeste() {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoFotosButton).click();
-        find(aplicativoAndroidSolicitacaoPermitirAcessoFotosButton).click();
+        //find(aplicativoAndroidSolicitacaoPermitirAcessoFotosButton).click();
         //find(aplicativoAndroidPermitirGravarAudio).click();
         //find(aplicativoAndroidSolicitacaoPermitirAcessoFotosSempreButton).click();
         //find(aplicativoAndroidSolicitacaoLembrarLocalizacaoDeFotosButton).click();
@@ -596,8 +596,8 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         SDAplicativoAndroidMain main = new SDAplicativoAndroidMain();
         main.oUsuarioClicaEmMais();
         main.oUsuarioClicaNoMenuCarro();
-        find(aplicativoAndroidPermitirGravarAudio).click();
-        find(aplicativoAndroidPermitirGravarAudio).click();
+        //find(aplicativoAndroidPermitirGravarAudio).click();
+        //find(aplicativoAndroidPermitirGravarAudio).click();
         //oUsuarioPermiteOAcessoAsFotosDoAplicativo();
         //oUsuarioPermiteAcessoAoMicrofoneDoAplicativo();
         oUsuarioPreencheOCampoOwner();
