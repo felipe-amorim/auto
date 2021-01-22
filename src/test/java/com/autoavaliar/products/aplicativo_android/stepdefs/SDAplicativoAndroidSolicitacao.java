@@ -596,8 +596,8 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         SDAplicativoAndroidMain main = new SDAplicativoAndroidMain();
         main.oUsuarioClicaEmMais();
         main.oUsuarioClicaNoMenuCarro();
-        find(aplicativoAndroidPermitirGravarAudio).click();
-        find(aplicativoAndroidPermitirGravarAudio).click();
+        //find(aplicativoAndroidPermitirGravarAudio).click();
+        //find(aplicativoAndroidPermitirGravarAudio).click();
         //oUsuarioPermiteOAcessoAsFotosDoAplicativo();
         //oUsuarioPermiteAcessoAoMicrofoneDoAplicativo();
         oUsuarioPreencheOCampoOwner();

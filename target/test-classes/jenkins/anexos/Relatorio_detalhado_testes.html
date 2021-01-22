@@ -13,7 +13,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/css/extent.css' type='text/css' rel='stylesheet' />
 	
-	<title>Relatório de Testes - apps</title>
+	<title>RelatÃ³rio de Testes - aplicativo_android</title>
 
 	<style type='text/css'>
 		/* json-tree */
@@ -40,13 +40,13 @@
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
-		<span class='report-name'>Relatório de Testes - apps</span>
+		<span class='report-name'>RelatÃ³rio de Testes - aplicativo_android</span>
 		<!-- report headline -->
 		<span class='report-headline'></span>
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>2021/01/19 - 23:04:34.854</span>
+			<span class='label blue darken-3 suite-start-time'>2021/01/22 - 12:13:39.125</span>
 			</a>
 		</ul>
 	</div>
@@ -62,7 +62,6 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-					<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -74,7 +73,7 @@
 				<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>criar_novo_veiculo</a></li>
+					<li><a href='#'>Nova_Solicitacao_-_Carro</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -166,64 +165,33 @@
 			<ul id='test-collection' class='test-collection'>
 				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>criar_veiculo</span>
-						<span class='test-time'>2021/01/19 - 23:04:36.052</span>
+						<span class='test-name'>solicitacoes</span>
+						<span class='test-time'>2021/01/22 - 12:13:40.383</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>2021/01/19 - 23:04:36.052</span>
-	<span class='label end-time'>2021/01/19 - 23:12:57.892</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 8m 21s+840ms</span>
+	<span class='label start-time'>2021/01/22 - 12:13:40.383</span>
+	<span class='label end-time'>2021/01/22 - 12:14:11.369</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 30s+986ms</span>
 </div>
 <ul class='collapsible node-list' data-collapsible='accordion'>
 	<li class='node level-1  pass' status='pass' test-id='2'>
 		<div class='collapsible-header'>
-			<div class='node-name'>Criar veiculo</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>criar_novo_veiculo</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Google_Chrome</span></div>
-			<span class='node-time'>2021/01/19 - 23:04:36.052</span>
-			&middot; <span class='node-duration'>0h 8m 21s+840ms</span>
+			<div class='node-name'>Realizar nova solicitacao para carro com campos obrigatorios</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>Nova_Solicitacao_-_Carro</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Galaxy_S9_-_Android_10_-_App_1.0</span></div>
+			<span class='node-time'>2021/01/22 - 12:13:40.383</span>
+			&middot; <span class='node-duration'>0h 0m 30s+986ms</span>
 			<span class='test-status right pass'>pass</span>
 			<div class='category-list'>
-				<span class='category label'>criar_novo_veiculo</span>
+				<span class='category label'>Nova_Solicitacao_-_Carro</span>
 			</div>
 		</div>
 		<ul class='collapsible-body collapsible node-list' data-collapsible='accordion'>
-	<li class='node level-2 leaf skip' status='skip' test-id='3'>
+	<li class='node level-2 leaf pass' status='pass' test-id='3'>
 		<div class='collapsible-header'>
-			<div class='node-name'>O usuario define os valores do carro "qwe0005" "qwe0003" "2016" "chevrolet" "prisma" "50000" "nao" "n/a" "1000" "ruim" "bom" "2000000" "3500000" "3000000" "sim"</div>
-			<span class='node-time'>2021/01/19 - 23:04:36.052</span>
-			&middot; <span class='node-duration'>0h 0m 0s+6ms</span>
-			<span class='test-status right skip'>skip</span>
-		</div>
-		<div class='collapsible-body'>
-			<div class='node-steps'>
-				<table class='bordered table-results'>
-					<thead>
-						<tr>
-							<th>Status</th>
-							<th>Timestamp</th>
-							<th>Details</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class='log' status='skip'>
-							<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
-							<td class='timestamp'>11:04:36 PM</td>
-							<td class='step-details'>
-									Bdd sem execução
-								
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</li>
-	<li class='node level-2 leaf pass' status='pass' test-id='4'>
-		<div class='collapsible-header'>
-			<div class='node-name'>O usuario cria um novo veiculo no b2b adm como timeqa usando os arquivos "C:/Users/isaias.silva/AppData/Local/Google/Chrome/User Data/Default/"</div>
-			<span class='node-time'>2021/01/19 - 23:04:36.064</span>
-			&middot; <span class='node-duration'>0h 4m 36s+29ms</span>
+			<div class='node-name'>O usuario abre o aplicativo como "arnaldo.wiziack2@autoavaliar.com.br" "aw203040"</div>
+			<span class='node-time'>2021/01/22 - 12:13:40.383</span>
+			&middot; <span class='node-duration'>0h 0m 30s+986ms</span>
 			<span class='test-status right pass'>pass</span>
 		</div>
 		<div class='collapsible-body'>
@@ -239,728 +207,89 @@
 					<tbody>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:04:55 PM</td>
+							<td class='timestamp'>12:13:40 PM</td>
 							<td class='step-details'>
-									Navegando para a URI https://adm.autoavaliar.com.br/
+									Tirando uma evidência - Abrindo o device: 'generic_x86 ' com o android '10' <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacarrocomcamposobrigatorios/_1.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:01 PM</td>
+							<td class='timestamp'>12:13:50 PM</td>
 							<td class='step-details'>
-									Validando a existência do elemento Login <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_1.png'><i class='material-icons'>panorama</i></a>
+									Tentativa de conexÃ£o sem sucesso, tentando novamente.. <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacarrocomcamposobrigatorios/_2.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:08 PM</td>
+							<td class='timestamp'>12:13:52 PM</td>
 							<td class='step-details'>
-									Enviando o texto 'timeqa.apk@autoavaliar.com.br' para o campo Login <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_2.png'><i class='material-icons'>panorama</i></a>
+									Tentativa de conexÃ£o sem sucesso, tentando novamente.. <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacarrocomcamposobrigatorios/_3.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:11 PM</td>
+							<td class='timestamp'>12:13:54 PM</td>
 							<td class='step-details'>
-									Enviando o texto 'de102030' para o campo Senha <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_3.png'><i class='material-icons'>panorama</i></a>
+									Tentativa de conexÃ£o sem sucesso, tentando novamente.. <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacarrocomcamposobrigatorios/_4.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:19 PM</td>
+							<td class='timestamp'>12:13:57 PM</td>
 							<td class='step-details'>
-									Clicando no elemento Login <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_4.png'><i class='material-icons'>panorama</i></a>
+									Tentativa de conexÃ£o sem sucesso, tentando novamente.. <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacarrocomcamposobrigatorios/_5.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:21 PM</td>
+							<td class='timestamp'>12:13:59 PM</td>
 							<td class='step-details'>
-									Simulando o mouse sobre o elemento Menu Avaliações <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_5.png'><i class='material-icons'>panorama</i></a>
+									Tentativa de conexÃ£o sem sucesso, tentando novamente.. <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacarrocomcamposobrigatorios/_6.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:42 PM</td>
+							<td class='timestamp'>12:14:01 PM</td>
 							<td class='step-details'>
-									Clicando no elemento Menu Valicações/Veiculos <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_6.png'><i class='material-icons'>panorama</i></a>
+									Tentativa de conexÃ£o sem sucesso, tentando novamente.. <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacarrocomcamposobrigatorios/_7.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:45 PM</td>
+							<td class='timestamp'>12:14:04 PM</td>
 							<td class='step-details'>
-									Clicando no elemento Novo veiculo <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_7.png'><i class='material-icons'>panorama</i></a>
+									Tentativa de conexÃ£o sem sucesso, tentando novamente.. <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacarrocomcamposobrigatorios/_8.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:49 PM</td>
+							<td class='timestamp'>12:14:06 PM</td>
 							<td class='step-details'>
-									Selecionando o index '1' no ComboBox Select Loja <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_8.png'><i class='material-icons'>panorama</i></a>
+									Tentativa de conexÃ£o sem sucesso, tentando novamente.. <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacarrocomcamposobrigatorios/_9.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:51 PM</td>
+							<td class='timestamp'>12:14:08 PM</td>
 							<td class='step-details'>
-									Enviando o texto 'qwe0005' para o campo Placa <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_9.png'><i class='material-icons'>panorama</i></a>
+									Tentativa de conexÃ£o sem sucesso, tentando novamente.. <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacarrocomcamposobrigatorios/_10.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:52 PM</td>
+							<td class='timestamp'>12:14:11 PM</td>
 							<td class='step-details'>
-									Clicando no elemento Chassi <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_10.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:56 PM</td>
-							<td class='step-details'>
-									Limpando o campo Placa <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_11.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:57 PM</td>
-							<td class='step-details'>
-									Enviando o texto 'llq3395' para o campo Placa <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_12.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:05:58 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Chassi <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_13.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:03 PM</td>
-							<td class='step-details'>
-									Enviando o texto 'llq3395' para o campo Chassi <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_14.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:05 PM</td>
-							<td class='step-details'>
-									Selecionando o texto 'Carro' no ComboBox Tipo de veiculo <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_15.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:06 PM</td>
-							<td class='step-details'>
-									Enviando o texto '2016' para o campo Ano fabricacao <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_16.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:07 PM</td>
-							<td class='step-details'>
-									Enviando o texto '2016' para o campo Ano modelo <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_17.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:10 PM</td>
-							<td class='step-details'>
-									Selecionando o texto 'CHEVROLET' no ComboBox Marca <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_18.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:11 PM</td>
-							<td class='step-details'>
-									Selecionando o texto 'PRISMA' no ComboBox Modelo <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_19.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:12 PM</td>
-							<td class='step-details'>
-									Selecionando o index '1' no ComboBox Versao <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_20.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:13 PM</td>
-							<td class='step-details'>
-									Selecionando o index '1' no ComboBox Cor <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_21.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:14 PM</td>
-							<td class='step-details'>
-									Selecionando o index '1' no ComboBox Combustivel <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_22.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:17 PM</td>
-							<td class='step-details'>
-									Enviando o texto '50000' para o campo Quilometragem <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_23.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:18 PM</td>
-							<td class='step-details'>
-									Selecionando o index '2' no ComboBox Portas <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_24.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:20 PM</td>
-							<td class='step-details'>
-									Clicando no elemento 4x4 Não <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_25.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:22 PM</td>
-							<td class='step-details'>
-									Selecionando o texto 'Teste' no ComboBox Loja Fisica <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_26.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:23 PM</td>
-							<td class='step-details'>
-									Enviando o texto '1000' para o campo Motor <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_27.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:24 PM</td>
-							<td class='step-details'>
-									Selecionando o index '1' no ComboBox Cambio <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_28.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:33 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Opcionais <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_29.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:36 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Adicionar primeiro item <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_30.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:37 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Adicionar primeiro item <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_31.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:39 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Adicionar primeiro item <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_32.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:40 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Itens avaliados <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_33.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:41 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Cambio ruim <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_34.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:43 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Motor bom <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_35.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:44 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Fotos <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_36.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:46 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Foto 1 <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_37.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:06:59 PM</td>
-							<td class='step-details'>
-									Tirando uma evidência - Foto anexada <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_38.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:07:01 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Foto 2 <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_39.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:07:10 PM</td>
-							<td class='step-details'>
-									Tirando uma evidência - Foto anexada <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_40.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:07:14 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Foto 3 <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_41.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:07:22 PM</td>
-							<td class='step-details'>
-									Tirando uma evidência - Foto anexada <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_42.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:07:25 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Valores <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_43.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:07:26 PM</td>
-							<td class='step-details'>
-									Enviando o texto '2000000' para o campo Valor de compra <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_44.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:07:35 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Salvar <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_45.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:07:54 PM</td>
-							<td class='step-details'>
-									Enviando o texto 'llq3395' para o campo Buscar placa <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_45.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:07:58 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Buscar placa lupa <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_46.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:07:59 PM</td>
-							<td class='step-details'>
-									Validando que o texto 'Ativo' era igual ao texto 'Ativo'
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:05 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Alterar <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_47.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:06 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Criar avaliação <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_48.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:07 PM</td>
-							<td class='step-details'>
-									Limpando o campo Intervalo de valor <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_49.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:08 PM</td>
-							<td class='step-details'>
-									Enviando o texto '38900' para o campo Intervalo de valor <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_50.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:10 PM</td>
-							<td class='step-details'>
-									Enviando o texto '3500000' para o campo definir valor de 'compre por' da avaliação <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_51.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:11 PM</td>
-							<td class='step-details'>
-									Enviando o texto '3000000' para o campo Valor minimo oferta <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_52.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:12 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Valor minimo aceito para aprovacao <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_53.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:13 PM</td>
-							<td class='step-details'>
-									Enviando o texto '10' para o campo Percentual calculo fipe aprovacao <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_54.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:15 PM</td>
-							<td class='step-details'>
-									Selecionando o texto 'Sim' no ComboBox Alterar compre já automaticamente <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_55.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:16 PM</td>
-							<td class='step-details'>
-									Enviando o texto '10' para o campo Porcentagem calculo compre já <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_56.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:17 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Salvar <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_57.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:08:20 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Confirmar <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_57.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:01 PM</td>
-							<td class='step-details'>
-									Enviando o texto 'llq3395' para o campo Buscar placa <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_57.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:08 PM</td>
-							<td class='step-details'>
-									Clicando no elemento Buscar placa lupa <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_58.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:12 PM</td>
-							<td class='step-details'>
-									Validando que o texto 'Em Oferta' era igual ao texto 'Em Oferta'
-								
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</li>
-	<li class='node level-2 leaf pass' status='pass' test-id='5'>
-		<div class='collapsible-header'>
-			<div class='node-name'>O usuario valida dados que os dados inseridos no portal admin estao iguais ao portal comum</div>
-			<span class='node-time'>2021/01/19 - 23:09:12.419</span>
-			&middot; <span class='node-duration'>0h 3m 45s+473ms</span>
-			<span class='test-status right pass'>pass</span>
-		</div>
-		<div class='collapsible-body'>
-			<div class='node-steps'>
-				<table class='bordered table-results'>
-					<thead>
-						<tr>
-							<th>Status</th>
-							<th>Timestamp</th>
-							<th>Details</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:16 PM</td>
-							<td class='step-details'>
-									Navegando para a URI https://www.autoavaliar.com.br/
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:22 PM</td>
-							<td class='step-details'>
-									Navegando para a URI https://www.autoavaliar.com.br/
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:25 PM</td>
-							<td class='step-details'>
-									Aguardando a exibição do elemento [Log do xpath não definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_59.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:27 PM</td>
-							<td class='step-details'>
-									Validando a existência do elemento [Log do xpath não definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_60.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:30 PM</td>
-							<td class='step-details'>
-									Clicando no elemento [Log do xpath não definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_61.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:40 PM</td>
-							<td class='step-details'>
-									Enviando o texto 'qaautoavaliar@gmail.com' para o campo e-mail e-mail login url comum <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_62.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:44 PM</td>
-							<td class='step-details'>
-									Enviando o texto 'timeqa0102' para o campo e-mail senha login url comum <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_63.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:57 PM</td>
-							<td class='step-details'>
-									Clicando no elemento entrar login url comum <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_64.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:09:59 PM</td>
-							<td class='step-details'>
-									Aguardando a exibição do elemento validar login <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_65.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:10:06 PM</td>
-							<td class='step-details'>
-									Clicando no elemento acessar tela repasse de veiculo <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_66.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:12 PM</td>
-							<td class='step-details'>
-									Aguardando a exibição do elemento validar carregou tela de repasse veiculo <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_67.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:24 PM</td>
-							<td class='step-details'>
-									Enviando o texto 'llq3395' para o campo input busca veiculos cadastrados <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_68.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:39 PM</td>
-							<td class='step-details'>
-									Clicando no elemento botão busca veiculos cadastrados <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_69.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:50 PM</td>
-							<td class='step-details'>
-									Clicando no elemento botão avalie agora, primeiro veiculo exibido <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_70.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:51 PM</td>
-							<td class='step-details'>
-									Aguardando a exibição do elemento validar carregou tela avaliação <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/criarveiculo/Criarveiculo/_71.png'><i class='material-icons'>panorama</i></a>
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:51 PM</td>
-							<td class='step-details'>
-									Validando que o texto '2016/2016' era igual ao texto '2016/2016'
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:52 PM</td>
-							<td class='step-details'>
-									Validando que o texto 'diesel' era igual ao texto 'diesel'
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:53 PM</td>
-							<td class='step-details'>
-									Validando que o texto '50000' era igual ao texto '50000'
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:53 PM</td>
-							<td class='step-details'>
-									Validando que o texto '1' era igual ao texto '1'
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:54 PM</td>
-							<td class='step-details'>
-									Validando que o texto 'amarelo' era igual ao texto 'amarelo'
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:55 PM</td>
-							<td class='step-details'>
-									Validando que o texto '1000' era igual ao texto '1000'
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:55 PM</td>
-							<td class='step-details'>
-									Validando que o texto 'l5' era igual ao texto 'l5'
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:57 PM</td>
-							<td class='step-details'>
-									Validando que o texto 'automatico' era igual ao texto 'automatico'
-								
-							</td>
-						</tr>
-						<tr class='log' status='pass'>
-							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>11:12:57 PM</td>
-							<td class='step-details'>
-									Validando que o texto 'nacional' era igual ao texto 'nacional'
+									Tentativa de conexÃ£o sem sucesso, tentando novamente.. <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacarrocomcamposobrigatorios/_11.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
@@ -1014,7 +343,7 @@
 			<ul id='category-collection' class='category-collection'>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>criar_novo_veiculo</span>
+						<span class='category-name'>Nova_Solicitacao_-_Carro</span>
 						<span class='category-status right'>
 						<span class='label pass'>1</span>
 						</span>
@@ -1036,8 +365,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>2021/01/19 - 23:04:36.052</td>
-										<td class='linked' test-id='2'>criar_veiculo.Criar veiculo</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>criar_novo_veiculo</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Google_Chrome</span></td>
+										<td>2021/01/22 - 12:13:40.383</td>
+										<td class='linked' test-id='2'>solicitacoes.Realizar nova solicitacao para carro com campos obrigatorios</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>Nova_Solicitacao_-_Carro</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Galaxy_S9_-_Android_10_-_App_1.0</span></td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -1096,8 +425,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>2021/01/19 - 23:04:36.052</td>
-										<td class='linked' test-id='2'>criar_veiculo.Criar veiculo</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>criar_novo_veiculo</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Google_Chrome</span></td>
+										<td>2021/01/22 - 12:13:40.383</td>
+										<td class='linked' test-id='2'>solicitacoes.Realizar nova solicitacao para carro com campos obrigatorios</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>Nova_Solicitacao_-_Carro</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Galaxy_S9_-_Android_10_-_App_1.0</span></td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -1134,25 +463,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Test Methods
-					<div class='panel-lead'>3</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>2021/01/19 - 23:04:34.854</div>
+					<div class='panel-lead'>2021/01/22 - 12:13:39.125</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>2021/01/19 - 23:12:57.893</div>
+			 		<div class='panel-lead'>2021/01/22 - 12:14:11.379</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 8m 23s+39ms</div>
+					<div class='panel-lead'>0h 0m 32s+254ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -1200,7 +529,7 @@
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>criar_novo_veiculo</td>
+							<td>Nova_Solicitacao_-_Carro</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -1237,21 +566,21 @@
 				infoChild: 0,
 				debugChild: 0,
 				exceptionsChild: 0,
-				grandChildCount: 3,
-				passGrandChild: 2,
+				grandChildCount: 1,
+				passGrandChild: 1,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 1,
+				skipGrandChild: 0,
 				infoGrandChild: 0,
 				debugGrandChild: 0,
-				exceptionsGrandChild: 1,
+				exceptionsGrandChild: 0,
 			};
 		</script>
 		<script>
 			var timeline = {
-			        "criar_veiculo":501.84
+			        "solicitacoes":30.986
 			};
 		</script>
 		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>
