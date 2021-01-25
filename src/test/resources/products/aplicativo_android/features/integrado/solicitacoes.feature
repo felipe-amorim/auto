@@ -13,8 +13,8 @@ Feature: Realizar nova solicitação
     Examples:
       | placa     | ano    | km       | marca        | modelo | statusMotor | statusCambio | valorCompra | valorVenda |
       #| "FFF0002" | "2014" | "50000"  | "fiat"       | "uno"         | "bom"       | "bom"        | "20000"     | "35000"    |
-      | "FFA0001" | "2016" | "120001" | "volkswagen" | "gol"         | "bom"       | "bom"        | "20000"     | "35000"    |
-      | "FFA0002" | "2014" | "50000"  | "fiat"       | "uno"         | "bom"       | "bom"        | "20000"     | "35000"    |
+      | "FFA0001" | "2016" | "120001" | "volkswagen" | "gol"  | "bom"       | "bom"        | "20000"     | "35000"    |
+      #| "FFA0002" | "2014" | "50000"  | "fiat"       | "uno"         | "bom"       | "bom"        | "20000"     | "35000"    |
       #| "FFF0003" | "2015" | "120000" | "FORD"       | "FIESTA"      | "bom"       | "bom"        | "20000"     | "35000"    |
       #| "FFF0004" | "2016" | "120001" | "volkswagen" | "gol"         | "bom"       | "bom"        | "20000"     | "35000"    |
       #| "FFF0005" | "2017" | "50000"  | "toyota"     | "hilux"       | "bom"       | "bom"        | "20000"     | "35000"    |
@@ -40,7 +40,7 @@ Feature: Realizar nova solicitação
       #| "FFF0024" | "2020" | "10000"  | "FORD"       | "KA"          | "bom"       | "ruim"       | "20000"     | "35000"    |
       #| "FFF0025" | "2020" | "10000"  | "FIAT "      | "PALIO"       | "ruim"      | "ruim"       | "20000"     | "35000"    |
 
-@NovaSolicitacaoComEdicaoAndroid
+  @NovaSolicitacaoComEdicaoAndroid
   Scenario Outline: Realizar nova solicitacao com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "arnaldo.wiziack2@autoavaliar.com.br" "aw203040"
     When O usuario realiza uma nova solicitacao para carro <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
@@ -75,17 +75,19 @@ Feature: Realizar nova solicitação
     #Given O usuario realiza uma nova solicitacao com os campos <email> <senha> <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
 
     Examples:
-      | placa     | ano    | km       | marca        | modelo        | statusMotor | statusCambio | valorCompra | valorVenda |
+      | placa     | ano    | km       | marca        | modelo | statusMotor | statusCambio | valorCompra | valorVenda |
 
-      | "FFA0001" | "2016" | "120001" | "volkswagen" | "gol"         | "bom"       | "bom"        | "20000"     | "35000"    |
-      | "FFA0002" | "2014" | "50000"  | "fiat"       | "uno"         | "bom"       | "bom"        | "20000"     | "35000"    |
+      | "FFA0001" | "2016" | "120001" | "volkswagen" | "gol"  | "bom"       | "bom"        | "20000"     | "35000"    |
+      | "FFA0002" | "2014" | "50000"  | "fiat"       | "uno"  | "bom"       | "bom"        | "20000"     | "35000"    |
 
   @NovaSolicitacaoAndroid @ComCamposObrigatoriosAndroidOutLine @Caminhao
-  Scenario Outline: Realizar nova solicitacao para moto com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Moto, Environment: Galaxy S9 - Android 10 - App 1.0
+  Scenario Outline: Realizar nova solicitacao para caminhao com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Moto, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "arnaldo.wiziack2@autoavaliar.com.br" "aw203040"
     When O usuario realiza uma nova solicitacao para caminhao <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
-    Then O usuario valida que a solicitacao foi realizada
+    #Then O usuario valida que a solicitacao foi realizada
+    #Then O usuario valida que a solicitacao foi realizada para caminhao
 
     Examples:
-      | placa     | ano    | km       | marca   | modelo       | statusMotor | statusCambio | valorCompra | valorVenda |
-      | "FFF0002" | "2016" | "120001" | "volvo" | "fh" | "bom"       | "bom"        | "20000"     | "35000"    |
+      | placa     | ano    | km       | marca   | modelo | statusMotor | statusCambio | valorCompra | valorVenda |
+      | "FFF0002" | "2016" | "120001" | "volvo" | "fh"   | "bom"       | "bom"        | "20000"     | "35000"    |
+

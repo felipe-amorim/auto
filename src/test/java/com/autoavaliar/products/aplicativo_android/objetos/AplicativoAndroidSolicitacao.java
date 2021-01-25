@@ -126,6 +126,13 @@ public class AplicativoAndroidSolicitacao {
     public static String APLICATIVO_ANDROID_SOLICITACAO_SEGUIMENTO = "com.autoaction.app:id/include_segment_spinner";
     public static String APLICATIVO_ANDROID_SOLICITACAO_TRACAO = "com.autoaction.app:id/include_traction_spinner";
     public static String APLICATIVO_ANDROID_SOLICITACAO_FABRICANTE_MOTOR = "com.autoaction.app:id/include_manufacturer_spinner";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_NUMERO_CILINDOS = "com.autoaction.app:id/include_cylinders_spinner";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_NUMERO_MARCHAS = "com.autoaction.app:id/include_gears_spinner";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_TIPO_CABINE = "com.autoaction.app:id/include_cabin_type_spinner";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_CONFIGURACAO_CABINE = "com.autoaction.app:id/include_cabin_settings_spinner";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ATUAL = "com.autoaction.app:id/evaluation_truck_mm";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ANTERIOR = "com.autoaction.app:id/evaluation_truck_mm_previous";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_POTENCIA = "com.autoaction.app:id/evaluation_truck_hp";
 
     public static LinkedHashMap<String, String> aplicativoAndroidSolicitacao = createData();
     private static LinkedHashMap<String, String> createData() {
@@ -232,6 +239,13 @@ public class AplicativoAndroidSolicitacao {
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_SEGUIMENTO, "Seguimento");
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_TRACAO, "Tracao");
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_FABRICANTE_MOTOR, "Fabricante do motor");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_NUMERO_CILINDOS, "Número de cilindros");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_NUMERO_MARCHAS, "Número de marchas");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_TIPO_CABINE, "Tipo de cabine");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_CONFIGURACAO_CABINE, "Configuração da cabine");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ATUAL, "Distancia entre eixos atual(MM)");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ANTERIOR, "Distancia entre eixos anterior(MM)");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_POTENCIA, "Pôtencia em (CV)");
 
         return ret;
     }

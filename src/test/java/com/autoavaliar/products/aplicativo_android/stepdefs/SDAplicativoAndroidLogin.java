@@ -28,7 +28,6 @@ public class SDAplicativoAndroidLogin extends CoreAndroid {
                 .platformName("android")
                 .platformVersion(arg1)
                 .skipUnlock("true")
-
                 .udid("emulator-5554").load();
         evidence("Abrindo o device: '"+arg0+"' com o android '"+arg1+"'");
     }

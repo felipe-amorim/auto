@@ -23,11 +23,6 @@ public class SDB2bMainAdmin extends CoreWeb {
     static String marca = "FIAT";
     static String modelo = "UNO";
     static String km = "67541";
-    static String combustivel = "";
-    static String portas = "";
-    static String cor = "";
-    static String cambio = "";
-    static String origem = "";
     static String quatroxquatro = "";
     static String statusQuatroPorQuatro = "";
     static String motor = "1";
@@ -88,13 +83,9 @@ public class SDB2bMainAdmin extends CoreWeb {
         find(tabDadosCadastrais.b2bMainSelectModelo).comboBox().set().byText(modelo.toUpperCase());
         find(tabDadosCadastrais.b2bMainVersao).comboBox().set().byIndex(1);
         find(tabDadosCadastrais.b2bMainSelectCor).comboBox().set().byIndex(1);
-        cor = find(b2bMainSelectCor).get().value().toString();
         find(tabDadosCadastrais.b2bMainCombustivel).comboBox().set().byIndex(1);
-        combustivel = find(b2bMainCombustivel).get().value().toString();
-        System.out.println("variavel combustivel: " + combustivel);
         find(tabDadosCadastrais.b2bMainQuilometragem).send().text(km);
         find(tabDadosCadastrais.b2bMainPortas).comboBox().set().byIndex(2);
-        portas = find(b2bMainPortas).get().value().toString();
         if (!quatroxquatro.toLowerCase().equals("sim")) {
             find(tabDadosCadastrais.b2bMain4x4).click();
         } else {
@@ -108,10 +99,8 @@ public class SDB2bMainAdmin extends CoreWeb {
             }
         }
         find(tabDadosCadastrais.b2bMainLojaFisica).comboBox().set().byText("Teste");
-        origem = find(b2bMainOrigem).get().value().toString();
         find(tabDadosCadastrais.b2bMainMotor).send().text(motor);
         find(tabDadosCadastrais.b2bMainCambio).comboBox().set().byIndex(1);
-        cambio = find(b2bMainCambio).get().value().toString();
         sleep().until(5000);//todo remover depois
         find(tabOpcionais.b2bMainOpcionais).click();
         find(tabOpcionais.b2bMainAdicionarPrimeiroItem).click();
@@ -237,10 +226,17 @@ public class SDB2bMainAdmin extends CoreWeb {
         find(b2bMainConfirmar).click();
         sleep().until(5000);
         find().popUp().accept();
-        sleep().until(30000);
-        find(b2bMainBuscarPlaca).send().text(placa);
-        find(b2bMainBuscarPlacaLupa).click();
-        assertThat(find(b2bMainStatusDoVeiculo).get().text().toString()).isEqualTo("Em Oferta");
+        System.out.println("####################################");
+        System.out.println(find(b2bMainStatusDoVeiculo).get().text().toString());
+        System.out.println("####################################");
+        if (assertThat(find(b2bMainStatusDoVeiculo).get().text().toString()).isEqualTo("Em Oferta")){
+            scroll().down(5000);
+            evidence("Status do veículo era Em Oferta");
+        } else {
+            scroll().down(5000);
+            evidence("Status do veículo não era Em Oferta");
+            error().Fail();
+        }
 
     }
 
