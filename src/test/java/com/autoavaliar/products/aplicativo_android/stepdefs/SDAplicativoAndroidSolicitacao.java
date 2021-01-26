@@ -28,48 +28,48 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
             "/dev/serial", // Linux
             "COM3", // Windows
     };
-    static long t = Calendar.getInstance().getTimeInMillis();
-    static String OWNER_ULTIMA = "";
-    static String placa = "";
-    static String ano = "";
-    static String km = "";
-    static String marca = "";
-    static String modelo = "";
-    static String statusMotor = "";
-    static String statusCambio = "";
-    static String valorCompra = "";
-    static String valorVenda = "";
-    static String celular = "";
-    static String telefone = "";
-    static String versao = "";
-    static String cor = "";
-    static String combustivel = "";
-    static String cambio = "";
-    static String procedencia = "";
-    static String portas = "";
-    static String classificacao = "";
-    static String finalidade = "";
-    static int plate = 0;
-    static String sTelefone = String.valueOf(t);
-    static String proprietario = "";
-    static String anoFabricacao = "";
-    static String anoLancamento = "";
-    static String kilometragem = "";
-    static String email = "";
-    static String vendedor = "";
-    static String aplicacao = "";
-    static String segmento = "";
-    static String tracao = "";
-    static String fabricanteMotor = "";
-    static String numeroCiclindros = "";
-    static String numeroMarchas = "";
-    static String tipoCabine = "";
-    static String configuracaoCabine = "";
-    static String distanciaEntreEixosAtual = "";
-    static String distanciaEntreEixosAnterior = "";
-    static String potencia = "";
-    static String estadoMotor = "";
-    static String estadoCambio = "";
+    public static long t = Calendar.getInstance().getTimeInMillis();
+    public static String OWNER_ULTIMA = "";
+    public static String placa = "";
+    public static String ano = "";
+    public static String km = "";
+    public static String marca = "";
+    public static String modelo = "";
+    public static String statusMotor = "";
+    public static String statusCambio = "";
+    public static String valorCompra = "";
+    public static String valorVenda = "";
+    public static String celular = "";
+    public static String telefone = "";
+    public static String versao = "";
+    public static String cor = "";
+    public static String combustivel = "";
+    public static String cambio = "";
+    public static String procedencia = "";
+    public static String portas = "";
+    public static String classificacao = "";
+    public static String finalidade = "";
+    public static int plate = 0;
+    public static String sTelefone = String.valueOf(t);
+    public static String proprietario = "";
+    public static String anoFabricacao = "";
+    public static String anoLancamento = "";
+    public static String kilometragem = "";
+    public static String email = "";
+    public static String vendedor = "";
+    public static String aplicacao = "";
+    public static String segmento = "";
+    public static String tracao = "";
+    public static String fabricanteMotor = "";
+    public static String numeroCiclindros = "";
+    public static String numeroMarchas = "";
+    public static String tipoCabine = "";
+    public static String configuracaoCabine = "";
+    public static String distanciaEntreEixosAtual = "";
+    public static String distanciaEntreEixosAnterior = "";
+    public static String potencia = "";
+    public static String estadoMotor = "";
+    public static String estadoCambio = "";
 
     private final Arduino arduino = new Arduino();
 
@@ -104,6 +104,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     public void oUsuarioPreencheOCampoCelular() {
         log().setLocator(aplicativoAndroidSolicitacao);
         celular = t + "";
+        celular = celular.substring(0, 11);
         find(aplicativoAndroidSolicitacaoCelularInput).send().text(celular);
     }
 

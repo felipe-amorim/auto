@@ -4,6 +4,8 @@ import com.autoavaliar.support.CoreWeb;
 import com.autoavaliar.support.tbi.GeradorCPF;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
 import java.util.Calendar;
 
 import static com.autoavaliar.products.apps.objetos.usbi.AppsUsbiSolicitarAvaliacao.*;
@@ -506,4 +508,5 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
         find(appsSolicitarAvaliacaoPossuiPossuiGarantiaComboBox).comboBox().set().byText(garantia);
         scroll().up(800);
     }
+
 }
