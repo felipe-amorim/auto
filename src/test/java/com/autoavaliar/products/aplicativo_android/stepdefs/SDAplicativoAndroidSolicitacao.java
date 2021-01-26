@@ -55,6 +55,21 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     static String anoFabricacao = "";
     static String anoLancamento = "";
     static String kilometragem = "";
+    static String email = "";
+    static String vendedor = "";
+    static String aplicacao = "";
+    static String segmento = "";
+    static String tracao = "";
+    static String fabricanteMotor = "";
+    static String numeroCiclindros = "";
+    static String numeroMarchas = "";
+    static String tipoCabine = "";
+    static String configuracaoCabine = "";
+    static String distanciaEntreEixosAtual = "";
+    static String distanciaEntreEixosAnterior = "";
+    static String potencia = "";
+    static String estadoMotor = "";
+    static String estadoCambio = "";
 
     private final Arduino arduino = new Arduino();
 
@@ -95,14 +110,19 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     @And("O usuario preenche o campo email")
     public void oUsuarioPreencheOCampoEmail() {
         log().setLocator(aplicativoAndroidSolicitacao);
+        email = aplicativoAndroidEmailTeste;
         find(aplicativoAndroidSolicitacaoEmailInput).send().text(aplicativoAndroidEmailTeste);
+
     }
 
     @And("O usuario escolhe o vendedor QA")
     public void oUsuarioEscolheOVendedorQA() {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoVendedorButton).click();
+        //String sVendedor = find(aplicativoAndroidSolicitacaoVendedorQAButton).get().text().toString();
+        //String sVendedor = find(aplicativoAndroidSolicitacaoVendedorQAButton).get().value().toString();
         find(aplicativoAndroidSolicitacaoVendedorQAButton).click();
+        vendedor = find(APLICATIVO_ANDROID_NOME_VENDEDOR_SELECIONADO).get().text().toString();
     }
 
     @And("O usuario preenche a placa")
@@ -113,6 +133,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     private void sendPlaca(String placaParam) {
         log().setLocator(aplicativoAndroidSolicitacao);
         if (placaParam.length() <= 0) {
+            placa = aplicativoAndroidPlacaTeste;
             find(aplicativoAndroidSolicitacaoPlacaInput).send().text(aplicativoAndroidPlacaTeste);
         } else {
             placa = placaParam;
@@ -134,16 +155,19 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
 
     private void sendAnoFab(String anoFab) {
         ano = anoFab;
+        anoFabricacao = anoFab;
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoAnoDeFabricacaoButton).click();
         if (anoFab.length() <= 0) {
-            find(aplicativoAndroidSolicitacaoBuscaInput).send().text("2007");
+            anoFabricacao = "2007";
+            find(aplicativoAndroidSolicitacaoBuscaInput).send().text(anoFabricacao);
         } else {
+            anoFabricacao = anoFab;
             find(aplicativoAndroidSolicitacaoBuscaInput).send().text(anoFab);
         }
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
-
-        //anoFabricacao = find(aplicativoAndroidSolicitacaoBuscaInput).get().text().toString();
+        //anoFabricacao = find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).get().value().toString();
+        //System.out.println("variavel anoFabricacao: " + anoFabricacao);
     }
 
     @And("O usuario preenche o ano de lancamento")
@@ -155,8 +179,10 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoAnoDeLancamentoButton).click();
         if (anoLanc.length() <= 0) {
-            find(aplicativoAndroidSolicitacaoBuscaInput).send().text("2007");
+            anoLancamento = "2007";
+            find(aplicativoAndroidSolicitacaoBuscaInput).send().text(anoLancamento);
         } else {
+            anoLancamento = anoLanc;
             find(aplicativoAndroidSolicitacaoBuscaInput).send().text(anoLanc);
         }
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
@@ -174,8 +200,10 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         km = kmPar;
         if (km.length() <= 0) {
             find(aplicativoAndroidSolicitacaoKilometragemInput).send().text("" + t);
+            kilometragem = String.valueOf(t);
         } else {
             find(aplicativoAndroidSolicitacaoKilometragemInput).send().text(km);
+            kilometragem = km;
         }
 
         //kilometragem = find(aplicativoAndroidSolicitacaoKilometragemInput).get().text().toString();
@@ -188,6 +216,8 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoMarcaButton).click();
         find(aplicativoAndroidSolicitacaoFiltroButton).send().text(marca);
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
+        marca = find(APLICATIVO_ANDROID_MARCA_VEICULO_SELECIONADA).get().text().toString();
+
         sleep().until(1000);
     }
 
@@ -198,6 +228,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoModeloButton).click();
         find(aplicativoAndroidSolicitacaoFiltroButton).send().text(modelo);
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
+        modelo = find(APLICATIVO_ANDROID_MODELO_VEICULO_SELECIONADO).get().text().toString();
     }
 
     @And("O usuario preenche o campo versao")
@@ -207,6 +238,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoPrimeiraVersaoButton).click();
         sleep().until(2500);
         //versao = find(aplicativoAndroidSolicitacaoVersaoCriacaoText).get().text().toString();
+        versao = find(APLICATIVO_ANDROID_VERSAO_VEICULO_SELECIONADA).get().text().toString();
     }
 
     @And("O usuario preenche o campo cor")
@@ -216,6 +248,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         sleep().until(2500);
         //cor = find(aplicativoAndroidSolicitacaoCorCriacaoText).get().text().toString();
+        cor = find(APLICATIVO_ANDROID_COR_VEICULO_SELECIONADA).get().text().toString();
     }
 
     @And("O usuario preenche o campo combustivel")
@@ -225,6 +258,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         sleep().until(2500);
         //combustivel = find(aplicativoAndroidSolicitacaoCombustivelCriacaoText).get().text().toString();
+        combustivel = find(APLICATIVO_ANDROID_COMBUSTIVEL_VEICULO_SELECIONADO).get().text().toString();
     }
 
     @And("O usuario preenche o campo cambio")
@@ -232,8 +266,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoCambioButton).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
-        //sleep().until(3500);
-        //cambio = find(aplicativoAndroidSolicitacaoCambioCriacaoText).get().text().toString();
+        cambio = find(APLICATIVO_ANDROID_TIPO_CAMBIO_VEICULO_SELECIONADO).get().text().toString();
     }
 
     @And("O usuario preenche o campo procedencia")
@@ -241,8 +274,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoProcedenciaButton).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
-        //sleep().until(2500);
-        //procedencia = find(aplicativoAndroidSolicitacaoProcedenciaCriacaoText).get().text().toString();
+        procedencia = find(APLICATIVO_ANDROID_PROCEDENCIA_VEICULO_SELECIONADA).get().text().toString();
     }
 
     @And("O usuario preenche o campo quantidade de portas utilizando o filtro por {string}")
@@ -308,6 +340,8 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoClassificacaoButton).click();
         find(aplicativoAndroidSolicitacaoClassificacaoAButton).click();
+        classificacao = find(APLICATIVO_ANDROID_CLASSIFICACAO_SELECIONADA).get().text().toString();
+        System.out.println("variavel classificacao: " + classificacao);
     }
 
     @And("O usuario preenche o campo finalidade como oferta")
@@ -315,6 +349,8 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoFinalidadeButton).click();
         find(aplicativoAndroidSolicitacaoFinalidadeShowRoomButton).click();
+        finalidade = find(APLICATIVO_ANDROID_FINALIDADE_SELECIONADA).get().text().toString();
+        System.out.println("variavel finalidade: " + finalidade);
         sleep().until(4000);
     }
 
@@ -407,12 +443,15 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
             find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
             switch (status.toLowerCase()) {
                 case "bom":
+                    estadoMotor = "bom";
                     find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
                     break;
                 case "otimo":
+                    estadoMotor = "otimo";
                     find(aplicativoAndroidSolicitacaoEstadoDoMotorOtimo).click();
                     break;
                 case "ruim":
+                    estadoMotor = "ruim";
                     find(aplicativoAndroidSolicitacaoEstadoDoMotorRuim).click();
                     break;
             }
@@ -438,12 +477,15 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
             find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
             switch (status.toLowerCase()) {
                 case "bom":
+                    estadoCambio = "bom";
                     find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
                     break;
                 case "otimo":
+                    estadoCambio = "otimo";
                     find(aplicativoAndroidSolicitacaoEstadoDoMotorOtimo).click();
                     break;
                 case "ruim":
+                    estadoCambio = "ruim";
                     find(aplicativoAndroidSolicitacaoEstadoDoMotorRuim).click();
                     break;
             }
@@ -459,8 +501,10 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     private void sendCampoValor(String valor) {
         log().setLocator(aplicativoAndroidSolicitacao);
         if (valor.length() <= 0) {
-            find(aplicativoAndroidSolicitacaoValorCompra).send().text("11000");
+            valorCompra = "11000";
+            find(aplicativoAndroidSolicitacaoValorCompra).send().text(valorCompra);
         } else {
+            valorCompra = valor;
             find(aplicativoAndroidSolicitacaoValorCompra).send().text(valor);
         }
     }
@@ -473,8 +517,10 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     private void sendCampoVenda(String valor) {
         log().setLocator(aplicativoAndroidSolicitacao);
         if (valor.length() <= 0) {
-            find(aplicativoAndroidSolicitacaoValorVenda).send().text("15000");
+            valorVenda = "15000";
+            find(aplicativoAndroidSolicitacaoValorVenda).send().text(valorVenda);
         } else {
+            valorVenda = valor;
             find(aplicativoAndroidSolicitacaoValorVenda).send().text(valor);
         }
     }
@@ -997,24 +1043,35 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         oUsuarioArrastaATelaParaBaixo();
         find(APLICATIVO_ANDROID_SOLICITACAO_APLICACAO).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
+        aplicacao = find(APLICATIVO_ANDROID_APLICACAO_SELECIONADA).get().text().toString();
         find(APLICATIVO_ANDROID_SOLICITACAO_SEGUIMENTO).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
+        segmento = find(APLICATIVO_ANDROID_SEGMENTO_SELECIONADO).get().text().toString();
         find(APLICATIVO_ANDROID_SOLICITACAO_TRACAO).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
+        tracao = find(APLICATIVO_ANDROID_TRACAO_SELECIONADO).get().text().toString();
         find(APLICATIVO_ANDROID_SOLICITACAO_FABRICANTE_MOTOR).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
+        fabricanteMotor = find(APLICATIVO_ANDROID_FABRICANTE_MOTOR_SELECIONADO).get().text().toString();
         find(APLICATIVO_ANDROID_SOLICITACAO_NUMERO_CILINDOS).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
+        numeroCiclindros = find(APLICATIVO_ANDROID_NUMERO_CILINDROS_SELECIONADO).get().text().toString();
         find(APLICATIVO_ANDROID_SOLICITACAO_NUMERO_MARCHAS).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
+        numeroMarchas = find(APLICATIVO_ANDROID_NUMERO_MARCHAS_SELECIONADO).get().text().toString();
         oUsuarioArrastaATelaParaBaixo();
         find(APLICATIVO_ANDROID_SOLICITACAO_TIPO_CABINE).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
+        tipoCabine = find(APLICATIVO_ANDROID_TIPO_CABINE_SELECIONADA).get().text().toString();
         find(APLICATIVO_ANDROID_SOLICITACAO_CONFIGURACAO_CABINE).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
-        find(APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ATUAL).send().text("1000");
-        find(APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ANTERIOR).send().text("1000");
-        find(APLICATIVO_ANDROID_SOLICITACAO_POTENCIA).send().text("400");
+        configuracaoCabine = find(APLICATIVO_ANDROID_CONFIGURACAO_CABINE_SELECIONADA).get().text().toString();
+        distanciaEntreEixosAtual = "1000";
+        find(APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ATUAL).send().text(distanciaEntreEixosAtual);
+        distanciaEntreEixosAnterior = "1000";
+        find(APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ANTERIOR).send().text(distanciaEntreEixosAnterior);
+        potencia = "400";
+        find(APLICATIVO_ANDROID_SOLICITACAO_POTENCIA).send().text(potencia);
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioInsereQuatroFotosDeTeste();
         oUsuarioArrastaATelaParaBaixo();
@@ -1051,23 +1108,40 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
 
     @Then("O usuario valida que a solicitacao foi realizada para caminhao")
     public void oUsuarioValidaQueASolicitacaoFoiRealizadaParaCaminhao() {
-
-        //proprietario;
-        //sTelefone;
-        //celular;
-        //aplicativoAndroidEmailTeste;
-        //placa;
-        //anoFabricacao;
-        //anoLancamento;
-        //kilometragem;
-        //marca;
-        //modelo;
-        //versao;
-        //cor;
-        //combustivel;
-        //cambio;
-        //procedencia;
-
-
+        System.out.println("#######################################################################");
+        System.out.println("variavel proprietario: " + proprietario);
+        System.out.println("variavel sTelefone: " + sTelefone);
+        System.out.println("variavel celular: " + celular);
+        System.out.println("variavel email: " + email);
+        System.out.println("variavel vendedor: " + vendedor);
+        System.out.println("variavel placa: " + placa);
+        System.out.println("variavel anoFabricacao: " + anoFabricacao);
+        System.out.println("variavel anoLancamento: " + anoLancamento);
+        System.out.println("variavel kilometragem: " + kilometragem);
+        System.out.println("variavel marca: " + marca);
+        System.out.println("variavel modelo: " + modelo);
+        System.out.println("variavel versao: " + versao);
+        System.out.println("variavel cor: " + cor);
+        System.out.println("variavel combustivel: " + combustivel);
+        System.out.println("variavel cambio: " + cambio);
+        System.out.println("variavel procedencia: " + procedencia);
+        System.out.println("variavel aplicacao: " + aplicacao);
+        System.out.println("variavel segmento: " + segmento);
+        System.out.println("variavel tracao: " + tracao);
+        System.out.println("variavel fabricanteMotor: " + fabricanteMotor);
+        System.out.println("variavel numeroCiclindros: " + numeroCiclindros);
+        System.out.println("variavel numeroMarchas: " + numeroMarchas);
+        System.out.println("variavel tipoCabine: " + tipoCabine);
+        System.out.println("variavel configuracaoCabine: " + configuracaoCabine);
+        System.out.println("variavel distanciaEntreEixosAtual: " + distanciaEntreEixosAtual);
+        System.out.println("variavel distanciaEntreEixosAnterior: " + distanciaEntreEixosAnterior);
+        System.out.println("variavel potencia: " + potencia);
+        System.out.println("variavel estadoMotor: " + estadoMotor);
+        System.out.println("variavel estadoCambio: " + estadoCambio);
+        System.out.println("variavel classificacao: " + classificacao);
+        System.out.println("variavel finalidade: " + finalidade);
+        System.out.println("variavel valorCompra: " + valorCompra);
+        System.out.println("variavel valorVenda: " + valorVenda);
+        System.out.println("#######################################################################");
     }
 }
