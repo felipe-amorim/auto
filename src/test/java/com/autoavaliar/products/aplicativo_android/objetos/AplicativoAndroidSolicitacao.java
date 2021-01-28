@@ -151,6 +151,7 @@ public class AplicativoAndroidSolicitacao {
     public static String APLICATIVO_ANDROID_CONFIGURACAO_CABINE_SELECIONADA = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup[8]/android.widget.TextView[2]";
     public static String APLICATIVO_ANDROID_CLASSIFICACAO_SELECIONADA = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.Spinner/android.widget.TextView";
     public static String APLICATIVO_ANDROID_FINALIDADE_SELECIONADA = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Spinner/android.widget.TextView";
+    public static String APLICATIVO_ANDROID_QUANTIDADE_PORTAS = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView[2]";
 
     public static LinkedHashMap<String, String> aplicativoAndroidSolicitacao = createData();
     private static LinkedHashMap<String, String> createData() {
@@ -282,6 +283,7 @@ public class AplicativoAndroidSolicitacao {
         ret.put(APLICATIVO_ANDROID_CONFIGURACAO_CABINE_SELECIONADA, "Configuração de cabine selecionada");
         ret.put(APLICATIVO_ANDROID_CLASSIFICACAO_SELECIONADA, "Classificação selecionada");
         ret.put(APLICATIVO_ANDROID_FINALIDADE_SELECIONADA, "Finalidade selecionada");
+        ret.put(APLICATIVO_ANDROID_QUANTIDADE_PORTAS, "Quantidade de portas selecionada");
 
         return ret;
     }

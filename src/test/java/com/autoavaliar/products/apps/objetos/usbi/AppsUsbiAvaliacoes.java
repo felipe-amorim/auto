@@ -40,6 +40,7 @@ public class AppsUsbiAvaliacoes {
     public static String APPS_USBI_AVALIACOES_TEXT_FINALIDADE = "//div[@ng-hide=\"ctrl.editable['vehicle'] || ctrl.editing\"]//div[contains(., 'Finalidade')]/div/span[@style]";
     public static String APPS_USBI_AVALIACOES_TEXT_VALOR_COMPRA = "//div[@class=\"panel-body pb0\"]/h1";
     public static String APPS_USBI_AVALIACOES_TEXT_VALOR_VENDA = "//div[@ng-dblclick=\"ctrl.fieldEdit('valor_app')\"]";
+    public static String APPS_USBI_AVALIACOES_TEXT_PORTAS = "//div[@ng-show=\"ctrl.valuation.vehicle.kind_id != 2\"]/div";
 
     //Layout
     public static String appsAvaliacoesBuscarPlacaText = "//input[@placeholder=\"Buscar Placa\"]/ancestor::div/label";
@@ -105,6 +106,7 @@ public class AppsUsbiAvaliacoes {
         ret.put(APPS_USBI_AVALIACOES_TEXT_FINALIDADE, "Finalidade avaliação cadastrada");
         ret.put(APPS_USBI_AVALIACOES_TEXT_VALOR_COMPRA, "Valor compra avaliação cadastrada");
         ret.put(APPS_USBI_AVALIACOES_TEXT_VALOR_VENDA, "Valor venda avaliação cadastrada");
+        ret.put(APPS_USBI_AVALIACOES_TEXT_PORTAS, "Número de portas avaliação cadastrada");
         return ret;
     }
 }

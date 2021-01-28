@@ -40,6 +40,32 @@ Feature: Realizar nova solicitação
       #| "FFF0024" | "2020" | "10000"  | "FORD"       | "KA"          | "bom"       | "ruim"       | "20000"     | "35000"    |
       #| "FFF0025" | "2020" | "10000"  | "FIAT "      | "PALIO"       | "ruim"      | "ruim"       | "20000"     | "35000"    |
 
+
+
+
+
+
+
+
+
+  @NovaSolicitacaoUsbiAndroid @ComCamposObrigatoriosAndroidOutLine @Carro
+  Scenario Outline: Realizar nova solicitacao para carro mais usbi, com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
+    Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
+    And O usuario realiza uma nova solicitacao para carro <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
+    And O usuario guarda variaveis utilizadas no cadastro de solicitacao para carro
+    When O usuario acessa portal auto avaliar usb com usuario vendedor
+    Then O usuario valida que todos os dados inseridos na avaliação di carro sao apresentados no portal
+    #Then O usuario valida que todos os dados inseridos na avaliação da moto sao apresentados no portal
+
+
+    #separar
+    #Given O usuario realiza uma nova solicitacao com os campos <email> <senha> <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
+
+    Examples:
+      | placa     | ano    | km       | marca        | modelo | statusMotor | statusCambio | valorCompra | valorVenda |
+      | "FFA0001" | "2016" | "120001" | "volkswagen" | "gol"  | "bom"       | "bom"        | "9000"     | "25000"    |
+
+
   @NovaSolicitacaoComEdicaoAndroid
   Scenario Outline: Realizar nova solicitacao com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "arnaldo.wiziack2@autoavaliar.com.br" "aw203040"
@@ -55,6 +81,7 @@ Feature: Realizar nova solicitação
       | placa     | ano    | km       | marca        | modelo | statusMotor | statusCambio | valorCompra | valorVenda | km2      |
       | "KZA9997" | "2016" | "120001" | "volkswagen" | "gol"  | "bom"       | "bom"        | "20000"     | "35000"    | "120002" |
 
+
   @NovaSolicitacaoAndroid @ComCamposObrigatoriosAndroidOutLine @Moto
   Scenario Outline: Realizar nova solicitacao para moto com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Moto, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "arnaldo.wiziack2@autoavaliar.com.br" "aw203040"
@@ -66,15 +93,8 @@ Feature: Realizar nova solicitação
       | "FFF0002" | "2016" | "120001" | "honda" | "cb twister" | "bom"       | "bom"        | "20000"     | "35000"    |
 
 
-
-
-
-
-
-
-
   @NovaSolicitacaoUsbiAndroid @ComCamposObrigatoriosAndroidOutLine @Moto
-  Scenario Outline: Realizar nova solicitacao para moto com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Moto, Environment: Galaxy S9 - Android 10 - App 1.0
+  Scenario Outline: Realizar nova solicitacao para moto mais usbi, com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Moto, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
     And O usuario realiza uma nova solicitacao para moto <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
     #And variaveis ultilizadas cadastro de nova solicitacao para motos
@@ -84,18 +104,6 @@ Feature: Realizar nova solicitação
     Examples:
       | placa     | ano    | km       | marca   | modelo       | statusMotor | statusCambio | valorCompra | valorVenda |
       | "FFF0002" | "2016" | "120001" | "honda" | "cb twister" | "bom"       | "bom"        | "20000"     | "35000"    |
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   @NovaAvaliacaoJaLogadoAndroidSemAmbienteLimpo @ComCamposObrigatoriosAndroidSemAmbienteLimpo

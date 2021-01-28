@@ -70,6 +70,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     public static String potencia = "";
     public static String estadoMotor = "";
     public static String estadoCambio = "";
+    public static String quantidadePortas = "";
 
     private final Arduino arduino = new Arduino();
 
@@ -120,8 +121,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     public void oUsuarioEscolheOVendedorQA() {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoVendedorButton).click();
-        //String sVendedor = find(aplicativoAndroidSolicitacaoVendedorQAButton).get().text().toString();
-        //String sVendedor = find(aplicativoAndroidSolicitacaoVendedorQAButton).get().value().toString();
         find(aplicativoAndroidSolicitacaoVendedorQAButton).click();
         vendedor = find(APLICATIVO_ANDROID_NOME_VENDEDOR_SELECIONADO).get().text().toString();
     }
@@ -167,8 +166,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
             find(aplicativoAndroidSolicitacaoBuscaInput).send().text(anoFab);
         }
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
-        //anoFabricacao = find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).get().value().toString();
-        //System.out.println("variavel anoFabricacao: " + anoFabricacao);
     }
 
     @And("O usuario preenche o ano de lancamento")
@@ -279,8 +276,11 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     public void oUsuarioPreencheOCampoQuantidadeDePortasUtilizandoOFiltroPor(String arg0) {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoQuantidadeDePortasButton).click();
-        find(aplicativoAndroidSolicitacaoFiltroButton).send().text(arg0);
+        quantidadePortas = arg0;
+        find(aplicativoAndroidSolicitacaoFiltroButton).send().text(quantidadePortas);
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
+        quantidadePortas = find(APLICATIVO_ANDROID_QUANTIDADE_PORTAS).get().text().toString();
+
     }
 
     @And("O usuario insere quatro fotos de teste")
@@ -642,30 +642,21 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
                                                                                                                    String arg8,
                                                                                                                    String arg9,
                                                                                                                    String arg10) {
+
+
         SDAplicativoAndroidMain main = new SDAplicativoAndroidMain();
         main.oUsuarioClicaEmMais();
         main.oUsuarioClicaNoMenuCarro();
-        //find(aplicativoAndroidPermitirGravarAudio).click();
-        //find(aplicativoAndroidPermitirGravarAudio).click();
-        //oUsuarioPermiteOAcessoAsFotosDoAplicativo();
-        //oUsuarioPermiteAcessoAoMicrofoneDoAplicativo();
         oUsuarioPreencheOCampoOwner();
-        find(aplicativoAndroidSolicitacaoTelefoneInput).send().text("" + t);
+        sTelefone = String.valueOf(t);
+        sTelefone = sTelefone.substring(0,10);
+        find(aplicativoAndroidSolicitacaoTelefoneInput).send().text(sTelefone);
         oUsuarioPreencheOCampoCelular();
         oUsuarioPreencheOCampoEmail();
         oUsuarioEscolheOVendedorQA();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
-        //oUsuarioArrastaATelaParaBaixo();
-   /*     plate++;
-        StringBuilder p = new StringBuilder("GGG" + plate);
-        while(p.length()<7){
-            p.append("0");
-        }
-        sendPlaca(p.toString());*/
         sendPlaca(arg2);
-        //sleep().until(3000);
-        //sleep().until(2000);
         sendAnoFab(arg3);
         anoLancamento(arg3);
         oUsuarioArrastaATelaParaBaixo();
@@ -683,8 +674,15 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         oUsuarioPreencheOCampoCambio();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioPreencheOCampoProcedencia();
+
+
+
+
         oUsuarioPreencheOCampoQuantidadeDePortasUtilizandoOFiltroPor("4");
-        portas = "4";
+
+
+
+
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
@@ -709,18 +707,9 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         sendCampoValor(arg9);
         sendCampoVenda(arg10);
         oUsuarioClicaEmSalvarEAvancar();
+        sleep().until(5000);
+        evidence("evidence");
         find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
-
-        placa = arg2;
-        ano = arg3;
-        km = arg4;
-        marca = arg5;
-        modelo = arg6;
-        statusMotor = arg7;
-        statusCambio = arg8;
-        valorCompra = arg9;
-        valorVenda = arg10;
-
     }
 
     @Then("O usuario valida que a solicitacao foi realizada")
@@ -1145,5 +1134,32 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         System.out.println("variavel valorCompra: " + valorCompra);
         System.out.println("variavel valorVenda: " + valorVenda);
         System.out.println("#######################################################################");
+    }
+
+    @And("O usuario guarda variaveis utilizadas no cadastro de solicitacao para carro")
+    public void oUsuarioGuardaVariaveisUtilizadasNoCadastroDeSolicitacaoParaCarro() {
+        System.out.println("variavel proprietario: " + proprietario);
+        System.out.println("variavel sTelefone: " + sTelefone);
+        System.out.println("variavel celular: " + celular);
+        System.out.println("variavel email: " + email);
+        System.out.println("variavel vendedor: " + vendedor);
+        System.out.println("variavel placa: " + placa);
+        System.out.println("variavel anoFabricacao: " + anoFabricacao);
+        System.out.println("variavel anoLancamento: " + anoLancamento);
+        System.out.println("variavel kilometragem: " + kilometragem);
+        System.out.println("variavel marca: " + marca);
+        System.out.println("variavel modelo: " + modelo);
+        System.out.println("variavel versao: " + versao);
+        System.out.println("variavel cor: " + cor);
+        System.out.println("variavel combustivel: " + combustivel);
+        System.out.println("variavel cambio: " + cambio);
+        System.out.println("variavel procedencia: " + procedencia);
+        System.out.println("variavel quantidadePortas: " + quantidadePortas);
+        System.out.println("variavel estadoMotor: " + estadoMotor);
+        System.out.println("variavel estadoCambio: " + estadoCambio);
+        System.out.println("variavel classificacao: " + classificacao);
+        System.out.println("variavel finalidade: " + finalidade);
+        System.out.println("variavel valorCompra: " + valorCompra);
+        System.out.println("variavel valorVenda: " + valorVenda);
     }
 }
