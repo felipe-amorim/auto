@@ -238,7 +238,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoVersaoButton).click();
         find(aplicativoAndroidSolicitacaoPrimeiraVersaoButton).click();
         sleep().until(2500);
-        //versao = find(aplicativoAndroidSolicitacaoVersaoCriacaoText).get().text().toString();
         versao = find(APLICATIVO_ANDROID_VERSAO_VEICULO_SELECIONADA).get().text().toString();
     }
 
@@ -248,7 +247,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoCorButton).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         sleep().until(2500);
-        //cor = find(aplicativoAndroidSolicitacaoCorCriacaoText).get().text().toString();
         cor = find(APLICATIVO_ANDROID_COR_VEICULO_SELECIONADA).get().text().toString();
     }
 
@@ -258,7 +256,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoCombustivelButton).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         sleep().until(2500);
-        //combustivel = find(aplicativoAndroidSolicitacaoCombustivelCriacaoText).get().text().toString();
         combustivel = find(APLICATIVO_ANDROID_COMBUSTIVEL_VEICULO_SELECIONADO).get().text().toString();
     }
 
@@ -342,7 +339,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoClassificacaoButton).click();
         find(aplicativoAndroidSolicitacaoClassificacaoAButton).click();
         classificacao = find(APLICATIVO_ANDROID_CLASSIFICACAO_SELECIONADA).get().text().toString();
-        System.out.println("variavel classificacao: " + classificacao);
     }
 
     @And("O usuario preenche o campo finalidade como oferta")
@@ -351,8 +347,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoFinalidadeButton).click();
         find(aplicativoAndroidSolicitacaoFinalidadeShowRoomButton).click();
         finalidade = find(APLICATIVO_ANDROID_FINALIDADE_SELECIONADA).get().text().toString();
-        System.out.println("variavel finalidade: " + finalidade);
-        sleep().until(4000);
     }
 
     @And("O usuario preenche a segunda tudo como sim e um")
@@ -941,12 +935,10 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         SDAplicativoAndroidMain main = new SDAplicativoAndroidMain();
         main.oUsuarioClicaEmMais();
         main.oUsuarioClicaNoMenuMoto();
-        //find(aplicativoAndroidPermitirGravarAudio).click();
-        //find(aplicativoAndroidPermitirGravarAudio).click();
-        //oUsuarioPermiteOAcessoAsFotosDoAplicativo();
-        //oUsuarioPermiteAcessoAoMicrofoneDoAplicativo();
         oUsuarioPreencheOCampoOwner();
-        find(aplicativoAndroidSolicitacaoTelefoneInput).send().text("" + t);
+        sTelefone = String.valueOf(t);
+        sTelefone = sTelefone.substring(0,10);
+        find(aplicativoAndroidSolicitacaoTelefoneInput).send().text(sTelefone);
         oUsuarioPreencheOCampoCelular();
         oUsuarioPreencheOCampoEmail();
         oUsuarioEscolheOVendedorQA();
@@ -992,16 +984,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         sendCampoVenda(arg10);
         oUsuarioClicaEmSalvarEAvancar();
         find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
-
-        placa = arg2;
-        ano = arg3;
-        km = arg4;
-        marca = arg5;
-        modelo = arg6;
-        statusMotor = arg7;
-        statusCambio = arg8;
-        valorCompra = arg9;
-        valorVenda = arg10;
     }
 
     @When("O usuario realiza uma nova solicitacao para caminhao {string} {string} {string} {string} {string} {string} {string} {string} {string}")
@@ -1096,15 +1078,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         sendCampoVenda(arg10);
         oUsuarioClicaEmSalvarEAvancar();
         find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
-        placa = arg2;
-        ano = arg3;
-        km = arg4;
-        marca = arg5;
-        modelo = arg6;
-        statusMotor = arg7;
-        statusCambio = arg8;
-        valorCompra = arg9;
-        valorVenda = arg10;
     }
 
     @Then("O usuario valida que a solicitacao foi realizada para caminhao")
@@ -1137,6 +1110,34 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         System.out.println("variavel distanciaEntreEixosAtual: " + distanciaEntreEixosAtual);
         System.out.println("variavel distanciaEntreEixosAnterior: " + distanciaEntreEixosAnterior);
         System.out.println("variavel potencia: " + potencia);
+        System.out.println("variavel estadoMotor: " + estadoMotor);
+        System.out.println("variavel estadoCambio: " + estadoCambio);
+        System.out.println("variavel classificacao: " + classificacao);
+        System.out.println("variavel finalidade: " + finalidade);
+        System.out.println("variavel valorCompra: " + valorCompra);
+        System.out.println("variavel valorVenda: " + valorVenda);
+        System.out.println("#######################################################################");
+    }
+
+    @And("variaveis ultilizadas cadastro de nova solicitacao para motos")
+    public void variaveisUltilizadasCadastroDeNovaSolicitacaoParaMotos() {
+        System.out.println("#######################################################################");
+        System.out.println("variavel proprietario: " + proprietario);
+        System.out.println("variavel sTelefone: " + sTelefone);
+        System.out.println("variavel celular: " + celular);
+        System.out.println("variavel email: " + email);
+        System.out.println("variavel vendedor: " + vendedor);
+        System.out.println("variavel placa: " + placa);
+        System.out.println("variavel anoFabricacao: " + anoFabricacao);
+        System.out.println("variavel anoLancamento: " + anoLancamento);
+        System.out.println("variavel kilometragem: " + kilometragem);
+        System.out.println("variavel marca: " + marca);
+        System.out.println("variavel modelo: " + modelo);
+        System.out.println("variavel versao: " + versao);
+        System.out.println("variavel cor: " + cor);
+        System.out.println("variavel combustivel: " + combustivel);
+        System.out.println("variavel cambio: " + cambio);
+        System.out.println("variavel procedencia: " + procedencia);
         System.out.println("variavel estadoMotor: " + estadoMotor);
         System.out.println("variavel estadoCambio: " + estadoCambio);
         System.out.println("variavel classificacao: " + classificacao);

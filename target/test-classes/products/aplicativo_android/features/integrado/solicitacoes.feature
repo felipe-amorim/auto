@@ -65,6 +65,39 @@ Feature: Realizar nova solicitação
       | placa     | ano    | km       | marca   | modelo       | statusMotor | statusCambio | valorCompra | valorVenda |
       | "FFF0002" | "2016" | "120001" | "honda" | "cb twister" | "bom"       | "bom"        | "20000"     | "35000"    |
 
+
+
+
+
+
+
+
+
+  @NovaSolicitacaoUsbiAndroid @ComCamposObrigatoriosAndroidOutLine @Moto
+  Scenario Outline: Realizar nova solicitacao para moto com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Moto, Environment: Galaxy S9 - Android 10 - App 1.0
+    Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
+    And O usuario realiza uma nova solicitacao para moto <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
+    #And variaveis ultilizadas cadastro de nova solicitacao para motos
+    When O usuario acessa portal auto avaliar usb com usuario vendedor
+    Then O usuario valida que todos os dados inseridos na avaliação da moto sao apresentados no portal
+
+    Examples:
+      | placa     | ano    | km       | marca   | modelo       | statusMotor | statusCambio | valorCompra | valorVenda |
+      | "FFF0002" | "2016" | "120001" | "honda" | "cb twister" | "bom"       | "bom"        | "20000"     | "35000"    |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   @NovaAvaliacaoJaLogadoAndroidSemAmbienteLimpo @ComCamposObrigatoriosAndroidSemAmbienteLimpo
   Scenario Outline: Realizar nova solicitacao com campos obrigatorios sem ambiente limpo, Author: Felipe Amorim, Category: Nova Solicitacao, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "arnaldo.wiziack2@autoavaliar.com.br" "aw203040"
@@ -83,9 +116,9 @@ Feature: Realizar nova solicitação
   @NovaSolicitacaoAndroid @ComCamposObrigatoriosAndroidOutLine @Caminhao
   Scenario Outline: Realizar nova solicitacao para caminhao com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Moto, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
-    When O usuario realiza uma nova solicitacao para caminhao <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
+    Then O usuario realiza uma nova solicitacao para caminhao <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
     #Then O usuario valida que a solicitacao foi realizada
-    Then O usuario valida que a solicitacao foi realizada para caminhao
+    #Then O usuario valida que a solicitacao foi realizada para caminhao
 
     Examples:
       | placa     | ano    | km       | marca   | modelo | statusMotor | statusCambio | valorCompra | valorVenda |
@@ -96,9 +129,10 @@ Feature: Realizar nova solicitação
   Scenario Outline: Realizar nova solicitacao para caminhao mais usbi, Author: Felipe Amorim, Category: Nova Solicitacao - Moto, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
     And O usuario realiza uma nova solicitacao para caminhao <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
-    And O usuario valida que a solicitacao foi realizada para caminhao
+    #And O usuario valida que a solicitacao foi realizada para caminhao
     When O usuario acessa portal auto avaliar usb com usuario vendedor
-    Then O usuario valida que todos os dados inseridos na avaliação sao apresentados no portal
+    Then O usuario valida que todos os dados inseridos na avaliação do caminhao sao apresentados no portal
+
 
     Examples:
       | placa     | ano    | km       | marca   | modelo | statusMotor | statusCambio | valorCompra | valorVenda |

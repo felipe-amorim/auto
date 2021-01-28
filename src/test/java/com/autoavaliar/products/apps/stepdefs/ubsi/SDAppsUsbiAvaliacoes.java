@@ -52,7 +52,6 @@ public class SDAppsUsbiAvaliacoes extends CoreWeb {
         sleep().untilAppear(appsAvaliacoesValidarAvaliacaoText);
     }
 
-
     @And("O usuario clica no botao editar dados do veiculo avaliado")
     public void oUsuarioClicaNoBotaoEditarDadosDoVeiculoAvaliado() {
         log().setLocator(appsAvaliacoes);
@@ -193,15 +192,13 @@ public class SDAppsUsbiAvaliacoes extends CoreWeb {
         find(appsSolicitarAvaliacaoCRMInput).send().text(SDAppsUsbiSolicitarAvaliacao.codigoCrm);
     }
 
-    @Then("O usuario valida que todos os dados inseridos na avaliação sao apresentados no portal")
-    public void oUsuarioValidaQueTodosOsDadosInseridosNaAvaliaçãoSaoApresentadosNoPortal() {
+    @Then("O usuario valida que todos os dados inseridos na avaliação do caminhao sao apresentados no portal")
+    public void oUsuarioValidaQueTodosOsDadosInseridosNaAvaliaçãoDoCaminhaoSaoApresentadosNoPortal() {
         log().setLocator(appsAvaliacoes);
-        //placa = "FFF0002";
         find(appsAvaliacoesBuscarPlacaInput).send().text(placa);
         find(appsAvaliacoesBuscarButton).click();
         find(APPS_USBI_AVALIACOES_BUTTON_AVALIACAO_ESPECIFICA_PLACA.replace("arg0", placa)).click();
         sleep().untilAppear(APPS_USBI_AVALIACOES_TEXT_AVALIACAO);
-
         String usbiTelefone = find(APPS_USBI_AVALIACOES_TEXT_TELEFONE).get().text().toString();
         String usbiCelular = find(APPS_USBI_AVALIACOES_TEXT_CELULAR).get().text().toString();
         String usbiEmail = find(APPS_USBI_AVALIACOES_TEXT_EMAIL).get().text().toString();
@@ -254,9 +251,52 @@ public class SDAppsUsbiAvaliacoes extends CoreWeb {
         assertThat(usbiPotencia).isEqualTo(potencia);
         assertThat(usbiClassificacao).isEqualTo(classificacao);
         assertThat(usbiFinalidade).isEqualTo(finalidade);
-        usbiValorCompra = usbiValorCompra.replace("R$", "").replace(".","").replace(",00","");
+        usbiValorCompra = usbiValorCompra.replace("R$", "").replace(".", "").replace(",00", "");
         assertThat(usbiValorCompra).contains(valorCompra);
-        usbiValorVenda = usbiValorVenda.replace("R$", "").replace(".","").replace(",00","");
+        usbiValorVenda = usbiValorVenda.replace("R$", "").replace(".", "").replace(",00", "");
+        assertThat(usbiValorVenda).contains(valorVenda);
+    }
+
+    @Then("O usuario valida que todos os dados inseridos na avaliação da moto sao apresentados no portal")
+    public void oUsuarioValidaQueTodosOsDadosInseridosNaAvaliaçãoDaMotoSaoApresentadosNoPortal() {
+        log().setLocator(appsAvaliacoes);
+        find(appsAvaliacoesBuscarPlacaInput).send().text(placa);
+        find(appsAvaliacoesBuscarButton).click();
+        find(APPS_USBI_AVALIACOES_BUTTON_AVALIACAO_ESPECIFICA_PLACA.replace("arg0", placa)).click();
+        find(APPS_USBI_AVALIACOES_TEXT_TELEFONE).click();
+        String usbiTelefone = find(APPS_USBI_AVALIACOES_TEXT_TELEFONE).get().text().toString();
+        usbiTelefone = usbiTelefone.replace(" ", "").replace("(", "").replace(")", "").replace("-", "");
+        System.out.println("variavel usbiTelefone: " + usbiTelefone);
+        assertThat(usbiTelefone).isEqualTo(sTelefone);
+        String usbiCelular = find(APPS_USBI_AVALIACOES_TEXT_CELULAR).get().text().toString();
+        usbiCelular = usbiCelular.replace(" ", "").replace("(", "").replace(")", "").replace("-", "");
+        assertThat(usbiCelular).isEqualTo(celular);
+        String usbiEmail = find(APPS_USBI_AVALIACOES_TEXT_EMAIL).get().text().toString();
+        assertThat(usbiEmail).isEqualTo(email);
+        String usbiSolicitante = find(APPS_USBI_AVALIACOES_TEXT_SOLICITANTE).get().text().toString();
+        assertThat(usbiSolicitante).isEqualTo(vendedor);
+        String usbiPlaca = find(APPS_USBI_AVALIACOES_TEXT_PLACA).get().text().toString();
+        assertThat(usbiPlaca).isEqualTo(placa);
+        String usbiAno = find(APPS_USBI_AVALIACOES_TEXT_ANO).get().text().toString();
+        assertThat(usbiAno).isEqualTo(anoFabricacao + "/" + anoLancamento);
+        String usbiKm = find(APPS_USBI_AVALIACOES_TEXT_KM).get().text().toString();
+        usbiKm = usbiKm.replace(".", "");
+        assertThat(usbiKm).isEqualTo(kilometragem);
+        String usbiCor = find(APPS_USBI_AVALIACOES_TEXT_COR).get().text().toString();
+        assertThat(usbiCor).isEqualTo(cor);
+        String usbiCombustivel = find(APPS_USBI_AVALIACOES_TEXT_COMBUSTIVEL).get().text().toString();
+        assertThat(usbiCombustivel).isEqualTo(combustivel);
+        String usbiCambio =find(APPS_USBI_AVALIACOES_TEXT_CAMBIO).get().text().toString();
+        assertThat(usbiCambio).isEqualTo(cambio);
+        String usbiClassificacao = find(APPS_USBI_AVALIACOES_TEXT_CLASSIFICACAO).get().text().toString();
+        assertThat(usbiClassificacao).isEqualTo(classificacao);
+        String usbiFinalidade = find(APPS_USBI_AVALIACOES_TEXT_FINALIDADE).get().text().toString();
+        assertThat(usbiFinalidade).isEqualTo(finalidade);
+        String usbiValorCompra = find(APPS_USBI_AVALIACOES_TEXT_VALOR_COMPRA).get().text().toString();
+        usbiValorCompra = usbiValorCompra.replace("R$", "").replace(".", "").replace(",00", "");
+        assertThat(usbiValorCompra).contains(valorCompra);
+        String usbiValorVenda = find(APPS_USBI_AVALIACOES_TEXT_VALOR_VENDA).get().text().toString();
+        usbiValorVenda = usbiValorVenda.replace("R$", "").replace(".", "").replace(",00", "");
         assertThat(usbiValorVenda).contains(valorVenda);
     }
 }
