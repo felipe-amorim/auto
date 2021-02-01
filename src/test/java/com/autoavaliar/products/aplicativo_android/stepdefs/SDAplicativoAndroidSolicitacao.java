@@ -14,8 +14,7 @@ import java.util.Calendar;
 import java.io.IOException;
 
 
-import static com.autoavaliar.products.aplicativo_android.objetos.AplicativoAndroidMain.APLICATIVO_ANDROID_MAIN_REALIZADAS;
-import static com.autoavaliar.products.aplicativo_android.objetos.AplicativoAndroidMain.APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS;
+import static com.autoavaliar.products.aplicativo_android.objetos.AplicativoAndroidMain.*;
 import static com.autoavaliar.products.aplicativo_android.objetos.AplicativoAndroidSolicitacao.*;
 
 
@@ -453,6 +452,36 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
             find(aplicativoAndroidSolicitacaoSalvar).click();
         }
     }
+    private void sendAvaliaMotorCaminhao(String status) {
+        if (status.length() <= 0) {
+            log().setLocator(aplicativoAndroidSolicitacao);
+            //find(aplicativoAndroidSolicitacaoAvaliacaoMotor).click();
+            find(APLICATIVO_ANDROID_SOLICITACAO_AVALIACAO_MOTOR_CAMINHAO).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
+            find(aplicativoAndroidSolicitacaoSalvar).click();
+        } else {
+            log().setLocator(aplicativoAndroidSolicitacao);
+            //find(aplicativoAndroidSolicitacaoAvaliacaoMotor).click();
+            find(APLICATIVO_ANDROID_SOLICITACAO_AVALIACAO_MOTOR_CAMINHAO).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
+            switch (status.toLowerCase()) {
+                case "bom":
+                    estadoMotor = "bom";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
+                    break;
+                case "otimo":
+                    estadoMotor = "otimo";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorOtimo).click();
+                    break;
+                case "ruim":
+                    estadoMotor = "ruim";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorRuim).click();
+                    break;
+            }
+            find(aplicativoAndroidSolicitacaoSalvar).click();
+        }
+    }
 
     @And("O usuario avalia o cambio")
     public void oUsuarioAvaliaOCambio() {
@@ -469,6 +498,36 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         } else {
             log().setLocator(aplicativoAndroidSolicitacao);
             find(aplicativoAndroidSolicitacaoAvaliacaoCambio).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
+            switch (status.toLowerCase()) {
+                case "bom":
+                    estadoCambio = "bom";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
+                    break;
+                case "otimo":
+                    estadoCambio = "otimo";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorOtimo).click();
+                    break;
+                case "ruim":
+                    estadoCambio = "ruim";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorRuim).click();
+                    break;
+            }
+            find(aplicativoAndroidSolicitacaoSalvar).click();
+        }
+    }
+    private void sendAvaliaCambioCaminhao(String status) {
+        if (status.length() <= 0) {
+            log().setLocator(aplicativoAndroidSolicitacao);
+            //find(aplicativoAndroidSolicitacaoAvaliacaoCambio).click();
+            find(APLICATIVO_ANDROID_SOLICITACAO_AVALIACAO_CAMBIO_CAMINHAO).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
+            find(aplicativoAndroidSolicitacaoSalvar).click();
+        } else {
+            log().setLocator(aplicativoAndroidSolicitacao);
+            //find(aplicativoAndroidSolicitacaoAvaliacaoCambio).click();
+            find(APLICATIVO_ANDROID_SOLICITACAO_AVALIACAO_CAMBIO_CAMINHAO).click();
             find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
             switch (status.toLowerCase()) {
                 case "bom":
@@ -674,15 +733,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         oUsuarioPreencheOCampoCambio();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioPreencheOCampoProcedencia();
-
-
-
-
         oUsuarioPreencheOCampoQuantidadeDePortasUtilizandoOFiltroPor("4");
-
-
-
-
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
@@ -716,13 +767,12 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     public void oUsuarioValidaQueASolicitacaoFoiRealizada() {
         String nomeDaAvaliacao = find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).get().text().toString();
         assertThat(nomeDaAvaliacao).isEqualTo("CLIENTE: " + OWNER_ULTIMA);
-
         find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).click();
-
 
         String actualOwner = find(aplicativoAndroidSolicitacaoOwnerInput).get().text().toString();
         evidence("Validando o nome do owner");
         assertThat(actualOwner).isEqualTo(OWNER_ULTIMA);
+
         find(aplicativoAndroidSolicitacaoTelefoneInput).send().text("" + t);
 
         StringBuilder mascaraCelular = new StringBuilder();
@@ -1054,8 +1104,8 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         oUsuarioArrastaATelaParaBaixo();
         sleep().until(2000);
         oUsuarioClicaEmSalvarEAvancar();
-        sendAvaliaMotor(arg7);
-        sendAvaliaCambio(arg8);
+        sendAvaliaMotorCaminhao(arg7);
+        sendAvaliaCambioCaminhao(arg8);
         sleep().until(2000);
         oUsuarioClicaEmSalvarEAvancar();
         evidence("evidence");
@@ -1069,97 +1119,443 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
     }
 
+    @Then("O usuario valida que a solicitacao foi realizada com sucesso")
+    public void oUsuarioValidaQueASolicitacaoFoiRealizadaComSucesso() {
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
+        String nomeDaAvaliacao = find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).get().text().toString();
+        assertThat(nomeDaAvaliacao).isEqualTo("CLIENTE: " + OWNER_ULTIMA);
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).click();
+        String actualOwner = find(aplicativoAndroidSolicitacaoOwnerInput).get().text().toString();
+        evidence("Validando o nome do owner");
+        assertThat(actualOwner).isEqualTo(OWNER_ULTIMA);
+        String actualTel = find(aplicativoAndroidSolicitacaoTelefoneInput).get().text().toString();
+        evidence("Validando o telefone");
+        actualTel = actualTel.replace("(", "").replace(")", "").replace(" ", "");
+        assertThat(actualTel).isEqualTo(sTelefone);
+        String actualCel = find(aplicativoAndroidSolicitacaoCelularInput).get().text().toString();
+        evidence("Validando o celular");
+        actualCel = actualCel.replace("(", "").replace(")", "").replace(" ", "");
+        assertThat(actualCel).isEqualTo(celular);
+        String actualEmail = find(aplicativoAndroidSolicitacaoEmailInput).get().text().toString();
+        evidence("Validando o email");
+        assertThat(actualEmail).isEqualTo(aplicativoAndroidEmailTeste);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualPlaca = find(aplicativoAndroidSolicitacaoPlacaInput).get().text().toString();
+        evidence("Validando a placa");
+        assertThat(actualPlaca).isEqualTo(placa);
+        sleep().until(2000);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualAnoFab = find(aplicativoAndroidSolicitacaoAnoDeFabricacaoText).get().text().toString();
+        evidence("Validando o ano de fabricacao");
+        assertThat(actualAnoFab).isEqualTo(ano);
+        String actualAnoLanc = find(aplicativoAndroidSolicitacaoAnoDeLancamentoText).get().text().toString();
+        evidence("Validando o ano de lancamento");
+        assertThat(actualAnoLanc).isEqualTo(ano);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualKm = find(aplicativoAndroidSolicitacaoKilometragemInput).get().text().toString();
+        evidence("Validando a kilometragem");
+        assertThat(actualKm).isEqualTo(km);
+        String actualMarca = find(aplicativoAndroidSolicitacaoMarcaText).get().text().toString();
+        evidence("Validando a marca");
+        assertThat(actualMarca).isEqualTo(marca.toUpperCase());
+        String actualModelo = find(aplicativoAndroidSolicitacaoModeloTexto).get().text().toString();
+        evidence("Validando o modelo");
+        assertThat(actualModelo).isEqualTo(modelo.toUpperCase());
+        oUsuarioArrastaATelaParaBaixo();
+        String actualVersao = find(aplicativoAndroidSolicitacaoVersaoText).get().text().toString();
+        evidence("Validando a versao");
+        assertThat(actualVersao).isEqualTo(versao.toUpperCase());
+        String actualCor = find(aplicativoAndroidSolicitacaoCorText).get().text().toString();
+        evidence("Validando a cor");
+        assertThat(actualCor).isEqualTo(cor.toUpperCase());
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        String actualStatusMotor = find(aplicativoAndroidSolicitacaoStatusAvaliacaoMotor).get().text().toString();
+        evidence("Validando o status do motor");
+        assertThat(actualStatusMotor).isEqualTo(estadoMotor.toUpperCase());
+        String actualStatusCambio = find(aplicativoAndroidSolicitacaoStatusAvaliacaoCambio).get().text().toString();
+        evidence("Validando o status do cambio");
+        assertThat(actualStatusCambio).isEqualTo(estadoCambio.toUpperCase());
+        oUsuarioClicaEmSalvarEAvancar();
+        evidence("evidence");
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        String actualValor = find(aplicativoAndroidSolicitacaoValorCompra).get().text().toString();
+        StringBuilder actualValorHold = new StringBuilder();
+        StringBuilder actualValorMascara = new StringBuilder();
+        actualValorHold.append(valorCompra).reverse();
+
+        for (int i = 0; i < actualValorHold.toString().length(); i++) {
+            if (i % 3 == 0 && i != 0) {
+                actualValorMascara.append(".");
+            }
+            actualValorMascara.append(actualValorHold.toString().charAt(i));
+        }
+        evidence("Validando o valor de compra");
+        assertThat(actualValor).isEqualTo(actualValorMascara.reverse().toString());
+        String actualVenda = find(aplicativoAndroidSolicitacaoValorVenda).get().text().toString();
+        StringBuilder actualVendaHold = new StringBuilder();
+        StringBuilder actualVendaMascara = new StringBuilder();
+        actualVendaHold.append(valorVenda).reverse();
+        for (int i = 0; i < actualVendaHold.toString().length(); i++) {
+            if (i % 3 == 0 && i != 0) {
+                actualVendaMascara.append(".");
+            }
+            actualVendaMascara.append(actualVendaHold.toString().charAt(i));
+        }
+        evidence("Validando o valor de venda");
+        assertThat(actualVenda).isEqualTo(actualVendaMascara.reverse().toString());
+        oUsuarioClicaEmSalvarEAvancar();
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
+    }
+
     @Then("O usuario valida que a solicitacao foi realizada para caminhao")
     public void oUsuarioValidaQueASolicitacaoFoiRealizadaParaCaminhao() {
-        System.out.println("#######################################################################");
-        System.out.println("variavel proprietario: " + proprietario);
-        System.out.println("variavel sTelefone: " + sTelefone);
-        System.out.println("variavel celular: " + celular);
-        System.out.println("variavel email: " + email);
-        System.out.println("variavel vendedor: " + vendedor);
-        System.out.println("variavel placa: " + placa);
-        System.out.println("variavel anoFabricacao: " + anoFabricacao);
-        System.out.println("variavel anoLancamento: " + anoLancamento);
-        System.out.println("variavel kilometragem: " + kilometragem);
-        System.out.println("variavel marca: " + marca);
-        System.out.println("variavel modelo: " + modelo);
-        System.out.println("variavel versao: " + versao);
-        System.out.println("variavel cor: " + cor);
-        System.out.println("variavel combustivel: " + combustivel);
-        System.out.println("variavel cambio: " + cambio);
-        System.out.println("variavel procedencia: " + procedencia);
-        System.out.println("variavel aplicacao: " + aplicacao);
-        System.out.println("variavel segmento: " + segmento);
-        System.out.println("variavel tracao: " + tracao);
-        System.out.println("variavel fabricanteMotor: " + fabricanteMotor);
-        System.out.println("variavel numeroCiclindros: " + numeroCiclindros);
-        System.out.println("variavel numeroMarchas: " + numeroMarchas);
-        System.out.println("variavel tipoCabine: " + tipoCabine);
-        System.out.println("variavel configuracaoCabine: " + configuracaoCabine);
-        System.out.println("variavel distanciaEntreEixosAtual: " + distanciaEntreEixosAtual);
-        System.out.println("variavel distanciaEntreEixosAnterior: " + distanciaEntreEixosAnterior);
-        System.out.println("variavel potencia: " + potencia);
-        System.out.println("variavel estadoMotor: " + estadoMotor);
-        System.out.println("variavel estadoCambio: " + estadoCambio);
-        System.out.println("variavel classificacao: " + classificacao);
-        System.out.println("variavel finalidade: " + finalidade);
-        System.out.println("variavel valorCompra: " + valorCompra);
-        System.out.println("variavel valorVenda: " + valorVenda);
-        System.out.println("#######################################################################");
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
+        String nomeDaAvaliacao = find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).get().text().toString();
+        assertThat(nomeDaAvaliacao).isEqualTo("CLIENTE: " + OWNER_ULTIMA);
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).click();
+        String actualOwner = find(aplicativoAndroidSolicitacaoOwnerInput).get().text().toString();
+        evidence("Validando o nome do owner");
+        assertThat(actualOwner).isEqualTo(OWNER_ULTIMA);
+        String actualTel = find(aplicativoAndroidSolicitacaoTelefoneInput).get().text().toString();
+        evidence("Validando o telefone");
+        actualTel = actualTel.replace("(", "").replace(")", "").replace(" ", "");
+        assertThat(actualTel).isEqualTo(sTelefone);
+        String actualCel = find(aplicativoAndroidSolicitacaoCelularInput).get().text().toString();
+        evidence("Validando o celular");
+        actualCel = actualCel.replace("(", "").replace(")", "").replace(" ", "");
+        assertThat(actualCel).isEqualTo(celular);
+        String actualEmail = find(aplicativoAndroidSolicitacaoEmailInput).get().text().toString();
+        evidence("Validando o email");
+        assertThat(actualEmail).isEqualTo(aplicativoAndroidEmailTeste);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualPlaca = find(aplicativoAndroidSolicitacaoPlacaInput).get().text().toString();
+        evidence("Validando a placa");
+        assertThat(actualPlaca).isEqualTo(placa);
+        sleep().until(2000);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualAnoFab = find(aplicativoAndroidSolicitacaoAnoDeFabricacaoText).get().text().toString();
+        evidence("Validando o ano de fabricacao");
+        assertThat(actualAnoFab).isEqualTo(ano);
+        String actualAnoLanc = find(aplicativoAndroidSolicitacaoAnoDeLancamentoText).get().text().toString();
+        evidence("Validando o ano de lancamento");
+        assertThat(actualAnoLanc).isEqualTo(ano);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualKm = find(aplicativoAndroidSolicitacaoKilometragemInput).get().text().toString();
+        evidence("Validando a kilometragem");
+        assertThat(actualKm).isEqualTo(km);
+        String actualMarca = find(aplicativoAndroidSolicitacaoMarcaText).get().text().toString();
+        evidence("Validando a marca");
+        assertThat(actualMarca).isEqualTo(marca.toUpperCase());
+        String actualModelo = find(aplicativoAndroidSolicitacaoModeloTexto).get().text().toString();
+        evidence("Validando o modelo");
+        assertThat(actualModelo).isEqualTo(modelo.toUpperCase());
+        oUsuarioArrastaATelaParaBaixo();
+        String actualVersao = find(aplicativoAndroidSolicitacaoVersaoText).get().text().toString();
+        evidence("Validando a versao");
+        assertThat(actualVersao).isEqualTo(versao.toUpperCase());
+        String actualCor = find(aplicativoAndroidSolicitacaoCorText).get().text().toString();
+        evidence("Validando a cor");
+        assertThat(actualCor).isEqualTo(cor.toUpperCase());
+        String sCombustivel = find(APLICATIVO_ANDROID_COMBUSTIVEL_VEICULO_SELECIONADO).get().text().toString();
+        assertThat(sCombustivel).isEqualTo(combustivel);
+        String sTipoCambio = find(APLICATIVO_ANDROID_TIPO_CAMBIO_VEICULO_SELECIONADO).get().text().toString();
+        assertThat(sTipoCambio).isEqualTo(cambio);
+        String sProcedencia = find(APLICATIVO_ANDROID_PROCEDENCIA_VEICULO_SELECIONADA).get().text().toString();
+        assertThat(sProcedencia).isEqualTo(procedencia);
+        String sAplicacao = find(APLICATIVO_ANDROID_APLICACAO_SELECIONADA).get().text().toString();
+        assertThat(sAplicacao).isEqualTo(aplicacao);
+        String sSegmento = find(APLICATIVO_ANDROID_SEGMENTO_SELECIONADO).get().text().toString();
+        assertThat(sSegmento).isEqualTo(segmento);
+        String sTracao = find(APLICATIVO_ANDROID_TRACAO_SELECIONADO).get().text().toString();
+        assertThat(sTracao).isEqualTo(tracao);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        String sFabricanteMotor = find(APLICATIVO_ANDROID_FABRICANTE_MOTOR_SELECIONADO).get().text().toString();
+        assertThat(sFabricanteMotor).isEqualTo(fabricanteMotor);
+        String sNumeroCilindros = find(APLICATIVO_ANDROID_NUMERO_CILINDROS_SELECIONADO).get().text().toString();
+        assertThat(sNumeroCilindros).isEqualTo(numeroCiclindros);
+        String sNumeroMarchas = find(APLICATIVO_ANDROID_NUMERO_MARCHAS_SELECIONADO).get().text().toString();
+        assertThat(sNumeroMarchas).isEqualTo(numeroMarchas);
+        String sTipoCabine = find(APLICATIVO_ANDROID_TIPO_CABINE_SELECIONADA).get().text().toString();
+        assertThat(sTipoCabine).isEqualTo(tipoCabine);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        String sConfiguracaoCabine = find(APLICATIVO_ANDROID_CONFIGURACAO_CABINE_SELECIONADA).get().text().toString();
+        assertThat(sConfiguracaoCabine).isEqualTo(configuracaoCabine);
+        String sDistanciaEntreEixosAtual = find(APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ATUAL).get().text().toString();
+        assertThat(sDistanciaEntreEixosAtual).isEqualTo(distanciaEntreEixosAtual);
+        String sDistanciaEntreEixosAnterior = find(APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ANTERIOR).get().text().toString();
+        assertThat(sDistanciaEntreEixosAnterior).isEqualTo(distanciaEntreEixosAnterior);
+        String sPotencia = find(APLICATIVO_ANDROID_SOLICITACAO_POTENCIA).get().text().toString();
+        assertThat(sPotencia).isEqualTo(potencia);
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        //String actualStatusMotor = find(aplicativoAndroidSolicitacaoStatusAvaliacaoMotor).get().text().toString();
+        String actualStatusMotor = find(APLICATIVO_ANDROID_SOLICITACAO_STATUS_AVALIACAO_MOTOR).get().text().toString();
+        evidence("Validando o status do motor");
+        assertThat(actualStatusMotor).isEqualTo(estadoMotor.toUpperCase());
+        //String actualStatusCambio = find(aplicativoAndroidSolicitacaoStatusAvaliacaoCambio).get().text().toString();
+        String actualStatusCambio = find(APLICATIVO_ANDROID_SOLICITACAO_STATUS_AVALIACAO_CAMBIO).get().text().toString();
+        evidence("Validando o status do cambio");
+        assertThat(actualStatusCambio).isEqualTo(estadoCambio.toUpperCase());
+        oUsuarioClicaEmSalvarEAvancar();
+
+
+
+        String sClassificacao = find(APLICATIVO_ANDROID_CLASSIFICACAO_SELECIONADA).get().text().toString();
+        assertThat(sClassificacao).isEqualTo(classificacao);
+        String sFinalidade = find(APLICATIVO_ANDROID_FINALIDADE_SELECIONADA).get().text().toString();
+        assertThat(sFinalidade).isEqualTo(finalidade);
+        String actualValor = find(aplicativoAndroidSolicitacaoValorCompra).get().text().toString();
+        StringBuilder actualValorHold = new StringBuilder();
+        StringBuilder actualValorMascara = new StringBuilder();
+        actualValorHold.append(valorCompra).reverse();
+        for (int i = 0; i < actualValorHold.toString().length(); i++) {
+            if (i % 3 == 0 && i != 0) {
+                actualValorMascara.append(".");
+            }
+            actualValorMascara.append(actualValorHold.toString().charAt(i));
+        }
+        evidence("Validando o valor de compra");
+        assertThat(actualValor).isEqualTo(actualValorMascara.reverse().toString());
+        String actualVenda = find(aplicativoAndroidSolicitacaoValorVenda).get().text().toString();
+        StringBuilder actualVendaHold = new StringBuilder();
+        StringBuilder actualVendaMascara = new StringBuilder();
+        actualVendaHold.append(valorVenda).reverse();
+        for (int i = 0; i < actualVendaHold.toString().length(); i++) {
+            if (i % 3 == 0 && i != 0) {
+                actualVendaMascara.append(".");
+            }
+            actualVendaMascara.append(actualVendaHold.toString().charAt(i));
+        }
+        evidence("Validando o valor de venda");
+        assertThat(actualVenda).isEqualTo(actualVendaMascara.reverse().toString());
+        oUsuarioClicaEmSalvarEAvancar();
     }
 
-    @And("variaveis ultilizadas cadastro de nova solicitacao para motos")
-    public void variaveisUltilizadasCadastroDeNovaSolicitacaoParaMotos() {
-        System.out.println("#######################################################################");
-        System.out.println("variavel proprietario: " + proprietario);
-        System.out.println("variavel sTelefone: " + sTelefone);
-        System.out.println("variavel celular: " + celular);
-        System.out.println("variavel email: " + email);
-        System.out.println("variavel vendedor: " + vendedor);
-        System.out.println("variavel placa: " + placa);
-        System.out.println("variavel anoFabricacao: " + anoFabricacao);
-        System.out.println("variavel anoLancamento: " + anoLancamento);
-        System.out.println("variavel kilometragem: " + kilometragem);
-        System.out.println("variavel marca: " + marca);
-        System.out.println("variavel modelo: " + modelo);
-        System.out.println("variavel versao: " + versao);
-        System.out.println("variavel cor: " + cor);
-        System.out.println("variavel combustivel: " + combustivel);
-        System.out.println("variavel cambio: " + cambio);
-        System.out.println("variavel procedencia: " + procedencia);
-        System.out.println("variavel estadoMotor: " + estadoMotor);
-        System.out.println("variavel estadoCambio: " + estadoCambio);
-        System.out.println("variavel classificacao: " + classificacao);
-        System.out.println("variavel finalidade: " + finalidade);
-        System.out.println("variavel valorCompra: " + valorCompra);
-        System.out.println("variavel valorVenda: " + valorVenda);
-        System.out.println("#######################################################################");
+    @Then("O usuario valida que a solicitacao foi realizada para moto")
+    public void oUsuarioValidaQueASolicitacaoFoiRealizadaParaMoto() {
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
+        String nomeDaAvaliacao = find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).get().text().toString();
+        assertThat(nomeDaAvaliacao).isEqualTo("CLIENTE: " + OWNER_ULTIMA);
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).click();
+        String actualOwner = find(aplicativoAndroidSolicitacaoOwnerInput).get().text().toString();
+        evidence("Validando o nome do owner");
+        assertThat(actualOwner).isEqualTo(OWNER_ULTIMA);
+        String actualTel = find(aplicativoAndroidSolicitacaoTelefoneInput).get().text().toString();
+        evidence("Validando o telefone");
+        actualTel = actualTel.replace("(", "").replace(")", "").replace(" ", "");
+        assertThat(actualTel).isEqualTo(sTelefone);
+        String actualCel = find(aplicativoAndroidSolicitacaoCelularInput).get().text().toString();
+        evidence("Validando o celular");
+        actualCel = actualCel.replace("(", "").replace(")", "").replace(" ", "");
+        assertThat(actualCel).isEqualTo(celular);
+        String actualEmail = find(aplicativoAndroidSolicitacaoEmailInput).get().text().toString();
+        evidence("Validando o email");
+        assertThat(actualEmail).isEqualTo(aplicativoAndroidEmailTeste);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualPlaca = find(aplicativoAndroidSolicitacaoPlacaInput).get().text().toString();
+        evidence("Validando a placa");
+        assertThat(actualPlaca).isEqualTo(placa);
+        sleep().until(2000);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualAnoFab = find(aplicativoAndroidSolicitacaoAnoDeFabricacaoText).get().text().toString();
+        evidence("Validando o ano de fabricacao");
+        assertThat(actualAnoFab).isEqualTo(ano);
+        String actualAnoLanc = find(aplicativoAndroidSolicitacaoAnoDeLancamentoText).get().text().toString();
+        evidence("Validando o ano de lancamento");
+        assertThat(actualAnoLanc).isEqualTo(ano);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualKm = find(aplicativoAndroidSolicitacaoKilometragemInput).get().text().toString();
+        evidence("Validando a kilometragem");
+        assertThat(actualKm).isEqualTo(km);
+        String actualMarca = find(aplicativoAndroidSolicitacaoMarcaText).get().text().toString();
+        evidence("Validando a marca");
+        assertThat(actualMarca).isEqualTo(marca.toUpperCase());
+        String actualModelo = find(aplicativoAndroidSolicitacaoModeloTexto).get().text().toString();
+        evidence("Validando o modelo");
+        assertThat(actualModelo).isEqualTo(modelo.toUpperCase());
+        oUsuarioArrastaATelaParaBaixo();
+        String actualVersao = find(aplicativoAndroidSolicitacaoVersaoText).get().text().toString();
+        evidence("Validando a versao");
+        assertThat(actualVersao).isEqualTo(versao.toUpperCase());
+        String actualCor = find(aplicativoAndroidSolicitacaoCorText).get().text().toString();
+        evidence("Validando a cor");
+        assertThat(actualCor).isEqualTo(cor.toUpperCase());
+        String sCombustivel = find(APLICATIVO_ANDROID_COMBUSTIVEL_VEICULO_SELECIONADO).get().text().toString();
+        assertThat(sCombustivel).isEqualTo(combustivel);
+        String sTipoCambio = find(APLICATIVO_ANDROID_TIPO_CAMBIO_VEICULO_SELECIONADO).get().text().toString();
+        assertThat(sTipoCambio).isEqualTo(cambio);
+        String sProcedencia = find(APLICATIVO_ANDROID_PROCEDENCIA_VEICULO_SELECIONADA).get().text().toString();
+        assertThat(sProcedencia).isEqualTo(procedencia);
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        String actualStatusMotor = find(aplicativoAndroidSolicitacaoStatusAvaliacaoMotor).get().text().toString();
+        evidence("Validando o status do motor");
+        assertThat(actualStatusMotor).isEqualTo(estadoMotor.toUpperCase());
+        String actualStatusCambio = find(aplicativoAndroidSolicitacaoStatusAvaliacaoCambio).get().text().toString();
+        evidence("Validando o status do cambio");
+        assertThat(actualStatusCambio).isEqualTo(estadoCambio.toUpperCase());
+        oUsuarioClicaEmSalvarEAvancar();
+        String sClassificacao = find(APLICATIVO_ANDROID_CLASSIFICACAO_SELECIONADA).get().text().toString();
+        assertThat(sClassificacao).isEqualTo(classificacao);
+        String sFinalidade = find(APLICATIVO_ANDROID_FINALIDADE_SELECIONADA).get().text().toString();
+        assertThat(sFinalidade).isEqualTo(finalidade);
+        evidence("evidence");
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        String actualValor = find(aplicativoAndroidSolicitacaoValorCompra).get().text().toString();
+        StringBuilder actualValorHold = new StringBuilder();
+        StringBuilder actualValorMascara = new StringBuilder();
+        actualValorHold.append(valorCompra).reverse();
+        for (int i = 0; i < actualValorHold.toString().length(); i++) {
+            if (i % 3 == 0 && i != 0) {
+                actualValorMascara.append(".");
+            }
+            actualValorMascara.append(actualValorHold.toString().charAt(i));
+        }
+        evidence("Validando o valor de compra");
+        assertThat(actualValor).isEqualTo(actualValorMascara.reverse().toString());
+        String actualVenda = find(aplicativoAndroidSolicitacaoValorVenda).get().text().toString();
+        StringBuilder actualVendaHold = new StringBuilder();
+        StringBuilder actualVendaMascara = new StringBuilder();
+        actualVendaHold.append(valorVenda).reverse();
+        for (int i = 0; i < actualVendaHold.toString().length(); i++) {
+            if (i % 3 == 0 && i != 0) {
+                actualVendaMascara.append(".");
+            }
+            actualVendaMascara.append(actualVendaHold.toString().charAt(i));
+        }
+        evidence("Validando o valor de venda");
+        assertThat(actualVenda).isEqualTo(actualVendaMascara.reverse().toString());
+        oUsuarioClicaEmSalvarEAvancar();
+        log().setLocator(aplicativoAndroidMain);
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
     }
 
-    @And("O usuario guarda variaveis utilizadas no cadastro de solicitacao para carro")
-    public void oUsuarioGuardaVariaveisUtilizadasNoCadastroDeSolicitacaoParaCarro() {
-        System.out.println("variavel proprietario: " + proprietario);
-        System.out.println("variavel sTelefone: " + sTelefone);
-        System.out.println("variavel celular: " + celular);
-        System.out.println("variavel email: " + email);
-        System.out.println("variavel vendedor: " + vendedor);
-        System.out.println("variavel placa: " + placa);
-        System.out.println("variavel anoFabricacao: " + anoFabricacao);
-        System.out.println("variavel anoLancamento: " + anoLancamento);
-        System.out.println("variavel kilometragem: " + kilometragem);
-        System.out.println("variavel marca: " + marca);
-        System.out.println("variavel modelo: " + modelo);
-        System.out.println("variavel versao: " + versao);
-        System.out.println("variavel cor: " + cor);
-        System.out.println("variavel combustivel: " + combustivel);
-        System.out.println("variavel cambio: " + cambio);
-        System.out.println("variavel procedencia: " + procedencia);
-        System.out.println("variavel quantidadePortas: " + quantidadePortas);
-        System.out.println("variavel estadoMotor: " + estadoMotor);
-        System.out.println("variavel estadoCambio: " + estadoCambio);
-        System.out.println("variavel classificacao: " + classificacao);
-        System.out.println("variavel finalidade: " + finalidade);
-        System.out.println("variavel valorCompra: " + valorCompra);
-        System.out.println("variavel valorVenda: " + valorVenda);
+    @Then("O usuario valida que a solicitacao foi realizada para carro")
+    public void oUsuarioValidaQueASolicitacaoFoiRealizadaParaCarro() {
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
+        String nomeDaAvaliacao = find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).get().text().toString();
+        assertThat(nomeDaAvaliacao).isEqualTo("CLIENTE: " + OWNER_ULTIMA);
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).click();
+        String actualOwner = find(aplicativoAndroidSolicitacaoOwnerInput).get().text().toString();
+        evidence("Validando o nome do owner");
+        assertThat(actualOwner).isEqualTo(OWNER_ULTIMA);
+        String actualTel = find(aplicativoAndroidSolicitacaoTelefoneInput).get().text().toString();
+        evidence("Validando o telefone");
+        actualTel = actualTel.replace("(", "").replace(")", "").replace(" ", "");
+        assertThat(actualTel).isEqualTo(sTelefone);
+        String actualCel = find(aplicativoAndroidSolicitacaoCelularInput).get().text().toString();
+        evidence("Validando o celular");
+        actualCel = actualCel.replace("(", "").replace(")", "").replace(" ", "");
+        assertThat(actualCel).isEqualTo(celular);
+        String actualEmail = find(aplicativoAndroidSolicitacaoEmailInput).get().text().toString();
+        evidence("Validando o email");
+        assertThat(actualEmail).isEqualTo(aplicativoAndroidEmailTeste);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualPlaca = find(aplicativoAndroidSolicitacaoPlacaInput).get().text().toString();
+        evidence("Validando a placa");
+        assertThat(actualPlaca).isEqualTo(placa);
+        sleep().until(2000);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualAnoFab = find(aplicativoAndroidSolicitacaoAnoDeFabricacaoText).get().text().toString();
+        evidence("Validando o ano de fabricacao");
+        assertThat(actualAnoFab).isEqualTo(ano);
+        String actualAnoLanc = find(aplicativoAndroidSolicitacaoAnoDeLancamentoText).get().text().toString();
+        evidence("Validando o ano de lancamento");
+        assertThat(actualAnoLanc).isEqualTo(ano);
+        oUsuarioArrastaATelaParaBaixo();
+        String actualKm = find(aplicativoAndroidSolicitacaoKilometragemInput).get().text().toString();
+        evidence("Validando a kilometragem");
+        assertThat(actualKm).isEqualTo(km);
+        String actualMarca = find(aplicativoAndroidSolicitacaoMarcaText).get().text().toString();
+        evidence("Validando a marca");
+        assertThat(actualMarca).isEqualTo(marca.toUpperCase());
+        String actualModelo = find(aplicativoAndroidSolicitacaoModeloTexto).get().text().toString();
+        evidence("Validando o modelo");
+        assertThat(actualModelo).isEqualTo(modelo.toUpperCase());
+        oUsuarioArrastaATelaParaBaixo();
+        String actualVersao = find(aplicativoAndroidSolicitacaoVersaoText).get().text().toString();
+        evidence("Validando a versao");
+        assertThat(actualVersao).isEqualTo(versao.toUpperCase());
+        String actualCor = find(aplicativoAndroidSolicitacaoCorText).get().text().toString();
+        evidence("Validando a cor");
+        assertThat(actualCor).isEqualTo(cor.toUpperCase());
+        String sCombustivel = find(APLICATIVO_ANDROID_COMBUSTIVEL_VEICULO_SELECIONADO).get().text().toString();
+        assertThat(sCombustivel).isEqualTo(combustivel);
+        String sTipoCambio = find(APLICATIVO_ANDROID_TIPO_CAMBIO_VEICULO_SELECIONADO).get().text().toString();
+        assertThat(sTipoCambio).isEqualTo(cambio);
+        String sProcedencia = find(APLICATIVO_ANDROID_PROCEDENCIA_VEICULO_SELECIONADA).get().text().toString();
+        assertThat(sProcedencia).isEqualTo(procedencia);
+        String sQuatidadePortas = find(APLICATIVO_ANDROID_QUANTIDADE_PORTAS).get().text().toString();
+        assertThat(sQuatidadePortas).isEqualTo(quantidadePortas);
+        oUsuarioClicaEmSalvarEAvancar();
+        sleep().until(2000);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioClicaEmSalvarEAvancar();
+        String actualStatusMotor = find(aplicativoAndroidSolicitacaoStatusAvaliacaoMotor).get().text().toString();
+        evidence("Validando o status do motor");
+        assertThat(actualStatusMotor).isEqualTo(estadoMotor.toUpperCase());
+        String actualStatusCambio = find(aplicativoAndroidSolicitacaoStatusAvaliacaoCambio).get().text().toString();
+        evidence("Validando o status do cambio");
+        assertThat(actualStatusCambio).isEqualTo(estadoCambio.toUpperCase());
+        oUsuarioClicaEmSalvarEAvancar();
+        String sClassificacao = find(APLICATIVO_ANDROID_CLASSIFICACAO_SELECIONADA).get().text().toString();
+        assertThat(sClassificacao).isEqualTo(classificacao);
+        String sFinalidade = find(APLICATIVO_ANDROID_FINALIDADE_SELECIONADA).get().text().toString();
+        assertThat(sFinalidade).isEqualTo(finalidade);
+        evidence("evidence");
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        String actualValor = find(aplicativoAndroidSolicitacaoValorCompra).get().text().toString();
+        StringBuilder actualValorHold = new StringBuilder();
+        StringBuilder actualValorMascara = new StringBuilder();
+        actualValorHold.append(valorCompra).reverse();
+        for (int i = 0; i < actualValorHold.toString().length(); i++) {
+            if (i % 3 == 0 && i != 0) {
+                actualValorMascara.append(".");
+            }
+            actualValorMascara.append(actualValorHold.toString().charAt(i));
+        }
+        evidence("Validando o valor de compra");
+        assertThat(actualValor).isEqualTo(actualValorMascara.reverse().toString());
+        String actualVenda = find(aplicativoAndroidSolicitacaoValorVenda).get().text().toString();
+        StringBuilder actualVendaHold = new StringBuilder();
+        StringBuilder actualVendaMascara = new StringBuilder();
+        actualVendaHold.append(valorVenda).reverse();
+        for (int i = 0; i < actualVendaHold.toString().length(); i++) {
+            if (i % 3 == 0 && i != 0) {
+                actualVendaMascara.append(".");
+            }
+            actualVendaMascara.append(actualVendaHold.toString().charAt(i));
+        }
+        evidence("Validando o valor de venda");
+        assertThat(actualVenda).isEqualTo(actualVendaMascara.reverse().toString());
+        oUsuarioClicaEmSalvarEAvancar();
+        log().setLocator(aplicativoAndroidMain);
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
     }
 }

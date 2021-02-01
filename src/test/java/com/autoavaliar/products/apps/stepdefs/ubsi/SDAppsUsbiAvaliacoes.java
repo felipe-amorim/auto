@@ -259,13 +259,16 @@ public class SDAppsUsbiAvaliacoes extends CoreWeb {
 
     @Then("O usuario valida que todos os dados inseridos na avaliação da moto sao apresentados no portal")
     public void oUsuarioValidaQueTodosOsDadosInseridosNaAvaliaçãoDaMotoSaoApresentadosNoPortal() {
+        //placa = "FFF0002";
         log().setLocator(appsAvaliacoes);
         find(appsAvaliacoesBuscarPlacaInput).send().text(placa);
         find(appsAvaliacoesBuscarButton).click();
         find(APPS_USBI_AVALIACOES_BUTTON_AVALIACAO_ESPECIFICA_PLACA.replace("arg0", placa)).click();
-        find(APPS_USBI_AVALIACOES_TEXT_TELEFONE).click();
+        find(APPS_USBI_AVALIACOES_TEXT_TELEFONE).move();
         String usbiTelefone = find(APPS_USBI_AVALIACOES_TEXT_TELEFONE).get().text().toString();
         usbiTelefone = usbiTelefone.replace(" ", "").replace("(", "").replace(")", "").replace("-", "");
+        System.out.println("variavel usbiTelefone: " + usbiTelefone);
+        System.out.println("variavel sTelefone: " + sTelefone);
         assertThat(usbiTelefone).isEqualTo(sTelefone);
         String usbiCelular = find(APPS_USBI_AVALIACOES_TEXT_CELULAR).get().text().toString();
         usbiCelular = usbiCelular.replace(" ", "").replace("(", "").replace(")", "").replace("-", "");
