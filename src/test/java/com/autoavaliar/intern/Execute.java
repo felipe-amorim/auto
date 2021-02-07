@@ -1,7 +1,6 @@
 package com.autoavaliar.intern;
 
 import com.autoavaliar.support.web.ScrollWeb;
-import com.autoavaliar.support.web.driver.WebDriver;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
