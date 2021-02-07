@@ -209,7 +209,7 @@ public class Instances {
     private static boolean resetPageLoad = false;
     private static final int defaultWaitMilisBackUp = 10000;
     private static int defaultWaitMilis = 10000;
-    private static org.sikuli.script.Screen screenSikuli = null;
+    public static org.sikuli.script.Screen screenSikuli = null;
     private static boolean headless = false;
     private static boolean compability = false;
     private static boolean cleanSection = false;
@@ -454,10 +454,10 @@ public class Instances {
     }
 
     public static void setScreenSikuli() {
-        if (screenSikuli == null) {
+        //if (screenSikuli == null) {
             screenSikuli = new org.sikuli.script.Screen();
-            Settings.DefaultHighlightTime = 1;
-        }
+            //Settings.DefaultHighlightTime = 1;
+        //}
     }
 
     public static String getMessageUntilDisapearFail() {

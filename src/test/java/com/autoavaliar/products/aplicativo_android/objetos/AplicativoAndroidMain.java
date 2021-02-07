@@ -17,8 +17,8 @@ public class AplicativoAndroidMain {
         LinkedHashMap<String, String> ret = new LinkedHashMap<>();
         ret.put(aplicativoAndroidMainMaisButton, "Mais");
         ret.put(aplicativoAndroidMainCarroButton, "Carro");
-        ret.put(aplicativoAndroidMainMotoButton, "Moto");
-        ret.put(aplicativoAndroidMainCaminhaoButton, "Caminhao");
+        ret.put(aplicativoAndroidMainCarroButton, "Moto");
+        ret.put(aplicativoAndroidMainCarroButton, "Caminhao");
         ret.put(APLICATIVO_ANDROID_MAIN_REALIZADAS, "Realizadas");
         ret.put(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS, "Card Realizado");
         return ret;

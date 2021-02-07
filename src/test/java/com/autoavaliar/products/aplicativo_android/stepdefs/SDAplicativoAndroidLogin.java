@@ -28,7 +28,8 @@ public class SDAplicativoAndroidLogin extends CoreAndroid {
                 .platformName("android")
                 .platformVersion(arg1)
                 .skipUnlock("true")
-                .udid("emulator-5554").load();
+
+                .udid("0036140297").load();
         evidence("Abrindo o device: '"+arg0+"' com o android '"+arg1+"'");
     }
 
@@ -68,7 +69,7 @@ public class SDAplicativoAndroidLogin extends CoreAndroid {
 
     @Given("O usuario abre o aplicativo como {string} {string}")
     public void oUsuarioAbreOAplicativoComo(String arg0, String arg1) {
-        oUsuarioAbreOAplicativoComODispositivoEVersaoDoOS("generic_x86 ", "10");
+        oUsuarioAbreOAplicativoComODispositivoEVersaoDoOS("cedric", "8.1");
         oUsuarioAcessaOMenuBrasil();
         find(AplicativoAndroidLogin.aplicativoAndroidLoginEmailInput).send().text(arg0);
         find(AplicativoAndroidLogin.aplicativoAndroidLoginSenhaInput).send().text(arg1);

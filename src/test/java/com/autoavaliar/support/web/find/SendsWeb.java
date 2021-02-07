@@ -67,6 +67,21 @@ public class SendsWeb {
         return this;
     }
 
+    public SendsWeb esc(){
+        if (!Instances.getEach()) {
+            Instances.getExecuteClassInstance().execute(()->{
+                Instances.getWebLastElements().get(0).sendKeys(Keys.ESCAPE);});
+            Instances.getScreenshotClassInstance().print();
+            Instances.getReportClassInstance().stepPass(Instances.getMessageSend().replace("arg0", "ESCAPE") + Instances.getWebLastXpathLog());
+        } else {
+            for (WebElement element : Instances.getWebLastElements()) {
+                Instances.getExecuteClassInstance().execute(()->{element.sendKeys(Keys.ESCAPE);});
+                Instances.getReportClassInstance().stepPass(Instances.getMessageSendEach().replace("arg0", "ESCAPE") + Instances.getWebLastXpathLog());
+            }
+            Instances.setEach(false);
+        }
+        return this;
+    }
 
     public SendsWeb enter(){
         if (!Instances.getEach()) {

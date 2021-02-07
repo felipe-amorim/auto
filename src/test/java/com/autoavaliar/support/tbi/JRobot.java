@@ -295,7 +295,7 @@ public class JRobot {
 
     public static Robot getRobot()
     {
-        esperar(50);
+        esperar(10);
         if(robot==null){
             esperar(500);
             setRobot();

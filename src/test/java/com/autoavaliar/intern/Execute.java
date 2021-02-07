@@ -29,6 +29,7 @@ public class Execute {
         int contadorDePaginas = 0;
         boolean executed = false;
         long tempoMaximo = Instances.getDefaultWaitMilis();
+        Throwable t = null;
         while (true){
             long ti = Calendar.getInstance().getTimeInMillis();
             try {
@@ -44,6 +45,7 @@ public class Execute {
                 break;
             } catch (WebDriverException e){
                 erroE = e.getMessage();
+                t = e;
             }
             if (erroE.length() == 0){
                 break;
@@ -73,6 +75,7 @@ public class Execute {
             tempoMaximo -= dif;
             System.out.println("Tempo decorrido na execução - execute: "+dif);
             System.out.println("Tempo restante para a execução - execute: "+tempoMaximo);
+            System.out.println(t);
             if (tempoMaximo <= 0) {
                 break;
             }

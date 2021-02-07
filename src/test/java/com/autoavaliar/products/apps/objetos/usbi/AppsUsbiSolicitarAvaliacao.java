@@ -71,7 +71,6 @@ public class AppsUsbiSolicitarAvaliacao {
     public static String appsSolicitarAvaliacaoPossuiChaveReservaComboBox = "//label[text()=\"O veículo possui chave reserva?\"]//ancestor::div[@ng-if]//select";
     public static String appsSolicitarAvaliacaoPossuiPossuiGarantiaComboBox = "//label[text()=\"Veículo possui garantia?\"]//ancestor::div[@ng-if]//select";
 
-
     public static LinkedHashMap<String, String> appsSolicitarAvaliacao = createData();
     private static LinkedHashMap<String, String> createData() {
         LinkedHashMap<String, String> ret = new LinkedHashMap<>();
@@ -141,7 +140,6 @@ public class AppsUsbiSolicitarAvaliacao {
         ret.put(appsSolicitarAvaliacaoEstaPerguntaEStringInput, "Esta pergunta é string");
         ret.put(appsSolicitarAvaliacaoPossuiChaveReservaComboBox, "O veiculo possui chave reserva");
         ret.put(appsSolicitarAvaliacaoPossuiPossuiGarantiaComboBox, "O veiculo possui garantia");
-
         return ret;
     }
 }
