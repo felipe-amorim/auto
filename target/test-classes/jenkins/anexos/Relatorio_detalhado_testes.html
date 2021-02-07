@@ -36,7 +36,6 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
-			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' view='author-view' onclick="configureView(3)"><i class='material-icons'>person_outline</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
@@ -47,7 +46,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>2021/02/01 - 01:38:30.783</span>
+			<span class='label blue darken-3 suite-start-time'>2021/02/01 - 01:52:14.733</span>
 			</a>
 		</ul>
 	</div>
@@ -63,7 +62,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li status='warning'><a href='#!'>Warning <i class='material-icons orange-text'>warning</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -119,7 +118,7 @@
                     <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
                 </div>
             </div>
         </div>
@@ -133,7 +132,7 @@
                     <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
                 </div>
             </div>
         </div>
@@ -165,25 +164,25 @@
 </div>	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='1'>
+				<li class='test displayed active has-leaf warning' status='warning' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>solicitacoes</span>
-						<span class='test-time'>2021/02/01 - 01:38:31.616</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-time'>2021/02/01 - 01:52:15.776</span>
+						<span class='test-status right warning'>warning</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>2021/02/01 - 01:38:31.616</span>
-	<span class='label end-time'>2021/02/01 - 01:39:41.713</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 10s+97ms</span>
+	<span class='label start-time'>2021/02/01 - 01:52:15.776</span>
+	<span class='label end-time'>2021/02/01 - 01:57:53.221</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 5m 37s+445ms</span>
 </div>
 <ul class='collapsible node-list' data-collapsible='accordion'>
-	<li class='node level-1  fail' status='fail' test-id='2'>
+	<li class='node level-1  warning' status='warning' test-id='2'>
 		<div class='collapsible-header'>
-			<div class='node-name'>Realizar nova solicitacao para caminhao mais usbi</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>Nova_Solicitacao_-_Moto</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Galaxy_S9_-_Android_10_-_App_1.0</span></div>
-			<span class='node-time'>2021/02/01 - 01:38:31.616</span>
-			&middot; <span class='node-duration'>0h 1m 10s+97ms</span>
-			<span class='test-status right fail'>fail</span>
+			<div class='node-name'>Realizar nova solicitacao para moto mais usbi com campos obrigatorios</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>Nova_Solicitacao_-_Moto</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Galaxy_S9_-_Android_10_-_App_1.0</span></div>
+			<span class='node-time'>2021/02/01 - 01:52:15.776</span>
+			&middot; <span class='node-duration'>0h 5m 37s+445ms</span>
+			<span class='test-status right warning'>warning</span>
 			<div class='category-list'>
 				<span class='category label'>Nova_Solicitacao_-_Moto</span>
 			</div>
@@ -191,9 +190,9 @@
 		<ul class='collapsible-body collapsible node-list' data-collapsible='accordion'>
 	<li class='node level-2 leaf pass' status='pass' test-id='3'>
 		<div class='collapsible-header'>
-			<div class='node-name'>O usuario acessa portal auto avaliar usb com usuario vendedor</div>
-			<span class='node-time'>2021/02/01 - 01:38:31.616</span>
-			&middot; <span class='node-duration'>0h 0m 31s+631ms</span>
+			<div class='node-name'>O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"</div>
+			<span class='node-time'>2021/02/01 - 01:52:15.776</span>
+			&middot; <span class='node-duration'>0h 0m 44s+821ms</span>
 			<span class='test-status right pass'>pass</span>
 		</div>
 		<div class='collapsible-body'>
@@ -209,81 +208,81 @@
 					<tbody>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:38:40 AM</td>
+							<td class='timestamp'>1:52:16 AM</td>
 							<td class='step-details'>
-									Navegando para a URI https://apps.autoavaliar.com.br/login/usbi#
+									Tirando uma evidência - Abrindo o device: 'generic_x86 ' com o android '10' <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_1.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:38:41 AM</td>
+							<td class='timestamp'>1:52:40 AM</td>
 							<td class='step-details'>
-									Aguardando a exibição do elemento E-mail <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_1.png'><i class='material-icons'>panorama</i></a>
+									Clicando no elemento Brasil <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_2.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:38:42 AM</td>
+							<td class='timestamp'>1:52:42 AM</td>
 							<td class='step-details'>
-									Enviando o texto 'vendedortimeqa@autoavaliar.com.br' para o campo E-mail <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_2.png'><i class='material-icons'>panorama</i></a>
+									Enviando o texto 'timeqa.apk@autoavaliar.com.br' para o campo E-mail <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_3.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:38:43 AM</td>
+							<td class='timestamp'>1:52:44 AM</td>
 							<td class='step-details'>
-									Enviando o texto 'timeqa0102' para o campo Senha <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_3.png'><i class='material-icons'>panorama</i></a>
+									Enviando o texto 'timeqa0102' para o campo Senha <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_4.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:38:43 AM</td>
+							<td class='timestamp'>1:52:47 AM</td>
 							<td class='step-details'>
-									Clicando no elemento Login <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_4.png'><i class='material-icons'>panorama</i></a>
+									Clicando no elemento Botão entrar <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_5.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:38:46 AM</td>
+							<td class='timestamp'>1:52:54 AM</td>
 							<td class='step-details'>
-									Aguardando a exibição do elemento [Log do xpath nÃ£o definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_5.png'><i class='material-icons'>panorama</i></a>
+									Clicando no elemento [Log do xpath nÃ£o definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_6.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:39:01 AM</td>
+							<td class='timestamp'>1:52:56 AM</td>
 							<td class='step-details'>
-									Validando a existência do elemento Alerta <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_6.png'><i class='material-icons'>panorama</i></a>
+									Clicando no elemento [Log do xpath nÃ£o definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_7.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:39:01 AM</td>
+							<td class='timestamp'>1:52:57 AM</td>
 							<td class='step-details'>
-									Clicando no elemento Avalicações <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_7.png'><i class='material-icons'>panorama</i></a>
+									Clicando no elemento [Log do xpath nÃ£o definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_8.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:39:02 AM</td>
+							<td class='timestamp'>1:52:58 AM</td>
 							<td class='step-details'>
-									Clicando no elemento Sub menu avalicações <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_8.png'><i class='material-icons'>panorama</i></a>
+									Clicando no elemento [Log do xpath nÃ£o definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_9.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:39:03 AM</td>
+							<td class='timestamp'>1:53:00 AM</td>
 							<td class='step-details'>
-									Validando a existência do elemento Titulo avaliações <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_9.png'><i class='material-icons'>panorama</i></a>
+									Clicando no elemento [Log do xpath nÃ£o definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_10.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
@@ -292,12 +291,12 @@
 			</div>
 		</div>
 	</li>
-	<li class='node level-2 leaf fail' status='fail' test-id='4'>
+	<li class='node level-2 leaf warning' status='warning' test-id='4'>
 		<div class='collapsible-header'>
-			<div class='node-name'>O usuario valida que todos os dados inseridos na avaliação do caminhao sao apresentados no portal</div>
-			<span class='node-time'>2021/02/01 - 01:39:03.360</span>
-			&middot; <span class='node-duration'>0h 0m 38s+353ms</span>
-			<span class='test-status right fail'>fail</span>
+			<div class='node-name'>O usuario realiza uma nova solicitacao para moto "FFF0002" "2016" "120001" "honda" "cb twister" "bom" "bom" "20000" "35000"</div>
+			<span class='node-time'>2021/02/01 - 01:53:00.783</span>
+			&middot; <span class='node-duration'>0h 4m 3s+519ms</span>
+			<span class='test-status right warning'>warning</span>
 		</div>
 		<div class='collapsible-body'>
 			<div class='node-steps'>
@@ -312,82 +311,887 @@
 					<tbody>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:39:04 AM</td>
+							<td class='timestamp'>1:53:03 AM</td>
 							<td class='step-details'>
-									Enviando o texto '' para o campo Input buscar placa <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_10.png'><i class='material-icons'>panorama</i></a>
+									Clicando no elemento Mais <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_11.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:39:05 AM</td>
+							<td class='timestamp'>1:53:05 AM</td>
 							<td class='step-details'>
-									Clicando no elemento Botão buscar para filtrar avaliações <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_11.png'><i class='material-icons'>panorama</i></a>
+									Clicando no elemento Moto <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_12.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:39:06 AM</td>
+							<td class='timestamp'>1:53:09 AM</td>
 							<td class='step-details'>
-									Clicando no elemento [Log do xpath nÃ£o definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_12.png'><i class='material-icons'>panorama</i></a>
+									Enviando o texto 'AUTO-1612155180784' para o campo Owner <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_13.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
-						<tr class='log' status='fail'>
-							<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-							<td class='timestamp'>1:39:41 AM</td>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:10 AM</td>
 							<td class='step-details'>
-									[FAIL]  <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparacaminhaomaisusbi/_13.png'><i class='material-icons'>panorama</i></a>
+									Enviando o texto '1612155180' para o campo Telefone <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_14.png'><i class='material-icons'>panorama</i></a>
 								
 							</td>
 						</tr>
-						<tr class='log' status='fail'>
-							<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-							<td class='timestamp'>1:39:41 AM</td>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:11 AM</td>
 							<td class='step-details'>
-									<textarea disabled class="code-block">java.lang.NullPointerException: O elemento almejado não estava disponivel após o tempo máximo de espera
-	at com.autoavaliar.support.web.sleep.SleepWeb.untilAppear(SleepWeb.java:65)
-	at com.autoavaliar.products.apps.stepdefs.ubsi.SDAppsUsbiAvaliacoes.oUsuarioValidaQueTodosOsDadosInseridosNaAvaliaçãoDoCaminhaoSaoApresentadosNoPortal(SDAppsUsbiAvaliacoes.java:201)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at cucumber.runtime.Utils$1.call(Utils.java:26)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
-	at cucumber.runtime.Utils.invoke(Utils.java:20)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)
-	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
-	at cucumber.runner.TestStep.executeStep(TestStep.java:65)
-	at cucumber.runner.TestStep.run(TestStep.java:50)
-	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
-	at cucumber.runner.TestCase.run(TestCase.java:46)
-	at cucumber.runner.Runner.runPickle(Runner.java:49)
-	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:123)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:65)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at cucumber.api.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:147)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53)
-</textarea>
+									Enviando o texto '16121551807' para o campo Celular <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_15.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:12 AM</td>
+							<td class='step-details'>
+									Enviando o texto 'emailteste@teste.com.br' para o campo Email <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_16.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:14 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Vendedor <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_17.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:15 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Primeiro elemento da lista <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_18.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:17 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_19.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:19 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_20.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:20 AM</td>
+							<td class='step-details'>
+									Enviando o texto 'FFF0002' para o campo Placa <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_21.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:22 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Ano de fabricacao <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_22.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:23 AM</td>
+							<td class='step-details'>
+									Enviando o texto '2016' para o campo Campo de busca <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_23.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:24 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Primeiro elemento da lista <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_24.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:25 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Ano de fabricacao <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_25.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:26 AM</td>
+							<td class='step-details'>
+									Enviando o texto '2016' para o campo Campo de busca <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_26.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:27 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Primeiro elemento da lista <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_27.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:29 AM</td>
+							<td class='step-details'>
+									Enviando o texto '120001' para o campo Kilometragem <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_28.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:30 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Marca <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_29.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:30 AM</td>
+							<td class='step-details'>
+									Enviando o texto 'honda' para o campo Filtro <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_30.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:32 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Primeiro elemento da lista <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_31.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:36 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Modelo <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_32.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:37 AM</td>
+							<td class='step-details'>
+									Enviando o texto 'cb twister' para o campo Filtro <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_33.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:38 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Primeiro elemento da lista <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_34.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:43 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_35.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:44 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Versao <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_36.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:45 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Primeiro cambio <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_37.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:49 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Cor <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_38.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:50 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Primeiro elemento da lista <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_39.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:55 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_40.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:56 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Combustivel <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_41.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:53:57 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Primeiro elemento da lista <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_42.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:54:02 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Cambio <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_43.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:54:03 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Primeiro elemento da lista <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_44.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:54:04 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Procedencia <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_45.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:54:05 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Primeiro elemento da lista <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_46.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:54:08 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_47.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:54:10 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_48.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:54:12 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_49.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:54:14 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Fotos <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_50.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:54:30 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Tirar foto <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_51.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='warning'>
+							<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+							<td class='timestamp'>1:54:41 AM</td>
+							<td class='step-details'>
+									[ALERT] Arduino was null <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_52.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:54:51 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Tirar foto <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_53.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='warning'>
+							<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+							<td class='timestamp'>1:55:03 AM</td>
+							<td class='step-details'>
+									[ALERT] Arduino was null <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_54.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:55:14 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Tirar foto <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_55.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='warning'>
+							<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+							<td class='timestamp'>1:55:24 AM</td>
+							<td class='step-details'>
+									[ALERT] Arduino was null <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_56.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:55:35 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Tirar foto <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_57.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='warning'>
+							<td class='status warning' title='warning' alt='warning'><i class='material-icons'>warning</i></td>
+							<td class='timestamp'>1:55:44 AM</td>
+							<td class='step-details'>
+									[ALERT] Arduino was null <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_58.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:55:49 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Fechar camera <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_59.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:55:50 AM</td>
+							<td class='step-details'>
+									Validando a existência do elemento Fotos <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_60.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:55:51 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia de fotos armazenadas <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_61.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:55:53 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_62.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:55:56 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Salvar e avançar <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_63.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:03 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_64.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:05 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_65.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:08 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_66.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:11 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Salvar e avançar <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_67.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:17 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Avaliacao de motor <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_68.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:18 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Estado do item <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_69.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:19 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Estado do item bom <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_70.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:20 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Salvar <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_71.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:22 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Avaliação motor caminhão <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_72.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:23 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Estado do item <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_73.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:25 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Estado do item bom <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_74.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:26 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Salvar <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_75.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:29 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Salvar e avançar <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_76.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:35 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - evidence <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_77.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:36 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Classificacao <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_78.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:37 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Estado do item ruim <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_79.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:38 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Finalidade <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_80.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:41 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Estado do item ruim <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_81.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:48 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_82.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:50 AM</td>
+							<td class='step-details'>
+									Tirando uma evidência - Evidencia scroll <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_83.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:51 AM</td>
+							<td class='step-details'>
+									Enviando o texto '20000' para o campo Valor compra <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_84.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:52 AM</td>
+							<td class='step-details'>
+									Enviando o texto '35000' para o campo Valor venda <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_85.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:56:53 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Salvar e avançar <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_86.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:04 AM</td>
+							<td class='step-details'>
+									Clicando no elemento [Log do xpath nÃ£o definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_87.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-2 leaf pass' status='pass' test-id='5'>
+		<div class='collapsible-header'>
+			<div class='node-name'>O usuario acessa portal auto avaliar usb com usuario vendedor</div>
+			<span class='node-time'>2021/02/01 - 01:57:04.402</span>
+			&middot; <span class='node-duration'>0h 0m 35s+171ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:14 AM</td>
+							<td class='step-details'>
+									Navegando para a URI https://apps.autoavaliar.com.br/login/usbi#
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:16 AM</td>
+							<td class='step-details'>
+									Aguardando a exibição do elemento E-mail <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_88.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:17 AM</td>
+							<td class='step-details'>
+									Enviando o texto 'vendedortimeqa@autoavaliar.com.br' para o campo E-mail <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_89.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:18 AM</td>
+							<td class='step-details'>
+									Enviando o texto 'timeqa0102' para o campo Senha <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_90.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:18 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Login <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_91.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:22 AM</td>
+							<td class='step-details'>
+									Aguardando a exibição do elemento [Log do xpath nÃ£o definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_92.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:37 AM</td>
+							<td class='step-details'>
+									Validando a existência do elemento Alerta <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_93.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:37 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Avalicações <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_94.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:38 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Sub menu avalicações <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_95.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:39 AM</td>
+							<td class='step-details'>
+									Validando a existência do elemento Titulo avaliações <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_96.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-2 leaf pass' status='pass' test-id='6'>
+		<div class='collapsible-header'>
+			<div class='node-name'>O usuario valida que todos os dados inseridos na avaliação da moto sao apresentados no portal</div>
+			<span class='node-time'>2021/02/01 - 01:57:39.700</span>
+			&middot; <span class='node-duration'>0h 0m 13s+521ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:40 AM</td>
+							<td class='step-details'>
+									Enviando o texto 'FFF0002' para o campo Input buscar placa <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_97.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:41 AM</td>
+							<td class='step-details'>
+									Clicando no elemento Botão buscar para filtrar avaliações <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_98.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:41 AM</td>
+							<td class='step-details'>
+									Clicando no elemento [Log do xpath nÃ£o definido] <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_99.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:46 AM</td>
+							<td class='step-details'>
+									Simulando o mouse sobre o elemento Telefone cadastrado <a data-featherlight='image' style='float: right;padding: 0px;' href='../evidencias/solicitacoes/Realizarnovasolicitacaoparamotomaisusbicomcamposobrigatorios/_100.png'><i class='material-icons'>panorama</i></a>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:47 AM</td>
+							<td class='step-details'>
+									Validando que o texto '1612155180' era igual ao texto '1612155180'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:47 AM</td>
+							<td class='step-details'>
+									Validando que o texto '16121551807' era igual ao texto '16121551807'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:48 AM</td>
+							<td class='step-details'>
+									Validando que o texto 'emailteste@teste.com.br' era igual ao texto 'emailteste@teste.com.br'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:48 AM</td>
+							<td class='step-details'>
+									Validando que o texto 'Vendedor Time QA' era igual ao texto 'Vendedor Time QA'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:49 AM</td>
+							<td class='step-details'>
+									Validando que o texto 'FFF0002' era igual ao texto 'FFF0002'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:49 AM</td>
+							<td class='step-details'>
+									Validando que o texto '2016/2016' era igual ao texto '2016/2016'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:50 AM</td>
+							<td class='step-details'>
+									Validando que o texto '120001' era igual ao texto '120001'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:50 AM</td>
+							<td class='step-details'>
+									Validando que o texto 'AMARELO' era igual ao texto 'AMARELO'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:50 AM</td>
+							<td class='step-details'>
+									Validando que o texto 'FLEX' era igual ao texto 'FLEX'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:51 AM</td>
+							<td class='step-details'>
+									Validando que o texto 'MANUAL' era igual ao texto 'MANUAL'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:51 AM</td>
+							<td class='step-details'>
+									Validando que o texto 'A' era igual ao texto 'A'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:52 AM</td>
+							<td class='step-details'>
+									Validando que o texto 'SHOWROOM' era igual ao texto 'SHOWROOM'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:52 AM</td>
+							<td class='step-details'>
+									Validando que o texto ' 20000' continha o texto '20000'
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:57:53 AM</td>
+							<td class='step-details'>
+									Validando que o texto ' 35000' continha o texto '35000'
 								
 							</td>
 						</tr>
@@ -443,13 +1247,12 @@
 					<div class='category-heading'>
 						<span class='category-name'>Nova_Solicitacao_-_Moto</span>
 						<span class='category-status right'>
-						<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
 							
-							<span status="fail" class='label red lighten-1 white-text'>Failed: 1</span>
+							
 							
 						</div>
 						<div class='category-tests'>
@@ -463,9 +1266,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>2021/02/01 - 01:38:31.616</td>
-										<td class='linked' test-id='2'>solicitacoes.Realizar nova solicitacao para caminhao mais usbi</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>Nova_Solicitacao_-_Moto</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Galaxy_S9_-_Android_10_-_App_1.0</span></td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td>2021/02/01 - 01:52:15.776</td>
+										<td class='linked' test-id='2'>solicitacoes.Realizar nova solicitacao para moto mais usbi com campos obrigatorios</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>Nova_Solicitacao_-_Moto</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Galaxy_S9_-_Android_10_-_App_1.0</span></td>
+										<td><span class='test-status warning'>warning</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -481,103 +1284,7 @@
 		</div>
 	</div>
 </div>
-<!-- category view --><div id='exception-view' class='view hide'>
-	<section id='controls'>
-		<div class='controls grey lighten-4'>
-			<!-- search -->
-			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
-				<a href="#" class='search-div'>
-				<i class='material-icons'>search</i> Search
-				</a>
-				<div class='input-field left hide'>
-					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-				</div>
-			</div>
-			<!-- search -->
-		</div>
-	</section>
-	<div class='subview-left left'>
-		<div class='view-summary'>
-			<ul id='exception-collection' class='exception-collection'>
-				<li class='exception displayed active'>
-					<div class='exception-heading'>
-						<span class='exception-name'>java.lang.NullPointerException</span>
-						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
-					</div>
-					<div class='exception-content hide'>
-						<div class='exception-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>2021/02/01 - 01:39:03.360</td>
-										<td class='linked' test-id='4'>solicitacoes.Realizar nova solicitacao para caminhao mais usbi</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>Nova_Solicitacao_-_Moto</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Galaxy_S9_-_Android_10_-_App_1.0</span>.O usuario valida que todos os dados inseridos na avaliação do caminhao sao apresentados no portal</td>
-										<td>
-											<textarea disabled class="code-block">java.lang.NullPointerException: O elemento almejado não estava disponivel após o tempo máximo de espera
-	at com.autoavaliar.support.web.sleep.SleepWeb.untilAppear(SleepWeb.java:65)
-	at com.autoavaliar.products.apps.stepdefs.ubsi.SDAppsUsbiAvaliacoes.oUsuarioValidaQueTodosOsDadosInseridosNaAvaliaçãoDoCaminhaoSaoApresentadosNoPortal(SDAppsUsbiAvaliacoes.java:201)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at cucumber.runtime.Utils$1.call(Utils.java:26)
-	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
-	at cucumber.runtime.Utils.invoke(Utils.java:20)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)
-	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
-	at cucumber.runner.TestStep.executeStep(TestStep.java:65)
-	at cucumber.runner.TestStep.run(TestStep.java:50)
-	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
-	at cucumber.runner.TestCase.run(TestCase.java:46)
-	at cucumber.runner.Runner.runPickle(Runner.java:49)
-	at cucumber.runtime.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:68)
-	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:23)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:73)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:123)
-	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:65)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at cucumber.api.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:147)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:33)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:220)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:53)
-</textarea>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class='subview-right left'>
-		<div class='view-summary'>
-			<h5 class='exception-name'></h5>
-		</div>
-	</div>
-</div>
-<!-- exception view --><div id='author-view' class='view hide'>
+<!-- category view --><!-- exception view --><div id='author-view' class='view hide'>
 	<section id='controls'>
 		<div class='controls grey lighten-4'>
 			<!-- search -->
@@ -599,14 +1306,14 @@
 					<div class='author-heading'>
 						<span class='author-name'>Felipe_Amorim</span>
 						<span class='author-status right'>
-						<span class='label fail'>1</span>
+						<span class='label others'>1</span>
 						</span>
 					</div>
 					<div class='author-content hide'>
 						<div class='author-status-counts'>
 							
-							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
 						</div>
 						<div class='author-tests'>
 							<table class='bordered table-results'>
@@ -619,9 +1326,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>2021/02/01 - 01:38:31.616</td>
-										<td class='linked' test-id='2'>solicitacoes.Realizar nova solicitacao para caminhao mais usbi</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>Nova_Solicitacao_-_Moto</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Galaxy_S9_-_Android_10_-_App_1.0</span></td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td>2021/02/01 - 01:52:15.776</td>
+										<td class='linked' test-id='2'>solicitacoes.Realizar nova solicitacao para moto mais usbi com campos obrigatorios</span><br><span class='author label'>Author: <span style='font-weight:normal'>Felipe_Amorim</span></span></br><span class='author label'>Category: <span style='font-weight:normal'>Nova_Solicitacao_-_Moto</span></span></br><span class='author label'>Environment: <span style='font-weight:normal'>Galaxy_S9_-_Android_10_-_App_1.0</span></td>
+										<td><span class='test-status warning'>warning</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -657,25 +1364,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Test Methods
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>4</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>2021/02/01 - 01:38:30.783</div>
+					<div class='panel-lead'>2021/02/01 - 01:52:14.733</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>2021/02/01 - 01:39:41.732</div>
+			 		<div class='panel-lead'>2021/02/01 - 01:57:53.237</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 1m 10s+949ms</div>
+					<div class='panel-lead'>0h 5m 38s+504ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -725,8 +1432,8 @@
 						<tr>
 							<td>Nova_Solicitacao_-_Moto</td>
 							<td>0</td>
-							<td>1</td>
 							<td>0</td>
+							<td>1</td>
 							<td>
 									0%
 							</td>
@@ -744,28 +1451,28 @@
 			var statusGroup = {
                 parentCount: 1,
 				passParent: 0,
-				failParent: 1,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
-				warningParent: 0,
+				warningParent: 1,
 				skipParent: 0,
 				exceptionsParent: 1,
 				childCount: 1,
 				passChild: 0,
-				failChild: 1,
+				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
-				warningChild: 0,
+				warningChild: 1,
 				skipChild: 0,
 				infoChild: 0,
 				debugChild: 0,
 				exceptionsChild: 1,
-				grandChildCount: 2,
-				passGrandChild: 1,
-				failGrandChild: 1,
+				grandChildCount: 4,
+				passGrandChild: 3,
+				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
-				warningGrandChild: 0,
+				warningGrandChild: 1,
 				skipGrandChild: 0,
 				infoGrandChild: 0,
 				debugGrandChild: 0,
@@ -774,7 +1481,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "solicitacoes":70.097
+			        "solicitacoes":337.445
 			};
 		</script>
 		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>
