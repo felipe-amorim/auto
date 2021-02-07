@@ -8,8 +8,8 @@ import cucumber.api.java.en.When;
 import static com.autoavaliar.products.apps.objetos.AppsLogin.*;
 import static com.autoavaliar.products.apps.objetos.usbi.AppsUsbiMain.*;
 
-
 public class SDAppsUsbiMain extends CoreWeb {
+
     @Then("O usuario valida que a tela de dashboard carregou com sucesso")
     public void oUsuarioValidaQueATelaDeDashboardCarregouComSucesso() {
         log().setLocator(appsMain);
@@ -67,5 +67,4 @@ public class SDAppsUsbiMain extends CoreWeb {
         log().setLocator(appsMain);
         find(appsEgoButton).click();
     }
-
 }
