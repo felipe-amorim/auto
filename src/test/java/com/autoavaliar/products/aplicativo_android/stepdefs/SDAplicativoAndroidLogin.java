@@ -4,6 +4,7 @@ import com.autoavaliar.intern.Instances;
 import com.autoavaliar.products.aplicativo_android.objetos.AplicativoAndroidLogin;
 import com.autoavaliar.products.apps.stepdefs.SDAppsLogin;
 import com.autoavaliar.support.CoreAndroid;
+import com.autoavaliar.support.log.Log;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;

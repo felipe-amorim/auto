@@ -11,17 +11,13 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
-import cucumber.api.java.eo.Se;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.io.FileUtils;
 import org.bson.Document;
 import org.bson.conversions.Bson;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -73,7 +69,6 @@ import com.autoavaliar.support.web.find.exceptionals.GetterPopUps;
 import com.autoavaliar.support.web.find.exceptionals.PopUps;
 import com.autoavaliar.support.web.sleep.SleepWeb;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
-import org.sikuli.basics.Settings;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -254,7 +249,6 @@ public class Instances {
         public static String MOBILE = "mobile";
         public static String SCREEN = "screen";
     }
-
     private static final String userLanguage = System.getProperty("user.language");
 
     private static final String propertiesLoc = getPropertiesLoc();
@@ -2706,4 +2700,48 @@ public class Instances {
     public static String getMessageNavigate() {
         return messageNavigate;
     }
+
+    public static String greenLog(String arg0) {
+        String ANSI_GREEN = "\u001B[32m";
+        String ANSI_RESET = "\u001B[0m";
+        return ANSI_GREEN + arg0 + ANSI_RESET;
+    }
+
+    public static String redLog(String arg0) {
+        String ANSI_RED = "\u001B[31m";
+        String ANSI_RESET = "\u001B[0m";
+        return ANSI_RED + arg0 + ANSI_RESET;
+    }
+
+    public static String yellowLog(String arg0) {
+        String ANSI_YELLOW = "\u001B[33m";
+        String ANSI_RESET = "\u001B[0m";
+        return ANSI_YELLOW + arg0 + ANSI_RESET;
+    }
+
+    public static String blueLog(String arg0) {
+        String ANSI_BLUE = "\u001B[34m";
+        String ANSI_RESET = "\u001B[0m";
+        return ANSI_BLUE + arg0 + ANSI_RESET;
+    }
+
+    public static String purpleLog(String arg0) {
+        String ANSI_PURPLE = "\u001B[35m";
+        String ANSI_RESET = "\u001B[0m";
+        return ANSI_PURPLE + arg0 + ANSI_RESET;
+    }
+
+    public static String cyanLog(String arg0) {
+        String ANSI_CYAN = "\u001B[36m";
+        String ANSI_RESET = "\u001B[0m";
+        return ANSI_CYAN + arg0 + ANSI_RESET;
+    }
+
+    public static String ansiLog(String arg0) {
+        String ANSI_WHITE = "\u001B[37m";
+        String ANSI_RESET = "\u001B[0m";
+        return ANSI_WHITE + arg0 + ANSI_RESET;
+    }
+
+
 }

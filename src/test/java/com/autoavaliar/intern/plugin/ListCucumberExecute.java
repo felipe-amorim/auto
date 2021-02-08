@@ -13,10 +13,14 @@ import java.util.Calendar;
 public class ListCucumberExecute{
 
     private static boolean started = false;
+    //private static String ANSI_RESET = "\u001B[0m";
+    //private static String ANSI_GREEN = "\u001B[32m";
+
     public static void testStepStarted(TestStepStarted event) {
         try {
             PickleStepTestStep testStep = (PickleStepTestStep) event.testStep;
-            System.out.println("BDD> " + ((PickleStepTestStep) event.testStep).getStepText());
+            //System.out.println("BDD> " + ((PickleStepTestStep) event.testStep).getStepText());
+            System.out.println(Instances.greenLog("BDD> " + ((PickleStepTestStep) event.testStep).getStepText()));
             Instances.getReportClassInstance().createBDD(((PickleStepTestStep) event.testStep).getStepText());
             Instances.setExecutionActionTimer(Calendar.getInstance().getTimeInMillis());
         } catch (Exception ignored) {
@@ -38,8 +42,8 @@ public class ListCucumberExecute{
 
         Instances.mongoNameOfProject = raizProduto.split("/")[0];
 
-        System.out.println("===== STARTING TEST CASE: " + event.testCase.getName() + " ==============");
-
+        //System.out.println(" ===== STARTING TEST CASE: " + event.testCase.getName() + " ============== ");
+        System.out.println((Instances.greenLog(" ===== STARTING TEST CASE: " + event.testCase.getName() + " ============== ")));
         System.out.println("package: " + event.testCase.getUri());
 
         String title = "Not defined";
@@ -98,7 +102,8 @@ public class ListCucumberExecute{
     }
     
     public static void testCaseFinished(TestCaseFinished event){
-        System.out.println("===== FINISHING TEST CASE: " + event.testCase.getName() + " ==============");
+        //System.out.println("===== FINISHING TEST CASE: " + event.testCase.getName() + " ==============");
+        System.out.println(Instances.greenLog("===== FINISHING TEST CASE: " + event.testCase.getName() + " =============="));
         if (!Instances.getTestsKilled()) {
             if (
                     event.result.getStatus().toString().equals("FAILED")
@@ -115,17 +120,21 @@ public class ListCucumberExecute{
             }
         }
         Instances.setTestsKilled(false);
-        System.out.println("result: " + event.result.getStatus());
+        //System.out.println("result: " + event.result.getStatus());
+        System.out.println(Instances.greenLog("result: " + event.result.getStatus()));
         Instances.killWebDriver();
     }
     
     public static void testRunStarted(TestRunStarted event){
-        System.out.println("-------STARTING TESTS-------");
-        System.out.println("Execution user: " + System.getProperty("user.name"));
+        System.out.println(Instances.greenLog("-------STARTING TESTS-------"));
+        //System.out.println("-------STARTING TESTS-------");
+        System.out.println(Instances.greenLog("Execution user: " + System.getProperty("user.name")));
+        //System.out.println("Execution user: " + System.getProperty("user.name"));
     }
     
     public static void testRunFinished(TestRunFinished event){
-        System.out.println("-------FINISHING TESTS-------");
+        //System.out.println("-------FINISHING TESTS-------");
+        System.out.println(Instances.greenLog("-------FINISHING TESTS-------"));
         //System.out.println("Removendo processos remanescentes do chromedriver");
         //Instances.commandEx("taskkill /F /IM \"chromedriver.exe\" /T");
         System.out.println("--------------------------------");
