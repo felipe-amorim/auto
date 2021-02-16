@@ -142,10 +142,9 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     }
 
     private void digitarPlaca(){
-        placa = GeradorPlaca.gerarPlaca();
+        placa = GeradorPlaca.gerarPlaca().toUpperCase();
         System.out.println("variavel placa gerada por gerador de placa: " + placa);
-        find(aplicativoAndroidSolicitacaoPlacaInput).send().text(placa.toUpperCase());
-
+        find(aplicativoAndroidSolicitacaoPlacaInput).send().text(placa);
     }
 
     @And("O usuario arrasta a tela para baixo")
@@ -247,10 +246,9 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     public void oUsuarioPreencheOCampoCor() {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoCorButton).click();
+        cor = find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PRIMEIRA_COR_VEICULO).get().text().toString();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
-        sleep().until(2500);
-        //cor = find(APLICATIVO_ANDROID_COR_VEICULO_SELECIONADA).get().text().toString();
-        cor = find(APLICATIVO_ANDROID_COR_VEICULO_SELECIONADA).get().text().toString();
+        System.out.println("variavel cor na camptura: " + cor);
     }
 
     @And("O usuario preenche o campo combustivel")
@@ -267,6 +265,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoCambioButton).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         cambio = find(APLICATIVO_ANDROID_TIPO_CAMBIO_VEICULO_SELECIONADO).get().text().toString();
+        System.out.println("variavel cambio na criacao: " + cambio);
     }
 
     @And("O usuario preenche o campo procedencia para carro")
@@ -1086,22 +1085,28 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(APLICATIVO_ANDROID_SOLICITACAO_TRACAO).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         tracao = find(APLICATIVO_ANDROID_TRACAO_SELECIONADO).get().text().toString();
+        System.out.println("variavel tracao: " + tracao);
         find(APLICATIVO_ANDROID_SOLICITACAO_FABRICANTE_MOTOR).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         fabricanteMotor = find(APLICATIVO_ANDROID_FABRICANTE_MOTOR_SELECIONADO).get().text().toString();
+        System.out.println("variavel fabricanteMotor: " + fabricanteMotor);
         find(APLICATIVO_ANDROID_SOLICITACAO_NUMERO_CILINDOS).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         numeroCiclindros = find(APLICATIVO_ANDROID_NUMERO_CILINDROS_SELECIONADO).get().text().toString();
+        System.out.println("variavel numeroCiclindros: " + numeroCiclindros);
         find(APLICATIVO_ANDROID_SOLICITACAO_NUMERO_MARCHAS).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         numeroMarchas = find(APLICATIVO_ANDROID_NUMERO_MARCHAS_SELECIONADO).get().text().toString();
+        System.out.println("variavel numeroMarchas: " + numeroMarchas);
         oUsuarioArrastaATelaParaBaixo();
         find(APLICATIVO_ANDROID_SOLICITACAO_TIPO_CABINE).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         tipoCabine = find(APLICATIVO_ANDROID_TIPO_CABINE_SELECIONADA).get().text().toString();
+        System.out.println("variavel tipoCabine: " + tipoCabine);
         find(APLICATIVO_ANDROID_SOLICITACAO_CONFIGURACAO_CABINE).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         configuracaoCabine = find(APLICATIVO_ANDROID_CONFIGURACAO_CABINE_SELECIONADA).get().text().toString();
+        System.out.println("varaivel configuracaoCabine: " + configuracaoCabine);
         distanciaEntreEixosAtual = "1000";
         find(APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ATUAL).send().text(distanciaEntreEixosAtual);
         distanciaEntreEixosAnterior = "1000";
@@ -1512,10 +1517,14 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         assertThat(actualVersao).isEqualTo(versao.toUpperCase());
         String actualCor = find(aplicativoAndroidSolicitacaoCorText).get().text().toString();
         evidence("Validando a cor");
+        System.out.println("variavel actualCor: " + actualCor);
+        System.out.println("variavel cor: " + cor);
         assertThat(actualCor).isEqualTo(cor.toUpperCase());
         String sCombustivel = find(APLICATIVO_ANDROID_COMBUSTIVEL_VEICULO_SELECIONADO).get().text().toString();
         assertThat(sCombustivel).isEqualTo(combustivel);
         String sTipoCambio = find(APLICATIVO_ANDROID_TIPO_CAMBIO_VEICULO_SELECIONADO).get().text().toString();
+        System.out.println("variavel sTipoCambio: " + sTipoCambio);
+        System.out.println("variavel cambio: " + cambio);
         assertThat(sTipoCambio).isEqualTo(cambio);
         String sProcedencia = find(APLICATIVO_ANDROID_PROCEDENCIA_VEICULO_SELECIONADA).get().text().toString();
         assertThat(sProcedencia).isEqualTo(procedencia);

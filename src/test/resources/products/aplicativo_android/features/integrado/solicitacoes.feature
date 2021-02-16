@@ -2,7 +2,7 @@ Feature: Realizar nova solicitação
 
   @NovaSolicitacaoAndroid @ComCamposObrigatoriosAndroidOutLine @Carro
   Scenario Outline: Realizar nova solicitacao para carro com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
-    Given O usuario abre o aplicativo como "arnaldo.wiziack2@autoavaliar.com.br" "aw203040"
+    Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
     When O usuario realiza uma nova solicitacao para carro <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
     Then O usuario valida que a solicitacao foi realizada para carro
 

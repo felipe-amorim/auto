@@ -14,15 +14,15 @@ public class SDAppsUsbiLogin extends CoreWeb {
         log().setLocator(appsUsbiLogin);
         webDriver().set().options().maximized();
         webDriver().navigate(url);
+        sleep().setMaxTime(30000);
         if (find(APPS_USBI_LOGIN_IMAGE_ALERTA_ABAIXO_ASSINADO).exists()){
             find(APPS_USBI_LOGIN_BUTTON_FECHAR_ALERTA_ABAIXO_ASSINADO).click();
         }
+        sleep().setDefaultTime();
         sleep().untilAppear(APPS_USBI_LOGIN_INPUT_EMAIL);
         find(APPS_USBI_LOGIN_INPUT_EMAIL).send().text(vendedorAutoavaliar);
         find(APPS_USBI_LOGIN_INPUT_SENHA).send().text(defaultPassword);
         find(APPS_USBI_LOGIN_BUTTON_LOGIN).click();
-
-
         sleep().setMaxTime(30000);
         sleep().untilAppear(appsIconUser);
         sleep().setDefaultTime();

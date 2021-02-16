@@ -214,6 +214,7 @@ public class SDAppsUsbiAvaliacoes extends CoreWeb {
         String usbiFabricanteMotor = find(APPS_USBI_AVALIACOES_TEXT_FABRICANTE_MOTOR).get().text().toString();
         String usbiNumeroCilindros = find(APPS_USBI_AVALIACOES_TEXT_NUMERO_CILINDROS).get().text().toString();
         String usbiNumeroMarchas = find(APPS_USBI_AVALIACOES_TEXT_NUMERO_MARCHAS).get().text().toString();
+        System.out.println("variavel usbiNumeroMarchas: " + usbiNumeroMarchas);
         String usbiCabine = find(APPS_USBI_AVALIACOES_TEXT_CABINE).get().text().toString();
         String usbiDistanciaEntreEixosAtual = find(APPS_USBI_AVALIACOES_TEXT_DISTANCIA_ENTRE_EIXOS_ATUAL).get().text().toString();
         String usbiDistanciaEntreEixosAnterior = find(APPS_USBI_AVALIACOES_TEXT_DISTANCIA_ENTRE_EIXOS_ANTERIOR).get().text().toString();
@@ -331,12 +332,8 @@ public class SDAppsUsbiAvaliacoes extends CoreWeb {
         assertThat(usbiCombustivel).isEqualTo(combustivel);
         String usbiCambio =find(APPS_USBI_AVALIACOES_TEXT_CAMBIO).get().text().toString();
         assertThat(usbiCambio).isEqualTo(cambio);
-        System.out.println("variavel usbiCambio: " + usbiCambio);
-        System.out.println("variavel cambio: " + cambio);
         find(APPS_USBI_AVALIACOES_TEXT_TELEFONE).click();
         String sQuantidadePortas = find(APPS_USBI_AVALIACOES_TEXT_PORTAS).get().text().toString();
-        System.out.println("variavel sQuantidadePortas: " + sQuantidadePortas);
-        System.out.println("variavel quantidadePortas: " + quantidadePortas);
         assertThat(sQuantidadePortas).isEqualTo(quantidadePortas);
         String usbiClassificacao = find(APPS_USBI_AVALIACOES_TEXT_CLASSIFICACAO).get().text().toString();
         assertThat(usbiClassificacao).isEqualTo(classificacao);
