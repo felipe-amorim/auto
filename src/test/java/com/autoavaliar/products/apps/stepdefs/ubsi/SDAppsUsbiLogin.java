@@ -14,6 +14,9 @@ public class SDAppsUsbiLogin extends CoreWeb {
         log().setLocator(appsUsbiLogin);
         webDriver().set().options().maximized();
         webDriver().navigate(url);
+        if (find(APPS_USBI_LOGIN_IMAGE_ALERTA_ABAIXO_ASSINADO).exists()){
+            find(APPS_USBI_LOGIN_BUTTON_FECHAR_ALERTA_ABAIXO_ASSINADO).click();
+        }
         sleep().untilAppear(APPS_USBI_LOGIN_INPUT_EMAIL);
         find(APPS_USBI_LOGIN_INPUT_EMAIL).send().text(vendedorAutoavaliar);
         find(APPS_USBI_LOGIN_INPUT_SENHA).send().text(defaultPassword);

@@ -2,6 +2,7 @@ package com.autoavaliar.products.aplicativo_android.stepdefs;
 
 
 import com.autoavaliar.support.tbi.Arduino;
+import com.autoavaliar.support.tbi.GeradorPlaca;
 import cucumber.api.java.en.*;
 
 import com.autoavaliar.products.aplicativo_android.objetos.AplicativoAndroidLogin;
@@ -140,6 +141,13 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         placa = find(aplicativoAndroidSolicitacaoPlacaInput).get().text().toString();
     }
 
+    private void digitarPlaca(){
+        placa = GeradorPlaca.gerarPlaca();
+        System.out.println("variavel placa gerada por gerador de placa: " + placa);
+        find(aplicativoAndroidSolicitacaoPlacaInput).send().text(placa.toUpperCase());
+
+    }
+
     @And("O usuario arrasta a tela para baixo")
     public void oUsuarioArrastaATelaParaBaixo() {
         scroll().down(1);
@@ -213,7 +221,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoFiltroButton).send().text(marca);
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         marca = find(APLICATIVO_ANDROID_MARCA_VEICULO_SELECIONADA).get().text().toString();
-
         sleep().until(1000);
     }
 
@@ -242,6 +249,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoCorButton).click();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
         sleep().until(2500);
+        //cor = find(APLICATIVO_ANDROID_COR_VEICULO_SELECIONADA).get().text().toString();
         cor = find(APLICATIVO_ANDROID_COR_VEICULO_SELECIONADA).get().text().toString();
     }
 
@@ -249,9 +257,8 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     public void oUsuarioPreencheOCampoCombustivel() {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoCombustivelButton).click();
+        combustivel = find(APLICATIVO_ANDROID_SOLICITACAO_TEXTO_PRIMEIRO_ITEM).get().text().toString();
         find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
-        sleep().until(2500);
-        combustivel = find(APLICATIVO_ANDROID_COMBUSTIVEL_VEICULO_SELECIONADO).get().text().toString();
     }
 
     @And("O usuario preenche o campo cambio")
@@ -262,6 +269,13 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         cambio = find(APLICATIVO_ANDROID_TIPO_CAMBIO_VEICULO_SELECIONADO).get().text().toString();
     }
 
+    @And("O usuario preenche o campo procedencia para carro")
+    public void oUsuarioPreencheOCampoProcedenciaParaCarro() {
+        log().setLocator(aplicativoAndroidSolicitacao);
+        find(aplicativoAndroidSolicitacaoProcedenciaButton).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
+        procedencia = find(APLICATIVO_ANDROID_PROCEDENCIA_CARRO_SELECIONADA).get().text().toString();
+    }
     @And("O usuario preenche o campo procedencia")
     public void oUsuarioPreencheOCampoProcedencia() {
         log().setLocator(aplicativoAndroidSolicitacao);
@@ -439,9 +453,9 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
                     estadoMotor = "bom";
                     find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
                     break;
-                case "otimo":
+                case "excelente":
                     estadoMotor = "otimo";
-                    find(aplicativoAndroidSolicitacaoEstadoDoMotorOtimo).click();
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorExcelente).click();
                     break;
                 case "ruim":
                     estadoMotor = "ruim";
@@ -451,7 +465,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
             find(aplicativoAndroidSolicitacaoSalvar).click();
         }
     }
-    private void sendAvaliaMotorCaminhao(String status) {
+    private void  sendAvaliaMotorCaminhao(String status) {
         if (status.length() <= 0) {
             log().setLocator(aplicativoAndroidSolicitacao);
             //find(aplicativoAndroidSolicitacaoAvaliacaoMotor).click();
@@ -471,7 +485,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
                     break;
                 case "otimo":
                     estadoMotor = "otimo";
-                    find(aplicativoAndroidSolicitacaoEstadoDoMotorOtimo).click();
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorExcelente).click();
                     break;
                 case "ruim":
                     estadoMotor = "ruim";
@@ -505,7 +519,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
                     break;
                 case "otimo":
                     estadoCambio = "otimo";
-                    find(aplicativoAndroidSolicitacaoEstadoDoMotorOtimo).click();
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorExcelente).click();
                     break;
                 case "ruim":
                     estadoCambio = "ruim";
@@ -535,7 +549,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
                     break;
                 case "otimo":
                     estadoCambio = "otimo";
-                    find(aplicativoAndroidSolicitacaoEstadoDoMotorOtimo).click();
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorExcelente).click();
                     break;
                 case "ruim":
                     estadoCambio = "ruim";
@@ -714,15 +728,16 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         oUsuarioEscolheOVendedorQA();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
-        sendPlaca(arg2);
+        //sendPlaca(arg2);
+        digitarPlaca();
         sendAnoFab(arg3);
         anoLancamento(arg3);
         oUsuarioArrastaATelaParaBaixo();
         sendKM(arg4);
         oUsuarioPreencheAMarcaUtilizandoOFiltroPor(arg5);
-        sleep().until(2000);
+        //sleep().until(2000);
         oUsuarioPreencheOModeloUtilizandoOFiltroPor(arg6);
-        sleep().until(2000);
+        //sleep().until(2000);
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioPreencheOCampoVersao();
         oUsuarioArrastaATelaParaBaixo();
@@ -731,7 +746,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         oUsuarioPreencheOCampoCombustivel();
         oUsuarioPreencheOCampoCambio();
         oUsuarioArrastaATelaParaBaixo();
-        oUsuarioPreencheOCampoProcedencia();
+        oUsuarioPreencheOCampoProcedenciaParaCarro();
         oUsuarioPreencheOCampoQuantidadeDePortasUtilizandoOFiltroPor("4");
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
@@ -758,7 +773,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         sendCampoVenda(arg10);
         oUsuarioClicaEmSalvarEAvancar();
         sleep().until(5000);
-        evidence("evidence");
+        //evidence("evidence");
         find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
     }
 
@@ -1314,9 +1329,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         evidence("Validando o status do cambio");
         assertThat(actualStatusCambio).isEqualTo(estadoCambio.toUpperCase());
         oUsuarioClicaEmSalvarEAvancar();
-
-
-
         String sClassificacao = find(APLICATIVO_ANDROID_CLASSIFICACAO_SELECIONADA).get().text().toString();
         assertThat(sClassificacao).isEqualTo(classificacao);
         String sFinalidade = find(APLICATIVO_ANDROID_FINALIDADE_SELECIONADA).get().text().toString();

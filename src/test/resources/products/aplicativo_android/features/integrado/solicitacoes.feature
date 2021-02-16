@@ -20,7 +20,7 @@ Feature: Realizar nova solicitação
 
     Examples:
       | placa     | ano    | km       | marca        | modelo | statusMotor | statusCambio | valorCompra | valorVenda |
-      | "FFA0001" | "2016" | "120001" | "volkswagen" | "gol"  | "bom"       | "bom"        | "9000"      | "25000"    |
+      | "FFA0001" | "2016" | "120001" | "volkswagen" | "gol"  | "bom"       | "bom"        | "19000"      | "21000"    |
 
 
   @NovaSolicitacaoComEdicaoAndroid

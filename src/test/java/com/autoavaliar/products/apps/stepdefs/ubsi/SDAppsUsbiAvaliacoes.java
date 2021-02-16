@@ -1,6 +1,7 @@
 package com.autoavaliar.products.apps.stepdefs.ubsi;
 
 import com.autoavaliar.support.CoreWeb;
+import com.autoavaliar.support.tbi.GeradorPlaca;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 
@@ -330,6 +331,8 @@ public class SDAppsUsbiAvaliacoes extends CoreWeb {
         assertThat(usbiCombustivel).isEqualTo(combustivel);
         String usbiCambio =find(APPS_USBI_AVALIACOES_TEXT_CAMBIO).get().text().toString();
         assertThat(usbiCambio).isEqualTo(cambio);
+        System.out.println("variavel usbiCambio: " + usbiCambio);
+        System.out.println("variavel cambio: " + cambio);
         find(APPS_USBI_AVALIACOES_TEXT_TELEFONE).click();
         String sQuantidadePortas = find(APPS_USBI_AVALIACOES_TEXT_PORTAS).get().text().toString();
         System.out.println("variavel sQuantidadePortas: " + sQuantidadePortas);
