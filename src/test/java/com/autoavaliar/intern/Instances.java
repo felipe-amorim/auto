@@ -84,7 +84,7 @@ import java.util.stream.Collectors;
 import static com.mongodb.client.model.Filters.eq;
 
 public class Instances {
-
+    private static Runnable environmentKill = null;
     public static String operationalSystem = System.getProperty("os.name");
     private static String operationalSystemSufix = operationalSystem.toLowerCase().startsWith("win") ? ".exe" : "" ;
     public static String chrome = "chrome";
@@ -2701,47 +2701,59 @@ public class Instances {
         return messageNavigate;
     }
 
-    public static String greenLog(String arg0) {
+    public static String logGreen(String arg0) {
         String ANSI_GREEN = "\u001B[32m";
         String ANSI_RESET = "\u001B[0m";
         return ANSI_GREEN + arg0 + ANSI_RESET;
     }
 
-    public static String redLog(String arg0) {
+    public static String logRed(String arg0) {
         String ANSI_RED = "\u001B[31m";
         String ANSI_RESET = "\u001B[0m";
         return ANSI_RED + arg0 + ANSI_RESET;
     }
 
-    public static String yellowLog(String arg0) {
+    public static String logYellow(String arg0) {
         String ANSI_YELLOW = "\u001B[33m";
         String ANSI_RESET = "\u001B[0m";
         return ANSI_YELLOW + arg0 + ANSI_RESET;
     }
 
-    public static String blueLog(String arg0) {
+    public static String logBlue(String arg0) {
         String ANSI_BLUE = "\u001B[34m";
         String ANSI_RESET = "\u001B[0m";
         return ANSI_BLUE + arg0 + ANSI_RESET;
     }
 
-    public static String purpleLog(String arg0) {
+    public static String logPurple(String arg0) {
         String ANSI_PURPLE = "\u001B[35m";
         String ANSI_RESET = "\u001B[0m";
         return ANSI_PURPLE + arg0 + ANSI_RESET;
     }
 
-    public static String cyanLog(String arg0) {
+    public static String logCyan(String arg0) {
         String ANSI_CYAN = "\u001B[36m";
         String ANSI_RESET = "\u001B[0m";
         return ANSI_CYAN + arg0 + ANSI_RESET;
     }
 
-    public static String ansiLog(String arg0) {
+    public static String logAnsi(String arg0) {
         String ANSI_WHITE = "\u001B[37m";
         String ANSI_RESET = "\u001B[0m";
         return ANSI_WHITE + arg0 + ANSI_RESET;
     }
 
+    public static Runnable getEnvironmentKill() {
+        return environmentKill;
+    }
 
+    public static void setEnvironmentKill(Runnable environmentKill) {
+        Instances.environmentKill = environmentKill;
+    }
+
+    public static void killEnvironment(){
+        if(environmentKill!=null){
+            environmentKill.run();
+        }
+    }
 }

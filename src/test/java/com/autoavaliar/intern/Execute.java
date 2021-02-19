@@ -82,6 +82,7 @@ public class Execute {
         if(!executed){
             if(!isAvailable) {
                 Instances.getReportClassInstance().stepFail(Instances.getLastException());
+                System.out.println(Instances.logRed(String.valueOf(Instances.getLastException())));
             }else {
                 Instances.setIsAvailable(false);
             }

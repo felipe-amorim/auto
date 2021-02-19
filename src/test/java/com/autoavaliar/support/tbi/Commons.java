@@ -1,5 +1,7 @@
 package com.autoavaliar.support.tbi;
 
+import com.aventstack.extentreports.markuputils.CodeLanguage;
+import com.autoavaliar.intern.Instances;
 import org.apache.commons.io.FileUtils;
 
 import java.io.*;
@@ -54,5 +56,30 @@ public class Commons {
             e.printStackTrace();
         }
         return retorno;
+    }
+
+    public static String executeCmd(String command) {
+        Process proc = null;
+        StringBuilder retorno = new StringBuilder();
+        try {
+            Instances.getLogClassInstance().type("Executing the command '"+command+"'");
+            proc = Runtime.getRuntime().exec(new String[] {"/bin/bash", "-c", command});
+            BufferedReader reader =
+                    new BufferedReader(new InputStreamReader(proc.getInputStream()));
+
+            String line = "";
+            while((line = reader.readLine()) != null) {
+                //System.out.print(line + "\n");
+                retorno.append(line).append("\n");
+            }
+
+            proc.waitFor();
+            //Instances.getLogClassInstance().type("Command output:\n"+retorno.toString());
+            Instances.getLogClassInstance().type("Command output:");
+            Instances.getLogClassInstance().typeBlock(retorno.toString());
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return retorno.toString();
     }
 }
