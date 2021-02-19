@@ -11,6 +11,18 @@ Feature: Realizar nova solicitação
       | "FFA0001" | "2016" | "120001" | "volkswagen" | "gol"  | "bom"       | "bom"        | "19000"     | "21000"    |
 
 
+  @EditarSolicitacaoAndroid @ComCamposObrigatoriosAndroidOutLine @Carro
+  Scenario Outline: Realizar nova solicitacao para carro com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
+    Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
+    And O usuario realiza uma nova solicitacao para carro <placa> <ano> <km> <marca> <modelo> <statusMotor> <statusCambio> <valorCompra> <valorVenda>
+    And O usuario atualiza todos os campos da solicitacao <ano> <km> <segundaMarca> <segundoModelo> <segundoStatusMotor> <segundoStatusCambio> <valorCompra> <valorVenda>
+    When O usuario valida que a solicitacao foi realizada para carro
+
+    Examples:
+      | placa     | ano    | km       | marca        | segundaMarca | modelo | segundoModelo | statusMotor | segundoStatusMotor | statusCambio | segundoStatusCambio | valorCompra | valorVenda |
+      | "FFA0001" | "2016" | "120001" | "volkswagen" | "chevrolet"  | "gol"  | "onix"        | "bom"       | "excelente"            | "bom"        | "excelente"             | "19000"     | "21000"    |
+
+
   @NovaSolicitacaoUsbiAndroid @ComCamposObrigatoriosAndroidOutLine @Carro
   Scenario Outline: Realizar nova solicitacao para carro mais usbi, com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
@@ -20,7 +32,7 @@ Feature: Realizar nova solicitação
 
     Examples:
       | placa     | ano    | km       | marca        | modelo | statusMotor | statusCambio | valorCompra | valorVenda |
-      | "FFA0001" | "2016" | "120001" | "volkswagen" | "gol"  | "bom"       | "bom"        | "19000"      | "21000"    |
+      | "FFA0001" | "2016" | "120001" | "volkswagen" | "gol"  | "bom"       | "bom"        | "19000"     | "21000"    |
 
 
   @NovaSolicitacaoComEdicaoAndroid

@@ -6,12 +6,13 @@ import cucumber.api.junit.Cucumber;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/products/",
         glue={"com.autoavaliar.products"},
         plugin = { "com.autoavaliar.intern.plugin.ListCucumber" }
-        ,tags = {"@NovaSolicitacaoAndroid, @NovaSolicitacaoUsbiAndroid", "@ComCamposObrigatoriosAndroidOutLine", "@Carro, @Moto, @Caminhao"}
+        ,tags = {"@EditarSolicitacaoAndroid", "@ComCamposObrigatoriosAndroidOutLine", "@Carro"}
 
 )
 public class Run{
