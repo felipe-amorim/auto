@@ -147,6 +147,12 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidSolicitacaoPlacaInput).send().text(placa);
     }
 
+    private void digitarPlacaComVariavelJaPopulada(){
+        System.out.println("variavel placa gerada por gerador de placa: " + placa);
+        find(aplicativoAndroidSolicitacaoPlacaInput).send().text(placa);
+        find(aplicativoAndroidSolicitacaoPlacaBusca).click();
+    }
+
     @And("O usuario arrasta a tela para baixo")
     public void oUsuarioArrastaATelaParaBaixo() {
         scroll().down(1);
@@ -1770,5 +1776,30 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         sendCampoValor(String.valueOf(valorCompra));
         sendCampoVenda(String.valueOf(valorVenda));
         oUsuarioClicaEmSalvarEAvancar();
+    }
+
+    @Then("O usuario valida bloqueio duplicidade placa para proposta")
+    public void oUsuarioValidaBloqueioDuplicidadePlacaParaProposta() {
+        SDAplicativoAndroidMain sDAplicativoAndroidMain = new SDAplicativoAndroidMain();
+        log().setLocator(aplicativoAndroidMain);
+        find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
+        placa = find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_PRIMEIRA_AVALIACAO).get().text().toString();
+        sDAplicativoAndroidMain.oUsuarioClicaEmMais();
+        sDAplicativoAndroidMain.oUsuarioClicaNoMenuCarro();
+        sleep().until(2000);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        digitarPlacaComVariavelJaPopulada();
+        sleep().setMaxTime(30000);
+        String msgAlerta = find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_ALERTA_VEICULO_JA_AVALIADO).get().text().toString();
+        if (msgAlerta.contains("Veículo já avaliado!")){
+            evidence("Menssagem de placa já cadastrada exibida como esperado");
+            sleep().setDefaultTime();
+        } else {
+            evidence("Menssagem de placa já cadastrada não exibida como esperado");
+            sleep().setDefaultTime();
+            error().Fail();
+        }
+        System.out.println("variavel msgAlerta: " + msgAlerta);
     }
 }

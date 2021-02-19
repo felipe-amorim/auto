@@ -20,7 +20,13 @@ Feature: Realizar nova solicitação
 
     Examples:
       | placa     | ano    | km       | marca        | segundaMarca | modelo | segundoModelo | statusMotor | segundoStatusMotor | statusCambio | segundoStatusCambio | valorCompra | valorVenda |
-      | "FFA0001" | "2016" | "120001" | "volkswagen" | "chevrolet"  | "gol"  | "onix"        | "bom"       | "excelente"            | "bom"        | "excelente"             | "19000"     | "21000"    |
+      | "FFA0001" | "2016" | "120001" | "volkswagen" | "chevrolet"  | "gol"  | "onix"        | "bom"       | "excelente"        | "bom"        | "excelente"         | "19000"     | "21000"    |
+
+
+  @ValidarBloqueioDuplicidadePlaca @ComCamposObrigatoriosAndroidOutLine @Carro
+  Scenario: Realizar nova solicitacao para carro com campos obrigatorios, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
+    Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
+    Then O usuario valida bloqueio duplicidade placa para proposta
 
 
   @NovaSolicitacaoUsbiAndroid @ComCamposObrigatoriosAndroidOutLine @Carro
