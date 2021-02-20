@@ -574,8 +574,8 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
                     estadoMotor = "bom";
                     find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
                     break;
-                case "otimo":
-                    estadoMotor = "otimo";
+                case "excelente":
+                    estadoMotor = "excelente";
                     find(aplicativoAndroidSolicitacaoEstadoDoMotorExcelente).click();
                     break;
                 case "ruim":
@@ -668,8 +668,8 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
                     estadoCambio = "bom";
                     find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
                     break;
-                case "otimo":
-                    estadoCambio = "otimo";
+                case "excelente":
+                    estadoCambio = "excelente";
                     find(aplicativoAndroidSolicitacaoEstadoDoMotorExcelente).click();
                     break;
                 case "ruim":
@@ -1178,7 +1178,8 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         oUsuarioEscolheOVendedorQA();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
-        sendPlaca(arg2);
+        //sendPlaca(arg2);
+        digitarPlaca();
         sendAnoFab(arg3);
         anoLancamento(arg3);
         sendKM(arg4);
@@ -1705,39 +1706,20 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
 
     @And("O usuario atualiza todos os campos da solicitacao {string} {string} {string} {string} {string} {string} {string} {string}")
     public void oUsuarioAtualizaTodosOsCamposDaSolicitacaoAnoKmSegundaMarcaSegundoModelo(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5, String arg6, String arg7) {
-        //find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
         log().setLocator(aplicativoAndroidSolicitacao);
         String placaVeiculoPrimeiraAvaliacao = find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_PRIMEIRA_AVALIACAO).get().text().toString();
-        System.out.println("variavel placaVeiculoPrimeiraAvaliacao: " + placaVeiculoPrimeiraAvaliacao);
-        //placa = "PLG7667";
         if (placaVeiculoPrimeiraAvaliacao.equals(placa)){
             find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).click();
         } else {
             error().Fail();
         }
-        String proprietarioAntigo = find(aplicativoAndroidSolicitacaoOwnerInput).get().text().toString();
         oUsuarioPreencheOCampoOwner();
-        String proprietarioNovo = find(aplicativoAndroidSolicitacaoOwnerInput).get().text().toString();
-        System.out.println("variavel proprietarioAntigo: " + proprietarioAntigo);
-        System.out.println("variavel proprietarioNovo: " + proprietarioNovo);
         sTelefone = String.valueOf(t);
         sTelefone = sTelefone.substring(0,10);
-        String telefoneAntigo = find(aplicativoAndroidSolicitacaoTelefoneInput).get().text().toString();
         find(aplicativoAndroidSolicitacaoTelefoneInput).send().text(sTelefone);
-        String telefoneNovo = find(aplicativoAndroidSolicitacaoTelefoneInput).get().text().toString();
-        System.out.println("variavel telefoneAntigo: " + telefoneAntigo);
-        System.out.println("variavel telefoneNovo: " + telefoneNovo);
-        String celularAntigo = find(aplicativoAndroidSolicitacaoCelularInput).get().text().toString();
         oUsuarioPreencheOCampoCelular();
-        String celularNovo = find(aplicativoAndroidSolicitacaoCelularInput).get().text().toString();
-        System.out.println("variavel celularAntigo: " + celularAntigo);
-        System.out.println("variavel celularNovo: " + celularNovo);
         aplicativoAndroidEmailTeste = aplicativoAndroidEmailTesteEditado;
-        String emailAntigo = find(aplicativoAndroidSolicitacaoEmailInput).get().text().toString();
         oUsuarioPreencheOCampoEmail();
-        String emailNovo = find(aplicativoAndroidSolicitacaoEmailInput).get().text().toString();
-        System.out.println("variavel emailAntigo: " + emailAntigo);
-        System.out.println("variavel emailNovo: " + emailNovo);
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
@@ -1761,7 +1743,6 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         oUsuarioClicaEmSalvarEAvancar();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioClicaEmSalvarEAvancar();
-
         sendAvaliaMotorCarro(arg4);
         sendAvaliaCambioCarro(arg5);
         oUsuarioClicaEmSalvarEAvancar();
@@ -1801,5 +1782,92 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
             error().Fail();
         }
         System.out.println("variavel msgAlerta: " + msgAlerta);
+    }
+
+    @And("O usuario atualiza todos os campos da solicitacao caminhao {string} {string} {string} {string} {string} {string}")
+    public void oUsuarioAtualizaTodosOsCamposDaSolicitacaoCaminhao(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5) {
+        //find(APLICATIVO_ANDROID_MAIN_REALIZADAS).click();
+        //placa = "FFF0002";
+        log().setLocator(aplicativoAndroidSolicitacao);
+        String placaVeiculoPrimeiraAvaliacao = find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_PRIMEIRA_AVALIACAO).get().text().toString();
+        if (placaVeiculoPrimeiraAvaliacao.equals(placa)){
+            find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).click();
+        } else {
+            error().Fail();
+        }
+        oUsuarioPreencheOCampoOwner();
+        sTelefone = String.valueOf(t);
+        sTelefone = sTelefone.substring(0,10);
+        find(aplicativoAndroidSolicitacaoTelefoneInput).send().text(sTelefone);
+        oUsuarioPreencheOCampoCelular();
+        aplicativoAndroidEmailTeste = aplicativoAndroidEmailTesteEditado;
+        oUsuarioPreencheOCampoEmail();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        int intAno = Integer.parseInt(arg0);
+        intAno += 1;
+        sendAnoFab(String.valueOf((intAno)));
+        anoLancamento(String.valueOf((intAno)));
+        int intKm = Integer.parseInt(arg1);
+        intKm += 10000;
+        sendKM(String.valueOf((intKm)));
+        oUsuarioPreencheAMarcaUtilizandoOFiltroPor(arg2);
+        oUsuarioPreencheOModeloUtilizandoOFiltroPor(arg3);
+        oUsuarioPreencheOCampoVersao();
+        oUsuarioPreencheOCampoCorComSegundaOpcao();
+        oUsuarioPreencheOCampoCombustivelComSegundaOpcao();
+        oUsuarioPreencheOCampoCambioComSegundaOpcaoLista();
+        oUsuarioPreencheOCampoProcedenciaParaCarroComSegundaOpcaoLista();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        find(APLICATIVO_ANDROID_SOLICITACAO_APLICACAO).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_SEGUNDO_ITEM).click();
+        aplicacao = find(APLICATIVO_ANDROID_APLICACAO_SELECIONADA).get().text().toString();
+        find(APLICATIVO_ANDROID_SOLICITACAO_SEGUIMENTO).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_SEGUNDO_ITEM).click();
+        segmento = find(APLICATIVO_ANDROID_SEGMENTO_SELECIONADO).get().text().toString();
+        find(APLICATIVO_ANDROID_SOLICITACAO_TRACAO).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_SEGUNDO_ITEM).click();
+        tracao = find(APLICATIVO_ANDROID_TRACAO_SELECIONADO).get().text().toString();
+        find(APLICATIVO_ANDROID_SOLICITACAO_FABRICANTE_MOTOR).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_SEGUNDO_ITEM).click();
+        fabricanteMotor = find(APLICATIVO_ANDROID_FABRICANTE_MOTOR_SELECIONADO).get().text().toString();
+        find(APLICATIVO_ANDROID_SOLICITACAO_NUMERO_CILINDOS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_SEGUNDO_ITEM).click();
+        numeroCiclindros = find(APLICATIVO_ANDROID_NUMERO_CILINDROS_SELECIONADO).get().text().toString();
+        find(APLICATIVO_ANDROID_SOLICITACAO_NUMERO_MARCHAS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_SEGUNDO_ITEM).click();
+        numeroMarchas = find(APLICATIVO_ANDROID_NUMERO_MARCHAS_SELECIONADO).get().text().toString();
+        find(APLICATIVO_ANDROID_SOLICITACAO_TIPO_CABINE).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_SEGUNDO_ITEM).click();
+        tipoCabine = find(APLICATIVO_ANDROID_TIPO_CABINE_SELECIONADA).get().text().toString();
+        find(APLICATIVO_ANDROID_SOLICITACAO_CONFIGURACAO_CABINE).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_SEGUNDO_ITEM).click();
+        configuracaoCabine = find(APLICATIVO_ANDROID_CONFIGURACAO_CABINE_SELECIONADA).get().text().toString();
+        distanciaEntreEixosAtual = "1500";
+        find(APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ATUAL).send().text(distanciaEntreEixosAtual);
+        distanciaEntreEixosAnterior = "1500";
+        find(APLICATIVO_ANDROID_SOLICITACAO_DISTANCIA_ENTRE_EIXOS_ANTERIOR).send().text(distanciaEntreEixosAnterior);
+        potencia = "700";
+        find(APLICATIVO_ANDROID_SOLICITACAO_POTENCIA).send().text(potencia);
+        oUsuarioClicaEmSalvarEAvancar();
+        sleep().until(1000);
+        oUsuarioClicaEmSalvarEAvancar();
+        sendAvaliaMotorCaminhao(arg4);
+        sendAvaliaCambioCaminhao(arg5);
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioPreencheOCampoClassificacaoComoB();
+        oUsuarioPreencheOCampoFinalidadeComoOferta();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        int valorCompra = Integer.parseInt(arg4);
+        valorCompra += 500;
+        int valorVenda = Integer.parseInt(arg5);
+        valorVenda += 500;
+        sendCampoValor(String.valueOf(valorCompra));
+        sendCampoVenda(String.valueOf(valorVenda));
+        oUsuarioClicaEmSalvarEAvancar();
     }
 }

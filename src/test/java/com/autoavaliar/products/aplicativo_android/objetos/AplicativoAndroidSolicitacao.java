@@ -22,6 +22,7 @@ public class AplicativoAndroidSolicitacao {
 
     public static String aplicativoAndroidSolicitacaoBuscaInput = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.EditText";
     public static String APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_SEGUNDO_ITEM = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.LinearLayout";
     public static String APLICATIVO_ANDROID_SOLICITACAO_TEXTO_PRIMEIRO_ITEM = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.TextView";
     public static String APLICATIVO_ANDROID_SOLICITACAO_TEXTO_SEGUNDO_ITEM = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView";
     public static String aplicativoAndroidSolicitacaoTerceiroAnoDeFabricacaoButton = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.support.v7.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.LinearLayout/android.widget.TextView";
@@ -191,6 +192,7 @@ public class AplicativoAndroidSolicitacao {
         ret.put(aplicativoAndroidSolicitacaoAnoDeFabricacaoText, "Texto do Ano de fabricacao");
         ret.put(aplicativoAndroidSolicitacaoBuscaInput, "Campo de busca");
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM, "Primeira opcao disponivel");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_SEGUNDO_ITEM, "Segunda opcao disponivel");
         ret.put(aplicativoAndroidSolicitacaoTerceiroAnoDeFabricacaoButton, "Terceira opcao disponivel");
         ret.put(aplicativoAndroidSolicitacaoAnoDeLancamentoButton, "Ano de fabricacao");
         ret.put(aplicativoAndroidSolicitacaoAnoDeLancamentoText, "Texto do Ano de fabricacao");
