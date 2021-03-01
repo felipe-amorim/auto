@@ -173,7 +173,10 @@ public class AplicativoAndroidSolicitacao {
     public static String APLICATIVO_ANDROID_SOLICITACAO_TEXT_PRIMEIRA_COR_VEICULO = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.TextView";
     public static String APLICATIVO_ANDROID_SOLICITACAO_TEXT_SEGUNDA_COR_VEICULO = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView";
     public static String APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_PRIMEIRA_AVALIACAO = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[2]";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_PRIMEIRA_SOLICITACAO = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_SEGUNDA_SOLICITACAO = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.view.ViewGroup/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView";
     public static String APLICATIVO_ANDROID_SOLICITACAO_TEXT_ALERTA_VEICULO_JA_AVALIADO = "android:id/message";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_TEXT_PROPRIETARIO = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.EditText";
 
 
     public static LinkedHashMap<String, String> aplicativoAndroidSolicitacao = createData();
@@ -322,8 +325,11 @@ public class AplicativoAndroidSolicitacao {
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PRIMEIRA_COR_VEICULO, "texto primeira cor disponivel lista cores");
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_SEGUNDA_COR_VEICULO, "texto primeira cor disponivel lista cores");
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_PRIMEIRA_AVALIACAO, "Placa veíulo primeira avaliação");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_PRIMEIRA_SOLICITACAO, "Placa veíulo primeira avaliação solicitada");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_SEGUNDA_SOLICITACAO, "Placa veíulo segunda avaliação solicitada");
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_AVALIACAO_CAMBIO_CARRO, "Avaliação cambio carro");
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_ALERTA_VEICULO_JA_AVALIADO, "Veículo já avaliado");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PROPRIETARIO, "Campo proprietário e vendedor");
 
         return ret;
     }

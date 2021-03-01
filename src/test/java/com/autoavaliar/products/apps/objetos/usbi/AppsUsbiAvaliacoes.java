@@ -52,6 +52,10 @@ public class AppsUsbiAvaliacoes {
     public static String appsAvaliacoesFiltroModeloInput = "//label[contains(text(),\"Modelo\")]/ancestor::div/av-search-filter/div/div/input";
     public static String appsAvaliacoesFiltroVersaoInput = "//label[contains(text(),\"Versão\")]/ancestor::div/av-search-filter/div/div/input";
     public static String appsAvaliacoesFiltroBuscarButton = "//button[@ng-click=\"ctrl.find()\"]";
+    public static String APPS_AVALIACOES_TEXT_CLIENTE = "//span[text()=\"Cliente\"]/following-sibling::span";
+    public static String APPS_AVALIACOES_TEXT_TELEFONE = "//span[text()=\"Telefone\"]/following-sibling::span";
+    public static String APPS_AVALIACOES_TEXT_CELULAR = "//span[text()=\"Celular\"]/following-sibling::span";
+    public static String APPS_AVALIACOES_TEXT_EMAIL = "//span[text()=\"E-mail\"]/following-sibling::span";
 
 
     //TEXT
@@ -107,6 +111,10 @@ public class AppsUsbiAvaliacoes {
         ret.put(APPS_USBI_AVALIACOES_TEXT_VALOR_COMPRA, "Valor compra avaliação cadastrada");
         ret.put(APPS_USBI_AVALIACOES_TEXT_VALOR_VENDA, "Valor venda avaliação cadastrada");
         ret.put(APPS_USBI_AVALIACOES_TEXT_PORTAS, "Número de portas avaliação cadastrada");
+        ret.put(APPS_AVALIACOES_TEXT_CLIENTE, "Cliente da proposta");
+        ret.put(APPS_AVALIACOES_TEXT_TELEFONE, "Telefone da proposta");
+        ret.put(APPS_AVALIACOES_TEXT_CELULAR, "Celular da proposta");
+        ret.put(APPS_AVALIACOES_TEXT_EMAIL, "E-mail da proposta");
         return ret;
     }
 }

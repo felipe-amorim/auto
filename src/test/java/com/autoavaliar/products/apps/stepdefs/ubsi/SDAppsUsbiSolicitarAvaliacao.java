@@ -2,8 +2,11 @@ package com.autoavaliar.products.apps.stepdefs.ubsi;
 
 import com.autoavaliar.support.CoreWeb;
 import com.autoavaliar.support.tbi.GeradorCPF;
+import com.autoavaliar.support.tbi.GeradorPlaca;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import org.junit.Test;
+
 import java.util.Calendar;
 
 import static com.autoavaliar.products.apps.objetos.usbi.AppsUsbiSolicitarAvaliacao.*;
@@ -14,6 +17,7 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
     public static String placaVeiculo = "";
     public static String cpf ="";
     public static String email ="";
+    public static String emailCriacao ="";
     public static String codigoCrm ="";
     public static String nomeCliente ="";
     public static String celularCliente ="";
@@ -47,6 +51,7 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
 
     @And("O usuario seleciona o tipo de avaliacao {string}")
     public void oUsuarioSelecionaOTipoDeAvaliacao(String arg0) {
+        log().setLocator(appsSolicitarAvaliacao);
         find(appsTipoAvaliacaoCombobox).comboBox().set().byText(arg0);
     }
 
@@ -67,7 +72,8 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
     @And("O usuario insere um nome do cliente")
     public void oUsuarioInsereUmNomeDoCliente() {
         long t = Calendar.getInstance().getTimeInMillis();
-        find(appsNomeDoClienteInput).send().text("Cliente " + t);
+        nomeCliente = "Cliente " + t;
+        find(appsNomeDoClienteInput).send().text(nomeCliente);
     }
 
     @And("O usuario insere o ano do veiculo de interesse como {string}")
@@ -78,6 +84,7 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
 
     @And("O usuario insere o veiculo {string}")
     public void oUsuarioInsereOVeiculo(String arg0) {
+        log().setLocator(appsSolicitarAvaliacao);
         find(appsVeiculoInput).send().text(arg0);
         veiculo = arg0;
     }
@@ -93,6 +100,7 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
     @Then("O usuario clica no botao solicitar sem preencher os campos obrigatorios")
     public void oUsuarioClicaNoBotaoSolicitarSemPreencherOsCamposObrigatorios() {
         log().setLocator(appsSolicitarAvaliacao);
+        find(appsSolicitarButton).move();
         find(appsSolicitarButton).click();
     }
 
@@ -327,7 +335,8 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
     @And("O usuario preenche o campo e-mail para solicitacao de avaliacao")
     public void oUsuarioPreencheOCampoEMailParaSolicitacaoDeAvaliacao() {
         log().setLocator(appsSolicitarAvaliacao);
-        find(appsSolicitarAvaliacaoEmailClienteInput).send().text("automacao@teste.com");
+        emailCriacao = "automacao@teste.com";
+        find(appsSolicitarAvaliacaoEmailClienteInput).send().text(emailCriacao);
     }
 
     @And("O usuario insere um cpf valido para solicitar avaliacao")
@@ -345,7 +354,9 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
     @And("O usuario insere um telefone para solicitar avaliacao")
     public void oUsuarioInsereUmTelefoneParaSolicitarAvaliacao() {
         log().setLocator(appsSolicitarAvaliacao);
-        find(appsSolicitarAvaliacaoTelefoneInput).send().text("1111111111");
+        telefoneCliente = String.valueOf(Calendar.getInstance().getTimeInMillis());
+        telefoneCliente = telefoneCliente.substring(3, 12);
+        find(appsSolicitarAvaliacaoTelefoneInput).send().slow().text(telefoneCliente);
     }
 
     @And("O usuario preenche o campo observacoes para solicitar avaliacao")
@@ -405,7 +416,9 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
 
     @And("O usuario insere um celular do cliente")
     public void oUsuarioInsereUmCelularDoCliente() {
-        find(appsCelularDoClienteInput).send().text("99999999999");
+        celularCliente = String.valueOf(Calendar.getInstance().getTimeInMillis());
+        celularCliente = celularCliente.substring(1, 12);
+        find(appsCelularDoClienteInput).send().slow().text(celularCliente);
     }
 
     @And("O usuario insere uma placa para o veiculo")
@@ -505,5 +518,90 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
         garantia = "Sim";
         find(appsSolicitarAvaliacaoPossuiPossuiGarantiaComboBox).comboBox().set().byText(garantia);
         scroll().up(800);
+    }
+
+    @And("O usuario preenche o campo crm")
+    public void oUsuarioPreencheOCampoCrm() {
+        log().setLocator(appsSolicitarAvaliacao);
+        codigoCrm = "0000";
+        find(appsSolicitarAvaliacaoCRMInput).send().text(codigoCrm);
+    }
+
+    @And("O usuario insere uma placa generica")
+    public void oUsuarioInsereUmaPlacaGenerica() {
+        log().setLocator(appsSolicitarAvaliacao);
+        placaVeiculo = GeradorPlaca.gerarPlaca();
+        find(appsPlacaInput).send().text(placaVeiculo);
+    }
+
+    @And("O usuario preenche os dados do veiculo com placa sem avaliacao")
+    public void oUsuarioPreencheOsDadosDoVeiculoComPlacaSemAvaliacao() {
+        anoInteresse = "2018";
+        oUsuarioInsereOAnoDoVeiculoDeInteresseComo(anoInteresse);
+        veiculo = "palio";
+        oUsuarioInsereOVeiculo(veiculo);
+        oUsuarioSelecionaOPrimeiroVeiculoDaBusca();
+
+        oUsuarioInsereUmaPlacaPlacaEGaranteQueNaoExisteAvaliacaoParaAMesma();
+        find(appsSolicitarAvaliacaoRenavamInput).click();
+        renavam = "12345678";
+        find(appsSolicitarAvaliacaoRenavamInput).send().slow().text(renavam);
+        assentos = "4";
+        find(appsSolicitarAvaliacaoAssentosInput).send().text(assentos);
+        estofamento = "couro";
+        find(appsSolicitarAvaliacaoEstofamentoInput).send().text(estofamento);
+        motor = "1";
+        find(appsSolicitarAvaliacaoNumeroDoMotorInput).send().text(motor);
+        potencia = "1";
+        find(appsSolicitarAvaliacaoPotenciaInput).send().text(potencia);
+        expectativaDoCliente = "1";
+        find(appsSolicitarAvaliacaoExpectativaDoClienteInput).send().text(expectativaDoCliente);
+        cidade = "campinas";
+        find(appsSolicitarAvaliacaoCidadeDoVeiculoInput).send().text(cidade);
+        find(appsSolicitarAvaliacaoCidadeCampinasInput).click();
+        perguntaBinaria = "Sim";
+        find(appsSolicitarAvaliacaoEstaPerguntaEBinariaInput).comboBox().set().byText(perguntaBinaria);
+        perguntaMonetaria = "1";
+        find(appsSolicitarAvaliacaoEstaPerguntaEMonetariaInput).send().text(perguntaMonetaria);
+        perguntaNumerica = "1";
+        find(appsSolicitarAvaliacaoEstaPerguntaENumericaInput).send().text(perguntaNumerica);
+        perguntaParaEscolha = "Escolha 1";
+        find(appsSolicitarAvaliacaoEstaPerguntaEParaEscolhaInput).comboBox().set().byText(perguntaParaEscolha);
+        find(appsSolicitarAvaliacaoEstaPerguntaEMultiplaEscolhaOpcaoUmButton).click();
+        perguntaString = "1";
+        find(appsSolicitarAvaliacaoEstaPerguntaEStringInput).send().text(perguntaString);
+        manual = "Sim";
+        find(appsSolicitarAvaliacaoPossuiManualDoVeiculoCombobox).comboBox().set().byText(manual);
+        chave = "Sim";
+        find(appsSolicitarAvaliacaoPossuiChaveReservaComboBox).comboBox().set().byText(chave);
+        garantia = "Sim";
+        find(appsSolicitarAvaliacaoPossuiPossuiGarantiaComboBox).comboBox().set().byText(garantia);
+    }
+
+
+    @And("O usuario insere uma placa e garante que nao existe avaliacao para a mesma")
+    public void oUsuarioInsereUmaPlacaPlacaEGaranteQueNaoExisteAvaliacaoParaAMesma() {
+        placaVeiculo = GeradorPlaca.gerarPlaca();
+        //placaVeiculo = "BKJ0692";
+        //placaVeiculo = "gxa8188";
+        find(appsPlacaInput).send().text(placaVeiculo);
+        find(appsBuscarPlacaButton).click();
+        //sleep().setMaxTime(5000);
+        //while (!find(APP_SOLICITAR_AVALIACAO_TEXT_PLACA_NAO_ENCONTRADA).exists()){
+        //    find(appsPlacaInput).clear();
+        //    placaVeiculo = GeradorPlaca.gerarPlaca();
+        //    find(appsPlacaInput).send().text(placaVeiculo);
+        //}
+        //sleep().setDefaultTime();
+    }
+
+    @And("O usuario valida que avaliacao foi registrada por placa")
+    public void oUsuarioValidaQueAvaliacaoFoiRegistradaPorPlaca(){
+        log().setLocator(appsSolicitarAvaliacao);
+        if (find(APP_SOLICITAR_AVALIACAO_TEXT_AVALIACAO_CADASTRADA.replace("arg0", placaVeiculo.toUpperCase())).exists()){
+            evidence("Avaliação cadastrada");
+        } else {
+            error().Warning("Avaliação nao localizada");
+        }
     }
 }

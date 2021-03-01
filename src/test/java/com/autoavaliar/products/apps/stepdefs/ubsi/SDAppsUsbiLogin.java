@@ -1,6 +1,7 @@
 package com.autoavaliar.products.apps.stepdefs.ubsi;
 
 import com.autoavaliar.support.CoreWeb;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 
 import static com.autoavaliar.products.apps.objetos.Environment.*;
@@ -39,4 +40,33 @@ public class SDAppsUsbiLogin extends CoreWeb {
         sdAppsUsbiMain.oUsuarioClicaNoBotaoAvaliacoesDentroDoMenuExpandido();
         sdAppsUsbiAvaliacoes.oUsuarioValidaQueATelaAvaliacoesCarregouComSucesso();
     }
+
+    @When("O usuario realiza apenas login no portal auto avaliar usbi com usuario vendedor")
+    public void oUsuarioRealizaApenasLoginNoPortalAutoAvaliarUsbiComUsuarioVendedor() {
+        log().setLocator(appsUsbiLogin);
+        webDriver().set().options().maximized();
+        webDriver().navigate(url);
+        sleep().setMaxTime(15000);
+        if (find(APPS_USBI_LOGIN_IMAGE_ALERTA_ABAIXO_ASSINADO).exists()){
+            find(APPS_USBI_LOGIN_BUTTON_FECHAR_ALERTA_ABAIXO_ASSINADO).click();
+        }
+        sleep().setDefaultTime();
+        sleep().untilAppear(APPS_USBI_LOGIN_INPUT_EMAIL);
+        find(APPS_USBI_LOGIN_INPUT_EMAIL).send().text(vendedorAutoavaliar);
+        find(APPS_USBI_LOGIN_INPUT_SENHA).send().text(defaultPassword);
+        find(APPS_USBI_LOGIN_BUTTON_LOGIN).click();
+        sleep().setMaxTime(30000);
+        sleep().untilAppear(appsIconUser);
+        sleep().setDefaultTime();
+        log().setLocator(appsMain);
+        sleep().setMaxTime(10000);
+        if (find(APPS_USBI_MAIN_TEXT_ALERTA).exists()){
+            find(APPS_USBI_MAIN_TEXT_FECHAR_ALERTA).click();
+        }
+        sleep().setDefaultTime();
+        sleep().setDefaultTime();
+        SDAppsUsbiMain SDAppsUsbiMain = new SDAppsUsbiMain();
+        SDAppsUsbiMain.oUsuarioClicaNoBotaoSolicitarAvaliacao();
+    }
+
 }

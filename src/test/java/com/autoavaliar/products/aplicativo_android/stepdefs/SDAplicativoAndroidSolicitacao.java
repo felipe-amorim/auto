@@ -16,6 +16,7 @@ import java.io.IOException;
 
 import static com.autoavaliar.products.aplicativo_android.objetos.AplicativoAndroidMain.*;
 import static com.autoavaliar.products.aplicativo_android.objetos.AplicativoAndroidSolicitacao.*;
+import static com.autoavaliar.products.apps.stepdefs.ubsi.SDAppsUsbiSolicitarAvaliacao.*;
 
 
 public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
@@ -464,7 +465,7 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     public void oUsuarioClicaNoCardComAPlacaCadastrada() {
         log().setLocator(aplicativoAndroidSolicitacao);
         String placa = find(aplicativoAndroidSolicitacaoVeiculoCardPorPlacaButton).get().text().toString();
-        assertThat(placa).isEqualTo(SDAppsUsbiSolicitarAvaliacao.placaVeiculo);
+        assertThat(placa).isEqualTo(placaVeiculo);
         find(aplicativoAndroidSolicitacaoVeiculoCardPorPlacaButton).click();
     }
 
@@ -1115,14 +1116,15 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         oUsuarioEscolheOVendedorQA();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
-        sendPlaca(arg2);
+        //sendPlaca(arg2);
+        digitarPlaca();
         sendAnoFab(arg3);
         anoLancamento(arg3);
         sendKM(arg4);
         oUsuarioPreencheAMarcaUtilizandoOFiltroPor(arg5);
-        sleep().until(2000);
+        //sleep().until(2000);
         oUsuarioPreencheOModeloUtilizandoOFiltroPor(arg6);
-        sleep().until(2000);
+        //sleep().until(2000);
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioPreencheOCampoVersao();
         oUsuarioPreencheOCampoCor();
@@ -1135,16 +1137,17 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioInsereQuatroFotosDeTeste();
         oUsuarioArrastaATelaParaBaixo();
-        sleep().until(2000);
+        //sleep().until(2000);
         oUsuarioClicaEmSalvarEAvancar();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
         oUsuarioArrastaATelaParaBaixo();
-        sleep().until(2000);
+        //sleep().until(2000);
         oUsuarioClicaEmSalvarEAvancar();
-        sendAvaliaMotor(arg7);
-        sendAvaliaCambio(arg8);
-        sleep().until(2000);
+        //sendAvaliaMotor(arg7);
+        sendAvaliaMotorCarro(arg7);
+        //sendAvaliaCambio(arg8);
+        //sendAvaliaCambioCarro(arg8);
         oUsuarioClicaEmSalvarEAvancar();
         evidence("evidence");
         oUsuarioPreencheOCampoClassificacaoComoA();
@@ -1549,9 +1552,9 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         String actualStatusMotor = find(aplicativoAndroidSolicitacaoStatusAvaliacaoMotor).get().text().toString();
         evidence("Validando o status do motor");
         assertThat(actualStatusMotor).isEqualTo(estadoMotor.toUpperCase());
-        String actualStatusCambio = find(aplicativoAndroidSolicitacaoStatusAvaliacaoCambio).get().text().toString();
+        //String actualStatusCambio = find(aplicativoAndroidSolicitacaoStatusAvaliacaoCambio).get().text().toString();
         evidence("Validando o status do cambio");
-        assertThat(actualStatusCambio).isEqualTo(estadoCambio.toUpperCase());
+        //assertThat(actualStatusCambio).isEqualTo(estadoCambio.toUpperCase());
         oUsuarioClicaEmSalvarEAvancar();
         String sClassificacao = find(APLICATIVO_ANDROID_CLASSIFICACAO_SELECIONADA).get().text().toString();
         assertThat(sClassificacao).isEqualTo(classificacao);
@@ -1869,5 +1872,130 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         sendCampoValor(String.valueOf(valorCompra));
         sendCampoVenda(String.valueOf(valorVenda));
         oUsuarioClicaEmSalvarEAvancar();
+    }
+
+    @And("O usuario atualiza todos os campos da solicitacao moto {string} {string} {string} {string} {string} {string} {string}")
+    public void oUsuarioAtualizaTodosOsCamposDaSolicitacaoMoto(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5, String arg6) {
+        log().setLocator(aplicativoAndroidSolicitacao);
+        String placaVeiculoPrimeiraAvaliacao = find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_PRIMEIRA_AVALIACAO).get().text().toString();
+        if (placaVeiculoPrimeiraAvaliacao.equals(placa)){
+            find(APLICATIVO_ANDROID_MAIN_REALIZADAS_CARDS).click();
+        } else {
+            error().Fail();
+        }
+        oUsuarioPreencheOCampoOwner();
+        sTelefone = String.valueOf(t);
+        sTelefone = sTelefone.substring(0,10);
+        find(aplicativoAndroidSolicitacaoTelefoneInput).send().text(sTelefone);
+        oUsuarioPreencheOCampoCelular();
+        aplicativoAndroidEmailTeste = aplicativoAndroidEmailTesteEditado;
+        oUsuarioPreencheOCampoEmail();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        int intAno = Integer.parseInt(arg0);
+        intAno += 1;
+        sendAnoFab(String.valueOf((intAno)));
+        anoLancamento(String.valueOf((intAno)));
+        int intKm = Integer.parseInt(arg1);
+        intKm += 10000;
+        sendKM(String.valueOf((intKm)));
+        oUsuarioPreencheAMarcaUtilizandoOFiltroPor(arg2);
+        oUsuarioPreencheOModeloUtilizandoOFiltroPor(arg3);
+        oUsuarioPreencheOCampoVersao();
+        oUsuarioPreencheOCampoCorComSegundaOpcao();
+        oUsuarioPreencheOCampoCombustivelComSegundaOpcao();
+        oUsuarioPreencheOCampoCambioComSegundaOpcaoLista();
+        oUsuarioPreencheOCampoProcedenciaParaCarroComSegundaOpcaoLista();
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioClicaEmSalvarEAvancar();
+        sendAvaliaMotorCarro(arg4);
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioPreencheOCampoClassificacaoComoB();
+        oUsuarioPreencheOCampoFinalidadeComoOferta();
+        oUsuarioArrastaATelaParaBaixo();
+        int valorCompra = Integer.parseInt(arg5);
+        valorCompra += 500;
+        int valorVenda = Integer.parseInt(arg6);
+        valorVenda += 500;
+        sendCampoValor(String.valueOf(valorCompra));
+        sendCampoVenda(String.valueOf(valorVenda));
+        oUsuarioClicaEmSalvarEAvancar();
+    }
+
+    @And("O usuario acessa a avaliacao solicitada pelo usbi no app com usuario {string} {string} {string} {string} {string} {string} {string} {string} {string} {string}")
+    public void  oUsuarioAcessaAAvaliacaoSolicitadaPeloUsbiNoAppComUsuario(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5, String arg6, String arg7, String arg8, String arg9){
+        log().setLocator(aplicativoAndroidSolicitacao);
+        SDAplicativoAndroidLogin SDAplicativoAndroidLogin = new SDAplicativoAndroidLogin();
+        SDAplicativoAndroidLogin.oUsuarioAbreOAplicativoComo(arg0, arg1);
+        String placaVeiculoPrimeiraAvaliacao = find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_PRIMEIRA_SOLICITACAO).get().text().toString();
+        if (placaVeiculoPrimeiraAvaliacao.toLowerCase().equals(placaVeiculo)){
+            find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_PRIMEIRA_SOLICITACAO).click();
+        } else {
+            placaVeiculoPrimeiraAvaliacao = find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_SEGUNDA_SOLICITACAO).get().text().toString();
+            if (placaVeiculoPrimeiraAvaliacao.equals(placaVeiculo)){
+                find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PLACA_VEICULO_SEGUNDA_SOLICITACAO).click();
+            } else {
+                error().Fail();
+            }
+        }
+        String nomeDaAvaliacao = find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PROPRIETARIO).get().text().toString();
+        assertThat(nomeDaAvaliacao).isEqualTo(nomeCliente);
+        proprietario = "Novo Cliente " + Calendar.getInstance().getTimeInMillis();
+        find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_PROPRIETARIO).send().text(proprietario);
+        String actualTel = find(aplicativoAndroidSolicitacaoTelefoneInput).get().text().toString();
+        actualTel = actualTel.replace("(", "").replace(")", "").replace(" ", "");
+        assertThat(actualTel).isEqualTo(telefoneCliente);
+        telefoneCliente = String.valueOf(Calendar.getInstance().getTimeInMillis());
+        telefoneCliente = telefoneCliente.substring(3, 12);
+        find(aplicativoAndroidSolicitacaoTelefoneInput).send().text(telefoneCliente);
+        String actualCel = find(aplicativoAndroidSolicitacaoCelularInput).get().text().toString();
+        actualCel = actualCel.replace("(", "").replace(")", "").replace(" ", "");
+        assertThat(actualCel).isEqualTo(celularCliente);
+        celularCliente = String.valueOf(Calendar.getInstance().getTimeInMillis());
+        celularCliente = celularCliente.substring(1, 12);
+        find(aplicativoAndroidSolicitacaoCelularInput).send().text(celularCliente);
+        String emailAvaliacao = find(aplicativoAndroidSolicitacaoEmailInput).get().text().toString();
+        assertThat(emailAvaliacao).isEqualTo(emailCriacao);
+        emailCriacao = "automacao@editado.com";
+        find(aplicativoAndroidSolicitacaoEmailInput).send().text(emailCriacao);
+        String emailAvaliacaoTemp = find(aplicativoAndroidSolicitacaoEmailInput).get().text().toString();
+        String placaAvaliacao = find(aplicativoAndroidSolicitacaoPlacaInput).get().text().toString();
+        assertThat(placaAvaliacao.toLowerCase()).isEqualTo(placaVeiculo);
+        oUsuarioPreencheOsDadosDoVeiculoParaNovaAvaliacaoCarro(arg2, arg3, arg4, arg5);
+        oUsuarioInsereQuatroFotosDeTeste();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioClicaEmSalvarEAvancar();
+        sendAvaliaMotorCarro(arg6);
+        sendAvaliaCambioCarro(arg7);
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioPreencheOCampoClassificacaoComoA();
+        oUsuarioPreencheOCampoFinalidadeComoOferta();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        sendCampoValor(arg8);
+        sendCampoVenda(arg9);
+        oUsuarioClicaEmSalvarEAvancar();
+    }
+
+    @And("O usuario preenche os dados do veiculo para nova avaliacao carro {string} {string} {string} {string}")
+    public void oUsuarioPreencheOsDadosDoVeiculoParaNovaAvaliacaoCarro(String arg0,String arg1,String arg2,String arg3){
+        sendAnoFab(arg0);
+        anoLancamento(arg0);
+        oUsuarioArrastaATelaParaBaixo();
+        sendKM(arg1);
+        oUsuarioPreencheAMarcaUtilizandoOFiltroPor(arg2);
+        oUsuarioPreencheOModeloUtilizandoOFiltroPor(arg3);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheOCampoVersao();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheOCampoCor();
+        oUsuarioPreencheOCampoCombustivel();
+        oUsuarioPreencheOCampoCambio();
+        oUsuarioPreencheOCampoProcedenciaParaCarro();
+        oUsuarioPreencheOCampoQuantidadeDePortasUtilizandoOFiltroPor("4");
     }
 }
