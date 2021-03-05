@@ -1,8 +1,11 @@
 package com.autoavaliar.products.apps.stepdefs.ubsi;
 
+import com.autoavaliar.intern.Instances;
 import com.autoavaliar.support.CoreWeb;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import io.appium.java_client.MobileElement;
 
 
 import static com.autoavaliar.products.aplicativo_android.stepdefs.SDAplicativoAndroidSolicitacao.proprietario;
@@ -69,5 +72,24 @@ public class SDAppsUsbiGeral extends CoreWeb {
         assertThat(sCelularProposta).isEqualTo(celularCliente);
         assertThat(sEmailProposta).isEqualTo(emailCriacao);
 
+    }
+
+    @Given("O usuario realiza uma solicitacao de avaliacao para moto usbi com usuario vendedor")
+    public void oUsuarioRealizaUmaSolicitacaoDeAvaliacaoParaMotoUsbiComUsuarioVendedor() {
+        SDAppsUsbiLogin.oUsuarioRealizaApenasLoginNoPortalAutoAvaliarUsbiComUsuarioVendedor();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioSelecionaOTipoDeAvaliacao("Somente compra");
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioInsereUmCpfValido();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioInsereUmNomeDoCliente();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioPreencheOCampoEMailParaSolicitacaoDeAvaliacao();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioInsereUmTelefoneParaSolicitarAvaliacao();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioInsereUmCelularDoCliente();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioPreencheOCampoCrm();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioInsereOCepDaAutoAvaliar();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioPreencheOOCampoNumero();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioPreencheOCampoComplemento();
+        //SDAppsUsbiSolicitarAvaliacao.oUsuarioPreencheOsDadosDoVeiculoComPlacaSemAvaliacao();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioPreencheOsDadosDoVeiculoParaMotoComPlacaSemAvaliacao();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioClicaNoBotaoSolicitarSemPreencherOsCamposObrigatorios();
+        SDAppsUsbiSolicitarAvaliacao.oUsuarioValidaQueAvaliacaoFoiRegistradaPorPlaca();
     }
 }

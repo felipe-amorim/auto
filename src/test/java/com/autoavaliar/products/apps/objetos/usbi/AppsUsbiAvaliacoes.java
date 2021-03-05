@@ -56,6 +56,7 @@ public class AppsUsbiAvaliacoes {
     public static String APPS_AVALIACOES_TEXT_TELEFONE = "//span[text()=\"Telefone\"]/following-sibling::span";
     public static String APPS_AVALIACOES_TEXT_CELULAR = "//span[text()=\"Celular\"]/following-sibling::span";
     public static String APPS_AVALIACOES_TEXT_EMAIL = "//span[text()=\"E-mail\"]/following-sibling::span";
+    public static String APPS_AVALIACOES_TEXT_PROGRESSO_AVALIACAO = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup";
 
 
     //TEXT

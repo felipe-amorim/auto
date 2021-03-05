@@ -10,6 +10,7 @@ import com.autoavaliar.products.apps.stepdefs.ubsi.SDAppsUsbiSolicitarAvaliacao;
 import com.autoavaliar.support.CoreAndroid;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+
 import java.util.Calendar;
 import java.io.IOException;
 
@@ -529,14 +530,12 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     private void  sendAvaliaMotorCarro(String status) {
         if (status.length() <= 0) {
             log().setLocator(aplicativoAndroidSolicitacao);
-            //find(aplicativoAndroidSolicitacaoAvaliacaoMotor).click();
             find(APLICATIVO_ANDROID_SOLICITACAO_AVALIACAO_MOTOR_CARRO).click();
             find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
             find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
             find(aplicativoAndroidSolicitacaoSalvar).click();
         } else {
             log().setLocator(aplicativoAndroidSolicitacao);
-            //find(aplicativoAndroidSolicitacaoAvaliacaoMotor).click();
             find(APLICATIVO_ANDROID_SOLICITACAO_AVALIACAO_MOTOR_CARRO).click();
             find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
             switch (status.toLowerCase()) {
@@ -1997,5 +1996,150 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         oUsuarioPreencheOCampoCambio();
         oUsuarioPreencheOCampoProcedenciaParaCarro();
         oUsuarioPreencheOCampoQuantidadeDePortasUtilizandoOFiltroPor("4");
+    }
+
+    @When("O usuario preenche dados nova solicitacao carro ate selecionar cinco opcionais {string} {string} {string} {string} {string}")
+    public void oUsuarioPreencheDadosNovaSolicitacaoCarroAteSelecionarCincoOpcionaisPlacaAnoKmMarcaModeloAvaliacaoOpcionais(String arg0, String arg1, String arg2, String arg3, String arg4) {
+        SDAplicativoAndroidMain main = new SDAplicativoAndroidMain();
+        main.oUsuarioClicaEmMais();
+        main.oUsuarioClicaNoMenuCarro();
+        oUsuarioPreencheOCampoOwner();
+        sTelefone = String.valueOf(t);
+        sTelefone = sTelefone.substring(0,10);
+        find(aplicativoAndroidSolicitacaoTelefoneInput).send().text(sTelefone);
+        oUsuarioPreencheOCampoCelular();
+        oUsuarioPreencheOCampoEmail();
+        oUsuarioEscolheOVendedorQA();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        digitarPlaca();
+        sendAnoFab(arg0);
+        anoLancamento(arg0);
+        oUsuarioArrastaATelaParaBaixo();
+        sendKM(arg1);
+        oUsuarioPreencheAMarcaUtilizandoOFiltroPor(arg2);
+        oUsuarioPreencheOModeloUtilizandoOFiltroPor(arg3);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheOCampoVersao();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheOCampoCor();
+        oUsuarioPreencheOCampoCombustivel();
+        oUsuarioPreencheOCampoCambio();
+        oUsuarioPreencheOCampoProcedenciaParaCarro();
+        oUsuarioPreencheOCampoQuantidadeDePortasUtilizandoOFiltroPor("4");
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioInsereQuatroFotosDeTeste();
+        oUsuarioArrastaATelaParaBaixo();
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        sendAvaliaPneusCarro(arg4);
+        sendAvaliaLatariaCarro(arg4);
+        sendAvaliaMotorCarro(arg4);
+        sendAvaliaPinturaCarro(arg4);
+        sendAvaliaCambioCarro(arg4);
+    }
+
+    private void  sendAvaliaPneusCarro(String status) {
+        if (status.length() <= 0) {
+            log().setLocator(aplicativoAndroidSolicitacao);
+            find(APLICATIVO_ANDROID_SOLICITACAO_INPUT_AVALIACAO_PNEUS_CARRO).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
+            find(aplicativoAndroidSolicitacaoSalvar).click();
+        } else {
+            log().setLocator(aplicativoAndroidSolicitacao);
+            find(APLICATIVO_ANDROID_SOLICITACAO_INPUT_AVALIACAO_PNEUS_CARRO).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
+            switch (status.toLowerCase()) {
+                case "bom":
+                    estadoMotor = "bom";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
+                    break;
+                case "excelente":
+                    estadoMotor = "excelente";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorExcelente).click();
+                    break;
+                case "ruim":
+                    estadoMotor = "ruim";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorRuim).click();
+                    break;
+            }
+            find(aplicativoAndroidSolicitacaoSalvar).click();
+        }
+    }
+
+    private void  sendAvaliaLatariaCarro(String status) {
+        if (status.length() <= 0) {
+            log().setLocator(aplicativoAndroidSolicitacao);
+            find(APLICATIVO_ANDROID_SOLICITACAO_INPUT_AVALIACAO_LATARIA_CARRO).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
+            find(aplicativoAndroidSolicitacaoSalvar).click();
+        } else {
+            log().setLocator(aplicativoAndroidSolicitacao);
+            find(APLICATIVO_ANDROID_SOLICITACAO_INPUT_AVALIACAO_LATARIA_CARRO).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
+            switch (status.toLowerCase()) {
+                case "bom":
+                    estadoMotor = "bom";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
+                    break;
+                case "excelente":
+                    estadoMotor = "excelente";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorExcelente).click();
+                    break;
+                case "ruim":
+                    estadoMotor = "ruim";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorRuim).click();
+                    break;
+            }
+            find(aplicativoAndroidSolicitacaoSalvar).click();
+        }
+    }
+
+    private void  sendAvaliaPinturaCarro(String status) {
+        if (status.length() <= 0) {
+            log().setLocator(aplicativoAndroidSolicitacao);
+            find(APLICATIVO_ANDROID_SOLICITACAO_INPUT_AVALIACAO_PINTURA_CARRO).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
+            find(aplicativoAndroidSolicitacaoSalvar).click();
+        } else {
+            log().setLocator(aplicativoAndroidSolicitacao);
+            find(APLICATIVO_ANDROID_SOLICITACAO_INPUT_AVALIACAO_PINTURA_CARRO).click();
+            find(aplicativoAndroidSolicitacaoEstadoDoMotor).click();
+            switch (status.toLowerCase()) {
+                case "bom":
+                    estadoMotor = "bom";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorBom).click();
+                    break;
+                case "excelente":
+                    estadoMotor = "excelente";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorExcelente).click();
+                    break;
+                case "ruim":
+                    estadoMotor = "ruim";
+                    find(aplicativoAndroidSolicitacaoEstadoDoMotorRuim).click();
+                    break;
+            }
+            find(aplicativoAndroidSolicitacaoSalvar).click();
+        }
+    }
+
+    @Then("O usuario valida existencia check referente a itens avaliados")
+    public void oUsuarioValidaExistenciaCheckReferenteAItensAvaliados() {
+        log().setLocator(aplicativoAndroidSolicitacao);
+        if (find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_ITENS_AVALIADOS).exists()){
+            evidence("Check referente A Itens Avaliados apresentado como esperado");
+        } else {
+            evidence("Check referente A Itens Avaliados não foi apresentado como esperado");
+            error().Fail();
+        }
     }
 }

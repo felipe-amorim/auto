@@ -541,7 +541,6 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
         veiculo = "palio";
         oUsuarioInsereOVeiculo(veiculo);
         oUsuarioSelecionaOPrimeiroVeiculoDaBusca();
-
         oUsuarioInsereUmaPlacaPlacaEGaranteQueNaoExisteAvaliacaoParaAMesma();
         find(appsSolicitarAvaliacaoRenavamInput).click();
         renavam = "12345678";
@@ -604,4 +603,48 @@ public class SDAppsUsbiSolicitarAvaliacao extends CoreWeb {
             error().Warning("Avaliação nao localizada");
         }
     }
+
+    @And("O usuario preenche os dados do veiculo para moto com placa sem avaliacao")
+    public void oUsuarioPreencheOsDadosDoVeiculoParaMotoComPlacaSemAvaliacao() {
+        anoInteresse = "2018";
+        oUsuarioInsereOAnoDoVeiculoDeInteresseComo(anoInteresse);
+        veiculo = "TWISTER";
+        oUsuarioInsereOVeiculo(veiculo);
+        oUsuarioSelecionaOPrimeiroVeiculoDaBusca();
+        oUsuarioInsereUmaPlacaPlacaEGaranteQueNaoExisteAvaliacaoParaAMesma();
+        find(appsSolicitarAvaliacaoRenavamInput).click();
+        renavam = "12345678";
+        find(appsSolicitarAvaliacaoRenavamInput).send().slow().text(renavam);
+        assentos = "4";
+        find(appsSolicitarAvaliacaoAssentosInput).send().text(assentos);
+        estofamento = "couro";
+        find(appsSolicitarAvaliacaoEstofamentoInput).send().text(estofamento);
+        motor = "1";
+        find(appsSolicitarAvaliacaoNumeroDoMotorInput).send().text(motor);
+        potencia = "1";
+        find(appsSolicitarAvaliacaoPotenciaInput).send().text(potencia);
+        expectativaDoCliente = "1";
+        find(appsSolicitarAvaliacaoExpectativaDoClienteInput).send().text(expectativaDoCliente);
+        cidade = "campinas";
+        find(appsSolicitarAvaliacaoCidadeDoVeiculoInput).send().text(cidade);
+        find(appsSolicitarAvaliacaoCidadeCampinasInput).click();
+        perguntaBinaria = "Sim";
+        find(appsSolicitarAvaliacaoEstaPerguntaEBinariaInput).comboBox().set().byText(perguntaBinaria);
+        perguntaMonetaria = "1";
+        find(appsSolicitarAvaliacaoEstaPerguntaEMonetariaInput).send().text(perguntaMonetaria);
+        perguntaNumerica = "1";
+        find(appsSolicitarAvaliacaoEstaPerguntaENumericaInput).send().text(perguntaNumerica);
+        perguntaParaEscolha = "Escolha 1";
+        find(appsSolicitarAvaliacaoEstaPerguntaEParaEscolhaInput).comboBox().set().byText(perguntaParaEscolha);
+        find(appsSolicitarAvaliacaoEstaPerguntaEMultiplaEscolhaOpcaoUmButton).click();
+        perguntaString = "1";
+        find(appsSolicitarAvaliacaoEstaPerguntaEStringInput).send().text(perguntaString);
+        manual = "Sim";
+        find(appsSolicitarAvaliacaoPossuiManualDoVeiculoCombobox).comboBox().set().byText(manual);
+        chave = "Sim";
+        find(appsSolicitarAvaliacaoPossuiChaveReservaComboBox).comboBox().set().byText(chave);
+        garantia = "Sim";
+        find(appsSolicitarAvaliacaoPossuiPossuiGarantiaComboBox).comboBox().set().byText(garantia);
+    }
+
 }
