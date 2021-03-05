@@ -152,7 +152,14 @@ Feature: Realizar nova solicitação
       | "2016" | "volkswagen" | "gol"  |
 
 
-  @ValidaCheckItensAvaliados @ComCamposObrigatoriosAndroidOutLine @Carro
+  @ValidaCheckFotos @ComCamposObrigatoriosAndroidOutLine @Carro
+  Scenario: Validar Check Fotos, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
+    Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
+    When O usuario preenche dados nova solicitacao carro com dezesseis fotos
+    Then O usuario valida existencia check referente a fotos
+
+
+    @ValidaCheckItensAvaliados @ComCamposObrigatoriosAndroidOutLine @Carro
   Scenario Outline: Validar Check Itens Avaliados, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
     When O usuario preenche dados nova solicitacao carro ate selecionar cinco opcionais <ano> <km> <marca> <modelo> <avaliacaoOpcionais>
@@ -162,4 +169,14 @@ Feature: Realizar nova solicitação
       | ano    | km       | marca        | modelo | avaliacaoOpcionais |
       | "2016" | "120001" | "volkswagen" | "gol"  | "bom"              |
 
+
+  @ValidaCheckObservacoes @ComCamposObrigatoriosAndroidOutLine @Carro
+  Scenario Outline: Validar Check Observações, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
+    Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
+    When O usuario preenche dados nova solicitacao carro ate preencher observacoes <ano> <km> <marca> <modelo> <statusMotor> <statusCambio>
+    Then O usuario valida existencia check referente a observacoes
+
+    Examples:
+      | ano    | km       | marca        | modelo | statusMotor | statusCambio |
+      | "2016" | "120001" | "volkswagen" | "gol"  | "bom"       | "bom"        |
 

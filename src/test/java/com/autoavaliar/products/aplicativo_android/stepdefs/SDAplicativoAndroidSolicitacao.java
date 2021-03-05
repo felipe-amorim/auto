@@ -2180,4 +2180,104 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
             error().Fail();
         }
     }
+
+    @When("O usuario preenche dados nova solicitacao carro com dezesseis fotos")
+    public void oUsuarioPreencheDadosNovaSolicitacaoCarroComDezesseisFotos() {
+        SDAplicativoAndroidMain main = new SDAplicativoAndroidMain();
+        main.oUsuarioClicaEmMais();
+        main.oUsuarioClicaNoMenuCarro();
+        oUsuarioArrastaATelaParaBaixo();
+        digitarPlaca();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        log().setLocator(aplicativoAndroidSolicitacao);
+        find(aplicativoAndroidSolicitacaoFotosButton).click();
+        sleep().until(2000);
+        sleep().until(5000);
+        int contador = 0;
+        while (contador <= 16){
+            find(aplicativoAndroidTirarFoto).click();
+            arduino.send('3');
+            sleep().until(2000);
+            contador++;
+        }
+        find(aplicativoAndroidFecharCamera).click();
+    }
+
+    @Then("O usuario valida existencia check referente a fotos")
+    public void oUsuarioValidaExistenciaCheckReferenteAFotos() {
+        log().setLocator(aplicativoAndroidSolicitacao);
+        if (find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_FOTOS).exists()){
+            evidence("Check referente a fotos apresentado como esperado");
+        } else {
+            evidence("Check referente a fotos não foi apresentado como esperado");
+            error().Fail();
+        }
+    }
+
+    @When("O usuario preenche dados nova solicitacao carro ate preencher observacoes {string} {string} {string} {string} {string} {string}")
+    public void oUsuarioPreencheDadosNovaSolicitacaoCarroAtePreencherObservacoesPlacaAnoKmMarcaModeloStatusMotorStatusCambioValorCompraValorVenda(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5) {
+        SDAplicativoAndroidMain main = new SDAplicativoAndroidMain();
+        main.oUsuarioClicaEmMais();
+        main.oUsuarioClicaNoMenuCarro();
+        oUsuarioPreencheOCampoOwner();
+        sTelefone = String.valueOf(t);
+        sTelefone = sTelefone.substring(0,10);
+        find(aplicativoAndroidSolicitacaoTelefoneInput).send().text(sTelefone);
+        oUsuarioPreencheOCampoCelular();
+        oUsuarioPreencheOCampoEmail();
+        oUsuarioEscolheOVendedorQA();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        digitarPlaca();
+        sendAnoFab(arg0);
+        anoLancamento(arg0);
+        oUsuarioArrastaATelaParaBaixo();
+        sendKM(arg1);
+        oUsuarioPreencheAMarcaUtilizandoOFiltroPor(arg2);
+        oUsuarioPreencheOModeloUtilizandoOFiltroPor(arg3);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheOCampoVersao();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheOCampoCor();
+        oUsuarioPreencheOCampoCombustivel();
+        oUsuarioPreencheOCampoCambio();
+        oUsuarioPreencheOCampoProcedenciaParaCarro();
+        oUsuarioPreencheOCampoQuantidadeDePortasUtilizandoOFiltroPor("4");
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioInsereQuatroFotosDeTeste();
+        oUsuarioArrastaATelaParaBaixo();
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        sendAvaliaMotorCarro(arg4);
+        sendAvaliaCambioCarro(arg5);
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        evidence("evidence");
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        find(APLICATIVO_ANDROID_SOLICITACAO_INPUT_OBSERVACOES).send().text("teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste ");
+    }
+
+    @Then("O usuario valida existencia check referente a observacoes")
+    public void oUsuarioValidaExistenciaCheckReferenteAObservacoes() {
+        log().setLocator(aplicativoAndroidSolicitacao);
+        if (find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_OBSERVACOES).exists()){
+            evidence("Check referente a observações apresentado como esperado");
+        } else {
+            evidence("Check referente a observações não foi apresentado como esperado");
+            error().Fail();
+        }
+
+    }
 }

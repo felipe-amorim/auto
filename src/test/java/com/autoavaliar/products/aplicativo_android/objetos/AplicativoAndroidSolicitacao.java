@@ -189,6 +189,9 @@ public class AplicativoAndroidSolicitacao {
     public static String APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_QUINTO_ITEM_LISTA_OPCIONAIS = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.LinearLayout/android.widget.CheckBox";
     public static String APLICATIVO_ANDROID_SOLICITACAO_BUTTON_SALVAR_OPCIONAIS = "com.autoaction.app:id/select";
     public static String APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_OPCIONAIS = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.ImageView";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_FOTOS = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.ImageView";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_INPUT_OBSERVACOES = "com.autoaction.app:id/observations";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_OBSERVACOES = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[4]/android.widget.ImageView";
 
 
     public static LinkedHashMap<String, String> aplicativoAndroidSolicitacao = createData();
@@ -354,6 +357,9 @@ public class AplicativoAndroidSolicitacao {
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_QUINTO_ITEM_LISTA_OPCIONAIS, "Quinto item lista opcionais");
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_SALVAR_OPCIONAIS, "Salvar opcionais");
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_OPCIONAIS, "Check Opcionais");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_FOTOS, "Check Fotos");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_INPUT_OBSERVACOES, "Observações");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_OBSERVACOES, "Check Observações");
         return ret;
     }
 }
