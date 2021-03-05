@@ -159,7 +159,7 @@ Feature: Realizar nova solicitação
     Then O usuario valida existencia check referente a fotos
 
 
-    @ValidaCheckItensAvaliados @ComCamposObrigatoriosAndroidOutLine @Carro
+  @ValidaCheckItensAvaliados @ComCamposObrigatoriosAndroidOutLine @Carro
   Scenario Outline: Validar Check Itens Avaliados, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
     When O usuario preenche dados nova solicitacao carro ate selecionar cinco opcionais <ano> <km> <marca> <modelo> <avaliacaoOpcionais>
@@ -180,3 +180,22 @@ Feature: Realizar nova solicitação
       | ano    | km       | marca        | modelo | statusMotor | statusCambio |
       | "2016" | "120001" | "volkswagen" | "gol"  | "bom"       | "bom"        |
 
+
+  @ValidaTrocaCorPontuacaoAzul @ComCamposObrigatoriosAndroidOutLine @Carro
+  Scenario Outline: Validar Troca da cor de vermelho para azul, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
+    Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
+    When O usuario preenche dados solicitacao carro validar troca cor pontuacao para azul <ano> <km> <marca> <modelo> <statusAvaliacao>
+
+    Examples:
+      | ano    | km       | marca        | modelo | statusAvaliacao |
+      | "2016" | "120001" | "volkswagen" | "gol"  | "bom"           |
+
+
+  @ValidaTrocaCorPontuacaoVerde @ComCamposObrigatoriosAndroidOutLine @Carro
+  Scenario Outline: Validar Troca da cor de azul para verde, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
+    Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
+    When O usuario preenche dados solicitacao carro validar troca cor pontuacao para verde <ano> <km> <marca> <modelo> <statusAvaliacao>
+
+    Examples:
+      | ano    | km       | marca        | modelo | statusAvaliacao |
+      | "2016" | "120001" | "volkswagen" | "gol"  | "bom"           |

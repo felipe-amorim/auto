@@ -2208,6 +2208,22 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
         find(aplicativoAndroidFecharCamera).click();
     }
 
+    @And("O usuario adiciona a quantidade de fotos especifica {int}")
+    public void oUsuarioAdicionaAQuantidadeDeFotosEspecifica(int arg0){
+        log().setLocator(aplicativoAndroidSolicitacao);
+        find(aplicativoAndroidSolicitacaoFotosButton).click();
+        sleep().until(5000);
+        int contador = 1;
+        while (contador <= arg0){
+            find(aplicativoAndroidTirarFoto).click();
+            arduino.send('3');
+            sleep().until(2000);
+            contador++;
+            System.out.println("contador fotos: " + contador);
+        }
+        find(aplicativoAndroidFecharCamera).click();
+    }
+
     @Then("O usuario valida existencia check referente a fotos")
     public void oUsuarioValidaExistenciaCheckReferenteAFotos() {
         log().setLocator(aplicativoAndroidSolicitacao);
@@ -2278,6 +2294,121 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
             evidence("Check referente a observações não foi apresentado como esperado");
             error().Fail();
         }
+    }
 
+    @When("O usuario preenche dados solicitacao carro validar troca cor pontuacao para azul {string} {string} {string} {string} {string}")
+    public void oUsuarioPreencheDadosSolicitacaoCarroValidarTrocaCorPontuacaoParaAzulAnoKmMarcaModeloStatusMotor(String arg0, String arg1, String arg2, String arg3, String arg4) {
+        SDAplicativoAndroidMain main = new SDAplicativoAndroidMain();
+        main.oUsuarioClicaEmMais();
+        main.oUsuarioClicaNoMenuCarro();
+        oUsuarioPreencheOCampoOwner();
+        sTelefone = String.valueOf(t);
+        sTelefone = sTelefone.substring(0,10);
+        find(aplicativoAndroidSolicitacaoTelefoneInput).send().text(sTelefone);
+        oUsuarioPreencheOCampoCelular();
+        oUsuarioPreencheOCampoEmail();
+        oUsuarioEscolheOVendedorQA();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        digitarPlaca();
+        sendAnoFab(arg0);
+        anoLancamento(arg0);
+        oUsuarioArrastaATelaParaBaixo();
+        sendKM(arg1);
+        oUsuarioPreencheAMarcaUtilizandoOFiltroPor(arg2);
+        oUsuarioPreencheOModeloUtilizandoOFiltroPor(arg3);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheOCampoVersao();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheOCampoCor();
+        oUsuarioPreencheOCampoCombustivel();
+        oUsuarioPreencheOCampoCambio();
+        oUsuarioPreencheOCampoProcedenciaParaCarro();
+        oUsuarioPreencheOCampoQuantidadeDePortasUtilizandoOFiltroPor("4");
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_VER_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_PRIMEIRO_ITEM_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_SALVAR_OPCIONAIS).click();
+        oUsuarioAdicionaAQuantidadeDeFotosEspecifica(9);
+        oUsuarioArrastaATelaParaBaixo();
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        sendAvaliaPneusCarro(arg4);
+        sendAvaliaLatariaCarro(arg4);
+        sendAvaliaMotorCarro(arg4);
+        sendAvaliaCambioCarro(arg4);
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        evidence("evidence");
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        find(APLICATIVO_ANDROID_SOLICITACAO_INPUT_OBSERVACOES).send().text("teste ");
+        sleep().until(30000);
+        find(APLICATIVO_ANDROID_SOLICITACAO_INPUT_OBSERVACOES).send().text("teste  ");
+    }
+
+    @When("O usuario preenche dados solicitacao carro validar troca cor pontuacao para verde {string} {string} {string} {string} {string}")
+    public void oUsuarioPreencheDadosSolicitacaoCarroValidarTrocaCorPontuacaoParaVerdeAnoKmMarcaModeloStatusAvaliacao(String arg0, String arg1, String arg2, String arg3, String arg4) {
+        SDAplicativoAndroidMain main = new SDAplicativoAndroidMain();
+        main.oUsuarioClicaEmMais();
+        main.oUsuarioClicaNoMenuCarro();
+        oUsuarioPreencheOCampoOwner();
+        sTelefone = String.valueOf(t);
+        sTelefone = sTelefone.substring(0,10);
+        find(aplicativoAndroidSolicitacaoTelefoneInput).send().text(sTelefone);
+        oUsuarioPreencheOCampoCelular();
+        oUsuarioPreencheOCampoEmail();
+        oUsuarioEscolheOVendedorQA();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        digitarPlaca();
+        sendAnoFab(arg0);
+        anoLancamento(arg0);
+        oUsuarioArrastaATelaParaBaixo();
+        sendKM(arg1);
+        oUsuarioPreencheAMarcaUtilizandoOFiltroPor(arg2);
+        oUsuarioPreencheOModeloUtilizandoOFiltroPor(arg3);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheOCampoVersao();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheOCampoCor();
+        oUsuarioPreencheOCampoCombustivel();
+        oUsuarioPreencheOCampoCambio();
+        oUsuarioPreencheOCampoProcedenciaParaCarro();
+        oUsuarioPreencheOCampoQuantidadeDePortasUtilizandoOFiltroPor("4");
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_VER_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_PRIMEIRO_ITEM_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_SEGUNDO_ITEM_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_TERCEIRO_ITEM_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_QUARTO_ITEM_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_SALVAR_OPCIONAIS).click();
+        oUsuarioAdicionaAQuantidadeDeFotosEspecifica(16);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        evidence("evidence");
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        sendAvaliaPneusCarro(arg4);
+        sendAvaliaMotorCarro(arg4);
+        sendAvaliaCambioCarro(arg4);
+        sleep().until(2000);
+        oUsuarioClicaEmSalvarEAvancar();
+        evidence("evidence");
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        find(APLICATIVO_ANDROID_SOLICITACAO_INPUT_OBSERVACOES).send().text("teste");
+        sleep().until(30000);
+        find(APLICATIVO_ANDROID_SOLICITACAO_INPUT_OBSERVACOES).send().text("teste teste");
     }
 }
