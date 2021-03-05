@@ -2136,9 +2136,47 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     public void oUsuarioValidaExistenciaCheckReferenteAItensAvaliados() {
         log().setLocator(aplicativoAndroidSolicitacao);
         if (find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_ITENS_AVALIADOS).exists()){
-            evidence("Check referente A Itens Avaliados apresentado como esperado");
+            evidence("Check referente a Itens Avaliados apresentado como esperado");
         } else {
-            evidence("Check referente A Itens Avaliados não foi apresentado como esperado");
+            evidence("Check referente a Itens Avaliados não foi apresentado como esperado");
+            error().Fail();
+        }
+    }
+
+    @When("O usuario adiciona cinco opcionais para nova solicitacao carro {string} {string} {string}")
+    public void oUsuarioAdicionaCincoOpcionaisParaNovaSolicitacaoCarro(String arg0,String arg1, String arg2) {
+        SDAplicativoAndroidMain main = new SDAplicativoAndroidMain();
+        main.oUsuarioClicaEmMais();
+        main.oUsuarioClicaNoMenuCarro();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        sendAnoFab(arg0);
+        anoLancamento(arg0);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheAMarcaUtilizandoOFiltroPor(arg1);
+        oUsuarioPreencheOModeloUtilizandoOFiltroPor(arg2);
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioArrastaATelaParaBaixo();
+        oUsuarioPreencheOCampoVersao();
+        log().setLocator(aplicativoAndroidSolicitacao);
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_VER_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_PRIMEIRO_ITEM_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_SEGUNDO_ITEM_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_TERCEIRO_ITEM_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_QUARTO_ITEM_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_QUINTO_ITEM_LISTA_OPCIONAIS).click();
+        find(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_SALVAR_OPCIONAIS).click();
+    }
+
+    @Then("O usuario valida existencia check referente a opcionais")
+    public void oUsuarioValidaExistenciaCheckReferenteAOpcionais() {
+        log().setLocator(aplicativoAndroidSolicitacao);
+        if (find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_OPCIONAIS).exists()){
+            evidence("Check referente a Opcionais apresentado como esperado");
+        } else {
+            evidence("Check referente a Opcionais não foi apresentado como esperado");
             error().Fail();
         }
     }

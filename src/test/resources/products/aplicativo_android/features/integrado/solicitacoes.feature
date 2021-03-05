@@ -141,6 +141,17 @@ Feature: Realizar nova solicitação
       | "FFA0002" | "2014" | "50000"  | "fiat"       | "uno"  | "bom"       | "bom"        | "20000"     | "35000"    |
 
 
+  @ValidaCheckOpcionais @ComCamposObrigatoriosAndroidOutLine @Carro
+  Scenario Outline: Validar Check Opcionais, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
+    Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
+    When O usuario adiciona cinco opcionais para nova solicitacao carro <ano> <marca> <modelo>
+    Then O usuario valida existencia check referente a opcionais
+
+    Examples:
+      | ano    | marca        | modelo |
+      | "2016" | "volkswagen" | "gol"  |
+
+
   @ValidaCheckItensAvaliados @ComCamposObrigatoriosAndroidOutLine @Carro
   Scenario Outline: Validar Check Itens Avaliados, Author: Felipe Amorim, Category: Nova Solicitacao - Carro, Environment: Galaxy S9 - Android 10 - App 1.0
     Given O usuario abre o aplicativo como "timeqa.apk@autoavaliar.com.br" "timeqa0102"
@@ -150,3 +161,5 @@ Feature: Realizar nova solicitação
     Examples:
       | ano    | km       | marca        | modelo | avaliacaoOpcionais |
       | "2016" | "120001" | "volkswagen" | "gol"  | "bom"              |
+
+

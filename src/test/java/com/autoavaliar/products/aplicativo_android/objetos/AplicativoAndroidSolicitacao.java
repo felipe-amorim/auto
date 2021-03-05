@@ -181,6 +181,14 @@ public class AplicativoAndroidSolicitacao {
     public static String APLICATIVO_ANDROID_SOLICITACAO_INPUT_AVALIACAO_LATARIA_CARRO = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]";
     public static String APLICATIVO_ANDROID_SOLICITACAO_INPUT_AVALIACAO_PINTURA_CARRO = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[4]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]";
     public static String APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_ITENS_AVALIADOS = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[3]/android.widget.ImageView";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_BUTTON_VER_LISTA_OPCIONAIS = "com.autoaction.app:id/button_optionals_list";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_PRIMEIRO_ITEM_LISTA_OPCIONAIS = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.CheckBox";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_SEGUNDO_ITEM_LISTA_OPCIONAIS = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.CheckBox";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_TERCEIRO_ITEM_LISTA_OPCIONAIS = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[3]/android.widget.LinearLayout/android.widget.CheckBox";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_QUARTO_ITEM_LISTA_OPCIONAIS = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[4]/android.widget.LinearLayout/android.widget.CheckBox";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_QUINTO_ITEM_LISTA_OPCIONAIS = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[5]/android.widget.LinearLayout/android.widget.CheckBox";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_BUTTON_SALVAR_OPCIONAIS = "com.autoaction.app:id/select";
+    public static String APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_OPCIONAIS = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/android.widget.ImageView";
 
 
     public static LinkedHashMap<String, String> aplicativoAndroidSolicitacao = createData();
@@ -338,7 +346,14 @@ public class AplicativoAndroidSolicitacao {
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_INPUT_AVALIACAO_LATARIA_CARRO, "Avaliação lataria carro");
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_INPUT_AVALIACAO_PINTURA_CARRO, "Avaliação pintura carro");
         ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_ITENS_AVALIADOS, "Check Itens Avaliados");
-
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_VER_LISTA_OPCIONAIS, "Ver lista opcionais");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_PRIMEIRO_ITEM_LISTA_OPCIONAIS, "Primeiro item lista opcionais");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_SEGUNDO_ITEM_LISTA_OPCIONAIS, "Segundo item lista opcionais");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_TERCEIRO_ITEM_LISTA_OPCIONAIS, "Terceiro item lista opcionais");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_QUARTO_ITEM_LISTA_OPCIONAIS, "Quarto item lista opcionais");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_CHECK_QUINTO_ITEM_LISTA_OPCIONAIS, "Quinto item lista opcionais");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_BUTTON_SALVAR_OPCIONAIS, "Salvar opcionais");
+        ret.put(APLICATIVO_ANDROID_SOLICITACAO_TEXT_CHECK_OPCIONAIS, "Check Opcionais");
         return ret;
     }
 }
