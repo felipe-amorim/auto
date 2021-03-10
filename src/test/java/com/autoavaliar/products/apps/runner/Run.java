@@ -11,8 +11,9 @@ import org.junit.runner.RunWith;
         glue={"com.autoavaliar.products"},
         monochrome = true,
         plugin = { "com.autoavaliar.intern.plugin.ListCucumber" },
-        tags = {"@NovaSolicitacaoAndroid", "@ComCamposObrigatoriosAndroidOutLine", "@Carro, @Moto, @Caminhao"}
-        //tags = {"@SolicitacaoUSBI", "@Moto"}
+        //tags = {"@EditarSolicitacaoAndroid", "@ComCamposObrigatoriosAndroidOutLine", "@Carro, @Moto, @Caminhao"}
+        //tags = {"@ValidarBloqueioDuplicidadePlaca, @ValidaCheckOpcionais, @ValidaCheckFotos, @ValidaCheckItensAvaliados, @ValidaCheckObservacoes, @ValidaTrocaCorPontuacaoAzul, @ValidaTrocaCorPontuacaoVerde"}
+        tags = {"@NovaSolicitacaoUsbiAndroid", "@ComCamposObrigatoriosAndroidOutLine", "@Caminhao"}
 )
 
 public class Run {

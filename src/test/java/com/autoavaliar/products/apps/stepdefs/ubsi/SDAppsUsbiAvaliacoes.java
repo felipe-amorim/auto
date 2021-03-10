@@ -312,6 +312,8 @@ public class SDAppsUsbiAvaliacoes extends CoreWeb {
         String usbiTelefone = find(APPS_USBI_AVALIACOES_TEXT_TELEFONE).get().text().toString();
         usbiTelefone = usbiTelefone.replace(" ", "").replace("(", "").replace(")", "").replace("-", "");
         assertThat(usbiTelefone).isEqualTo(sTelefone);
+        System.out.println("variavel usbiTelefone: " + usbiTelefone);
+        System.out.println("variavel sTelefone: " + sTelefone);
         String usbiCelular = find(APPS_USBI_AVALIACOES_TEXT_CELULAR).get().text().toString();
         usbiCelular = usbiCelular.replace(" ", "").replace("(", "").replace(")", "").replace("-", "");
         assertThat(usbiCelular).isEqualTo(celular);

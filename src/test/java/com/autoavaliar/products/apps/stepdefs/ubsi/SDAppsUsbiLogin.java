@@ -16,9 +16,9 @@ public class SDAppsUsbiLogin extends CoreWeb {
         webDriver().set().options().maximized();
         webDriver().navigate(url);
         sleep().setMaxTime(30000);
-        if (find(APPS_USBI_LOGIN_IMAGE_ALERTA_ABAIXO_ASSINADO).exists()){
-            find(APPS_USBI_LOGIN_BUTTON_FECHAR_ALERTA_ABAIXO_ASSINADO).click();
-        }
+        //if (find(APPS_USBI_LOGIN_IMAGE_ALERTA_ABAIXO_ASSINADO).exists()){
+        //    find(APPS_USBI_LOGIN_BUTTON_FECHAR_ALERTA_ABAIXO_ASSINADO).click();
+        //}
         sleep().setDefaultTime();
         sleep().untilAppear(APPS_USBI_LOGIN_INPUT_EMAIL);
         find(APPS_USBI_LOGIN_INPUT_EMAIL).send().text(vendedorAutoavaliar);

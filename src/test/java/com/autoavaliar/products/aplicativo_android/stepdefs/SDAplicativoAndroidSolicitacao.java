@@ -289,9 +289,9 @@ public class SDAplicativoAndroidSolicitacao extends CoreAndroid {
     public void oUsuarioPreencheOCampoCambio() {
         log().setLocator(aplicativoAndroidSolicitacao);
         find(aplicativoAndroidSolicitacaoCambioButton).click();
-        find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
-        cambio = find(APLICATIVO_ANDROID_TIPO_CAMBIO_VEICULO_SELECIONADO).get().text().toString();
+        cambio = find(APLICATIVO_ANDROID_SOLICITACAO_TEXT_UNICO_ITEM_LISTA_TIPO_CAMBIO_CARRO).get().text().toString();
         System.out.println("variavel cambio na criacao: " + cambio);
+        find(APLICATIVO_ANDROID_SOLICITACAO_PRIMEIRO_ITEM).click();
     }
 
     @And("O usuario preenche o campo cambio com segunda opcao lista")
