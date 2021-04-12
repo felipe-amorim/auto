@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         glue={"com.autoavaliar.products"},
         monochrome = true,
         plugin = { "com.autoavaliar.intern.plugin.ListCucumber" },
-        tags = {"@NovaSolicitacaoUsbiAndroid", "@ComCamposObrigatoriosAndroidOutLine", "@Carro"}
+        tags = {"@criarVeiculo"}
 )
 
 public class Run {
